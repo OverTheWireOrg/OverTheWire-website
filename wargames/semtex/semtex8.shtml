@@ -1,0 +1,34 @@
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 8" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
+</div>
+<h1>Level 8</h1>
+<dl>
+<dt>Non-sniffable data</dt>
+<dd>
+This level is about some very simple covert channel, about transferring information that cannot possibly be sniffed.<br>
+There is a socket file in /rdx/nature. It is a local Unix socket.<br>
+Receive data from it until EOF and save it to a file.<br>
+<br>
+Watch the time between the received bytes. Certain delays mean certain bytes that have been left out (have not been sent).<br>
+<br>
+0-1 s : no special data<br>
+1-2 s : 'Q'<br>
+2-3 s : 'L'<br>
+3-4 s : 'A'<br>
+4-5 s : 'V'<br>
+<br>
+you have to take these "unsent" data into your output file too, exactly at the places where they occur.<br>
+<br>
+Thus you are receiving data while not receiving anything.<br>
+<br>
+The output file is a .jpg image :)<br>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

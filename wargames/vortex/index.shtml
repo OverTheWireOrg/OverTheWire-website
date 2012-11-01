@@ -1,0 +1,13 @@
+<!--#set var="PageTitle" value="Wargames - Vortex" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Vortex</h1>
+<p>
+The Vortex wargame is currently composed of 27 levels. Most files you need are in /vortex/. 
+Special thanks to the many people who have helped setup and maintain this wargame.</p>
+<p>Many thanks to those who have made sure all levels can be played</p>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

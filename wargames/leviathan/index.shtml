@@ -1,0 +1,45 @@
+<!--#set var="PageTitle" value="Wargames - Leviathan" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/leviathan">Discuss this wargame on the forum</a>
+</div>
+<h1>Leviathan</h1> <!--<star>&#9733;<not>&#9733;&#9733;&#9733;&#9733;</not></star></h1>-->
+<h3>Dare you face the lord of the oceans?</h3>
+
+<p>Leviathan is a wargame that has been rescued from the demise of <b>intruded.net</b>, previously hosted on leviathan.intruded.net.
+<b>Big thanks to adc, morla and reth</b> for their help in resurrecting this game!</p>
+
+<p>What follows below is the original description of leviathan, copied from intruded.net:</p>
+
+<pre>
+<b>Summary:</b>
+Difficulty:     1/10
+Levels:	        8
+Platform:	Linux/x86
+
+<b>Author:</b>
+<a href="mailto:norse@dievo.org">Anders Tonfeldt</a>
+
+<b>Special Thanks:</b>
+We would like to thank AstroMonk for coming up with a replacement idea for the last level,
+deadfood for finding a leveljump and Coi for finding a non-planned vulnerability.
+
+<b>Description:</b>
+This wargame doesn't require any knowledge about programming - just a bit of common
+sense and some knowledge about basic *nix commands. We had no idea that it'd be this
+hard to make an interesting wargame that wouldn't require programming abilities from 
+the players. Hopefully we made an interesting challenge for the new ones.
+</pre>
+
+<p>
+Leviathan's levels are called <b>leviathan0, leviathan1, ... etc.</b> and can be accessed on <b>leviathan.labs.overthewire.org</b> through SSH.<br>
+Data for the levels can be found in <b>the homedirectories</b>.
+</p> 
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

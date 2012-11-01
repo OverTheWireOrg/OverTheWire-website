@@ -1,0 +1,32 @@
+<!--#set var="PageTitle" value="Wargames - Blacksun - Level 1" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/blacksun">Discuss this level on the forum</a>
+</div>
+<h1>Level 1</h1>
+<p>Level1 is a trivial stack buffer overflow. Note that you'll probably find it easier to use the compiled version than compiling it from source.</p>
+<center>
+<table border=0>
+	<tr><th colspan=2>Binary information</th></tr>
+	<tr><th>Stack smashing protection (SSP):</th><td class="disabled">Disabled</td></tr>
+	<tr><th>Postition Independent Executable (PIE):</th><td class="disabled">Disabled</td></tr>
+	<tr><th>Address space layout randomisation (ASLR):</th><td class="enabled">Enabled - No PIE</td></tr>
+	<tr><th>Non-executable pages:</th><td class="disabled">None / disabled</td></tr>
+	<tr><td colspan=2><hr/></td></tr>
+	<tr><th>Location:</th><td><p>/levels/level1</p></td></tr>
+</table>
+</center>
+<dl>
+<dt>Code listing (<a href="level1.c">level1.c</a>)</dt>
+<dd>
+<pre>
+<!--#include virtual="level1.c.colored.html" -->
+</pre>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

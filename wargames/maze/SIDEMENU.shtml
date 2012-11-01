@@ -1,0 +1,16 @@
+<div id="sidemenu">
+    <ul>
+	<li><a href="/wargames/maze/"><sh>Maze</sh></a></li>
+        <li><a href="/wargames/maze/maze0.shtml">Level 0</a></li>
+        <li><a href="/wargames/maze/maze1.shtml">Level 1</a></li>
+        <li><a href="/wargames/maze/maze2.shtml">Level 2</a></li>
+        <li><a href="/wargames/maze/maze3.shtml">Level 3</a></li>
+        <li><a href="/wargames/maze/maze4.shtml">Level 4</a></li>
+        <li><a href="/wargames/maze/maze5.shtml">Level 5</a></li>
+        <li><a href="/wargames/maze/maze6.shtml">Level 6</a></li>
+        <li><a href="/wargames/maze/maze7.shtml">Level 7</a></li>
+        <li><a href="/wargames/maze/maze8.shtml">Level 8</a></li>
+        <li><a href="/wargames/maze/maze9.shtml">Level 9</a></li>
+    </ul>
+</div>
+

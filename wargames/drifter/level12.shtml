@@ -1,0 +1,15 @@
+<!--#set var="PageTitle" value="Wargames - Drifter - Level 12" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this level on the forum</a>
+</div>
+<h1>Level 12 - Indexing fun</h1>
+<p>Remote Procedure Call style reverse engineering fun :-)</p>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

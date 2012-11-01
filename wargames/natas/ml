@@ -1,0 +1,12 @@
+#!/bin/bash
+
+lev=$1
+lev=$((lev+0))
+
+if [ -e natas$lev.shtml ];
+then
+    echo "Level $lev already exists"
+    exit 0
+fi
+
+cat natasX.shtml | sed "s:XXXXX:$lev:g" > natas$lev.shtml

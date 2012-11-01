@@ -1,0 +1,22 @@
+<div id="sidemenu">
+    <ul>
+	<!--#if expr="${DOCUMENT_URI}=/\/about\/contribute/" -->
+	<li><a class='selected' href="/about/contribute.shtml">Contribute</a></li>
+	<!--#else -->
+	<li><a href="/about/contribute.shtml">Contribute</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/about\/us/" -->
+	<li><a class='selected' href="/about/us.shtml">About&nbsp;Us</a></li>
+	<!--#else -->
+	<li><a href="/about/us.shtml">About&nbsp;Us</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/about\/contact/" -->
+	<li><a class='selected' href="/about/contact.shtml">Contact</a></li>
+	<!--#else -->
+	<li><a href="/about/contact.shtml">Contact</a></li>
+	<!--#endif -->
+    </ul>
+</div>
+

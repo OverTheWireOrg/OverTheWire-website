@@ -1,0 +1,32 @@
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 15" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
+</div>
+<h1>Level 15</h1>
+
+<dl>
+<dt>Level Goal</dt>
+<dd>
+The password for the next level can be retrieved by submitting the password of the current level to <b>port 30000 on localhost</b>.
+</dd>
+</dl>
+
+<dl>
+<dt>Commands you may need to solve this level</dt>
+<dd>ssh, telnet, nc, openssl, s_client, nmap</dd>
+<dt>Helpful Reading Material</dt>
+<dd><a href="https://www.youtube.com/watch?v=7_LPdttKXPc">How the Internet works in 5 minutes (YouTube)</a> (Not completely accurate, but good enough for beginners)</dd>
+<dd><a href="http://computer.howstuffworks.com/web-server5.htm">IP Addresses</a></dd>
+<dd><a href="http://en.wikipedia.org/wiki/IP_address">IP Address on Wikipedia</a></dd>
+<dd><a href="http://en.wikipedia.org/wiki/Localhost">Localhost on Wikipedia</a></dd>
+<dd><a href="http://computer.howstuffworks.com/web-server8.htm">Ports</a></dd>
+<dd><a href="http://en.wikipedia.org/wiki/Port_(computer_networking)">Port (computer networking) on Wikipedia</a></dd>
+</dl>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

@@ -1,0 +1,50 @@
+<!--#set var="PageTitle" value="Wargames - Monxla (HES2012)" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="LOCALHEADER.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Monxla (HES2012)</h1>
+<p>This wargame was introduced at the <a href="http://hackitoergosum.org/">Hackito Ergo Sum (HES)</a> 2012 conference in Paris and is centered around the <b>fictitious Russian crime family Nasenko</b>.</p>
+
+<p>
+The following letter is your starting point:
+</p>
+
+<pre>
+Hello agent Hipnkewl,
+
+As head of the cybercrime-fighting unit of the best three-letter agency
+in the world, I welcome you to the team.
+
+To demonstrate your skills to the rest of team, we have prepared your
+first assignment.
+
+The russian Nasenko family has decided to become a crime family. Being
+hip and trendy, they have figured out that an online presence is a must 
+in today's world. They have set up a server where they are testing and 
+developing the best and latest cybercrime tools. What they don't know, 
+is that we have already infiltrated their business and have a mole 
+inside their organisation.
+
+Your job is to locate the information hidden by the mole and use it to 
+take down the Nasenko server. Details about the location of this server 
+will be transmitted once the mission is a go.
+
+God speed, make us proud!
+
+Signed,
+Director A.F.
+</pre>
+
+<p>
+The location of the Nasenko server is <a href="http://monxla.labs.overthewire.org">http://monxla.labs.overthewire.org</a>. Go there and uncover the information from the mole
+to start the game.
+</p>
+
+<p>
+<b>NOTE:</b>
+If you are stuck on the steganography level, consider that all passwords are alphanumeric. It might also help to look in /etc/monxla_pass to find out how long the password is...
+</p>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

@@ -1,0 +1,28 @@
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 16" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
+</div>
+<h1>Level 16</h1>
+
+<dl>
+<dt>Level Goal</dt>
+<dd>
+The password for the next level can be retrieved by submitting the password of the current level to <b>port 30001 on localhost</b> using SSL encryption.
+</dd>
+</dl>
+
+<dl>
+<dt>Commands you may need to solve this level</dt>
+<dd>ssh, telnet, nc, openssl, s_client, nmap</dd>
+<dt>Helpful Reading Material</dt>
+<dd><a href="http://en.wikipedia.org/wiki/Secure_Socket_Layer">Secure Socket Layer/Transport Layer Security on Wikipedia</a></dd>
+<dd><a href="http://advosys.ca/viewpoints/2006/08/testing-ssl-with-command-line-tools/">Testing SSL with commandline tools</a></dd>
+</dl>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

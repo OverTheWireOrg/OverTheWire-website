@@ -1,0 +1,18 @@
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 21" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
+</div>
+<h1>Level 21</h1>
+<dl>
+<dt>Reverse Me</dt>
+<dd>This level is a slightly more difficult reverse me (which might require understanding the encryptor for it).</dd>
+<dt>Binary download</dt>
+<dd><a href="vortex21.bin">vortex21.bin</a><pre><!--#include virtual="vortex21.bin.sums" --></pre></dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

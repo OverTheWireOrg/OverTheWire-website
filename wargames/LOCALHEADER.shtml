@@ -1,0 +1,109 @@
+<div id="sidemenu">
+    <ul>
+	<li><sh>Online</sh></li>
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/vortex/" -->
+	<li><a class='selected' href="/wargames/vortex">Vortex</a></li>
+	<!--#else -->
+	<li><a href="/wargames/vortex">Vortex</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/semtex/" -->
+	<li><a class='selected' href="/wargames/semtex">Semtex</a></li>
+	<!--#else -->
+	<li><a href="/wargames/semtex">Semtex</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/krypton/" -->
+	<li><a class='selected' href="/wargames/krypton">Krypton</a></li>
+	<!--#else -->
+	<li><a href="/wargames/krypton">Krypton</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/bandit/" -->
+	<li><a class='selected' href="/wargames/bandit">Bandit</a></li>
+	<!--#else -->
+	<li><a href="/wargames/bandit">Bandit</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/leviathan/" -->
+	<li><a class='selected' href="/wargames/leviathan">Leviathan</a></li>
+	<!--#else -->
+	<li><a href="/wargames/leviathan">Leviathan</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/narnia/" -->
+	<li><a class='selected' href="/wargames/narnia">Narnia</a></li>
+	<!--#else -->
+	<li><a href="/wargames/narnia">Narnia</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/behemoth/" -->
+	<li><a class='selected' href="/wargames/behemoth">Behemoth</a></li>
+	<!--#else -->
+	<li><a href="/wargames/behemoth">Behemoth</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/utumno/" -->
+	<li><a class='selected' href="/wargames/utumno">Utumno</a></li>
+	<!--#else -->
+	<li><a href="/wargames/utumno">Utumno</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/maze/" -->
+	<li><a class='selected' href="/wargames/maze">Maze</a></li>
+	<!--#else -->
+	<li><a href="/wargames/maze">Maze</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/manpage/" -->
+	<li><a class='selected' href="/wargames/manpage">Manpage</a></li>
+	<!--#else -->
+	<li><a href="/wargames/manpage">Manpage</a></li>
+	<!--#endif -->
+
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/monxla/" -->
+	<li><a class='selected' href="/wargames/monxla">Monxla</a></li>
+	<!--#else -->
+	<li><a href="/wargames/monxla">Monxla</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/natas/" -->
+	<li><a class='selected' href="/wargames/natas">Natas</a></li>
+	<!--#else -->
+	<li><a href="/wargames/natas">Natas</a></li>
+	<!--#endif -->
+	</ul>
+	<br />
+
+	<ul>
+	<li><sh>Released</sh></li>
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/hes2010/" -->
+	<li><a class='selected' href="/wargames/hes2010">HES2010</a></li>
+	<!--#else -->
+	<li><a href="/wargames/hes2010">HES2010</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/abraxas/" -->
+	<li><a class='selected' href="/wargames/abraxas">Abraxas</a></li>
+	<!--#else -->
+	<li><a href="/wargames/abraxas">Abraxas</a></li>
+	<!--#endif -->
+	</ul>
+	<br />
+
+	<ul>
+	<li><sh>Currently down</sh></li>
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/blacksun/" -->
+	<li><a class='selected' href="/wargames/blacksun">Blacksun</a></li>
+	<!--#else -->
+	<li><a href="/wargames/blacksun">Blacksun</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/drifter/" -->
+	<li><a class='selected' href="/wargames/drifter">Drifter</a></li>
+	<!--#else -->
+	<li><a href="/wargames/drifter">Drifter</a></li>
+	<!--#endif -->
+    </ul>
+</div>

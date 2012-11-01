@@ -1,0 +1,22 @@
+<!--#set var="PageTitle" value="Wargames - Drifter - Level 6" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this level on the forum</a>
+</div>
+<h1>Level 6</h1>
+<p>Level 6 is a simple remote daemon with a particular vulnerability. In what I intended for this level, it is running in a vulnerable state :P</p>
+<p><b>Reading material:</b></p>
+<dt>
+  <dd><a href="http://www.phrack.org/archives/59/p59-0x07.txt">Advances in format string exploitation</a></dd>
+  <dd><a href="http://julianor.tripod.com/bc/NN-formats.txt">Format String Technique</a></dd>
+  <dd><a href="http://doc.bughunter.net/format-string/exploit-fs.html">Exploiting Format String Vulnerabilities</a></dd>
+</dt>
+<p>As usual when I grab random code and look over it, someone might want to tell the developer :P</p>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

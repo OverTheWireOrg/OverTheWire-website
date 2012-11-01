@@ -1,0 +1,18 @@
+<!--#set var="PageTitle" value="Wargames - Natas - Level 15" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/natas">Discuss this level on the forum</a>
+</div>
+<h1>Level 15</h1>
+
+<pre>
+Username: natas15
+URL:      <a href="http://natas15.natas.labs.overthewire.org">http://natas15.natas.labs.overthewire.org</a>
+</pre>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

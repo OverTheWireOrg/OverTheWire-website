@@ -1,0 +1,7 @@
+<div id="topmenu2">
+    <ul>
+	<li><a href="http://wiki.overthewire.org/">Wiki</a></li>
+	<li><a href="http://planet.overthewire.org/">Planet</a></li>
+	<!--<li><a href="http://library.overthewire.org/">Library</a></li>-->
+    </ul>
+</div>

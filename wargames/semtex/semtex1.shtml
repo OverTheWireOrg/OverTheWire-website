@@ -1,0 +1,23 @@
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 1" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
+</div>
+<h1>Level 1</h1>
+<dl>
+<dt>Simple encryption</dt>
+<dd>
+A password has been crypted using the /semtex/semtex1 tool.<br>
+<br>
+The crypted password is HRXDZNWEAWWCP.<br>
+<br>
+You have to reverse engineer the algorithm and decrypt the password.<br>
+You might try the -v switch for encrypt.<br>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

@@ -1,0 +1,12 @@
+<!--#set var="PageTitle" value="Contact Us" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="LOCALHEADER.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Contact Us</h1>
+
+If you have a problem, a question, a suggestion, or just want to hang out with us,
+you can join <a href="ircs://irc.overthewire.org/social">irc.overthewire.org</a> on port 6697 using an SSL-enabled IRC client, 
+or <a href="irc://irc.overthewire.org/social">irc.overthewire.org</a> on port 6667 using a regular IRC client.</li>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->

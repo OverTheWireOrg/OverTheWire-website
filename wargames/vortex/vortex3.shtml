@@ -1,0 +1,27 @@
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 3" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
+</div>
+<h1>Level 3</h1>
+<dl>
+<dt>A Stack Overflow with a Difference</dt>
+<dd>This level is pretty straight forward. Just sit down and understand what the code is doing. Your shellcode will require a setuid(LEVEL4_UID) since bash drops effective privileges. You could alternatively write a quick setuid(geteuid()) wrapper around bash.<br>
+<b>NOTE:</b> ctors/dtors might no longer be writable, although this level is compiled with <i>-Wl,-z,norelro</i>. Lookup some information about this e.g. <a href="http://unix.stackexchange.com/questions/8062/dtors-looks-writable-but-attempts-to-write-segfault">here</a></dd>
+<b>NOTE:</b> This level is solvable, but it is tricky. If all else fails, use an intelligent bruteforce and then circle back to find out why it worked.</dd>
+<dt>Reading Material</dt>
+<dd><a href="http://www.phrack.com/issues.html?issue=49&id=14&mode=txt">Smashing the Stack for Fun and Profit</a></dd>
+<!-- <dd><a href="http://vx.netlux.org/lib/viz00.html">Overwriting the .dtors section</a></dd> -->
+<dd><a href="http://www.phrack.org/issues.html?issue=56&id=5#article">Bypassing StackGuard and StackShield</a></dd>
+<dt>Code listing (<a href="vortex3.c">vortex3.c</a>)</dt>
+<dd>
+<pre>
+<!--#include virtual="vortex3.c.colored.html" -->
+</pre>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->

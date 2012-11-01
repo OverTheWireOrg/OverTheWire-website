@@ -1,0 +1,14 @@
+<!--#set var="PageTitle" value="Projects" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="LOCALHEADER.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Projects</h1>
+<dl>
+<dt>Wiki</dt>
+<dd>For everything related to hacking, security, OverTheWire community and other cool stuff</dd>
+<dt>Planet</dt>
+<dd>An aggregation of the blogs of OverTheWire community members</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

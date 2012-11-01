@@ -1,0 +1,41 @@
+<!--#set var="PageTitle" value="Wargames - Natas" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Natas</h1>
+
+<p>
+Natas teaches the basics of serverside web-security. 
+</p>
+
+<p>
+Each level of natas consists of its own website located at <b>http://natasX.natas.labs.overthewire.org</b>, where X is the level number. There is <b>no SSH login</b>. To access a level, enter the username for that level (e.g. natas0 for level 0) and its password.
+</p>
+<p>
+Each level has access to the password of the next level. Your job is to somehow obtain that next password and level up.
+<b>All passwords are also stored in /etc/natas_webpass/</b>. E.g. the password for natas5 is stored in the file 
+/etc/natas_webpass/natas5 and only readable by natas4 and natas5.
+</p>
+
+<p>Start here:</p>
+
+<pre>
+Username: natas0
+Password: natas0
+URL: <a href="http://natas0.natas.labs.overthewire.org">http://natas0.natas.labs.overthewire.org</a>
+</pre>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p align=right>
+developed in association with the <a href="http://www.nessos-project.eu/">NESSoS FP7 project<br/>
+<img src="FP7-NESSOS.jpg" width='100px'></a>
+</p>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

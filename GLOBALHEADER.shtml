@@ -1,0 +1,45 @@
+<!--#if expr="${PageTitle}" -->
+<!--#set var="PageTitle" value="OverTheWire - ${PageTitle}" -->
+<!--#else -->
+<!--#set var="PageTitle" value="OverTheWire" -->
+<!--#endif -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<link rel='shortcut icon' href='/img/favicon.ico' />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<!--
+<link rel="stylesheet" href="https://tracker.overthewire.org/css/otw-hof.css" type="text/css" media="screen" />
+<script src="https://tracker.overthewire.org/js/jquery-1.7.2.min.js"></script>
+<script src="https://tracker.overthewire.org/js/otw-hof-api.js"></script>
+-->
+
+<title><!--#echo var="PageTitle" --></title>
+</head>
+<body>
+<div id="sitename"><a href="/">OverTheWire</a></div>
+<div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
+<div id="topmenu">
+    <ul>
+	<!--#if expr="${DOCUMENT_URI}=/\/news/" -->
+	<li><a class='selected' href="/news/">News</a></li>
+	<!--#else -->
+	<li><a href="/news/">News</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames/" -->
+	<li><a class='selected' href="/wargames/">Wargames</a></li>
+	<!--#else -->
+	<li><a href="/wargames/">Wargames</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/about/" -->
+	<li><a class='selected' href="/about/">About</a></li>
+	<!--#else -->
+	<li><a href="/about/">About</a></li>
+	<!--#endif -->
+    </ul>
+</div>
+

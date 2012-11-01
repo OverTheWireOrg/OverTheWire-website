@@ -1,0 +1,34 @@
+<!--#set var="PageTitle" value="Wargames - Blacksun - Level 2" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/blacksun">Discuss this level on the forum</a>
+</div>
+<h1>Level 2</h1>
+<p>Level2 is a test application from a <a href="http://brouits.free.fr/libspopc/">pop3 library</a> that's pretty buggy. The idea is to write a pop3 server to trigger a vulnerability (pick any you like :p) in the code and get a shell.</p>
+<p><b>Notes</b></p>
+<ul>
+<li>-fpic -fPIC was added to the compile options to remote DT_TEXTREL's :p</li>
+<li>If you're feeling generous, perhaps drop the author a note about any bugs you find so that future versions of the library can be fixed.</li>
+<li>ASLR remote fun!</li>
+</ul>
+
+<center>
+<table border=0>
+	<tr><th colspan=2>Binary information</th></tr>
+	<tr><th>Stack smashing protection (SSP):</th><td class="disabled">Disabled</td></tr>
+	<tr><th>Postition Independent Executable (PIE):</th><td class="disabled">Disabled</td></tr>
+	<tr><th>Address space layout randomisation (ASLR):</th><td class="enabled">Enabled</td></tr>
+	<tr><th>Non-executable pages:</th><td class="disabled">None / disabled</td></tr>
+	<tr><td colspan=2><hr/></td></tr>
+	<tr><th>Code Location:</th><td>/levels/2/libspopc-0.7, using poptest1.c, and associated library code</td></tr>
+	<tr><td colspan=2><hr/></td></tr>
+	<tr><th>Location:</th><td><p>/levels/level2</p></td></tr>
+</table>
+
+</center>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

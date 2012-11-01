@@ -1,0 +1,348 @@
+<a name="line1" href="#line1">  1</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;unistd.h&gt;</font></strong></font>
+<a name="line2" href="#line2">  2</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
+<a name="line3" href="#line3">  3</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;string.h&gt;</font></strong></font>
+<a name="line4" href="#line4">  4</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
+<a name="line5" href="#line5">  5</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;netinet/in.h&gt;</font></strong></font>
+<a name="line6" href="#line6">  6</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;sys/types.h&gt;</font></strong></font>
+<a name="line7" href="#line7">  7</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;fcntl.h&gt;</font></strong></font>
+<a name="line8" href="#line8">  8</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;errno.h&gt;</font></strong></font>
+<a name="line9" href="#line9">  9</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;ctype.h&gt;</font></strong></font>
+<a name="line10" href="#line10"> 10</a> 
+<a name="line11" href="#line11"> 11</a> <font color="0000ff"><strong>#include <font color="#008000">&quot;md5.h&quot;</font></strong></font>
+<a name="line12" href="#line12"> 12</a> 
+<a name="line13" href="#line13"> 13</a> <font color="#2040a0">class</font> <font color="#2040a0">BaseClass</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line14" href="#line14"> 14</a>   <font color="#2040a0">private</font><font color="4444FF">:</font>
+<a name="line15" href="#line15"> 15</a>     <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">Buffer</font><font color="4444FF">[</font><font color="#FF0000">512</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line16" href="#line16"> 16</a>   <font color="#2040a0">public</font><font color="4444FF">:</font>
+<a name="line17" href="#line17"> 17</a>     <font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">next</font><font color="4444FF">;</font>
+<a name="line18" href="#line18"> 18</a>     <font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">child</font><font color="4444FF">;</font>
+<a name="line19" href="#line19"> 19</a>     <strong>void</strong> <font color="#2040a0">SetBuffer</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">data</font>, <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line20" href="#line20"> 20</a>       <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">Buffer</font>, <font color="#2040a0">data</font>, <font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line21" href="#line21"> 21</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line22" href="#line22"> 22</a>     <font color="#2040a0">virtual</font> <strong>void</strong> <font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line23" href="#line23"> 23</a>       <strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">c</font> <font color="4444FF">=</font> <font color="#2040a0">Buffer</font><font color="4444FF">;</font>
+<a name="line24" href="#line24"> 24</a>       <strong>while</strong><font color="4444FF">(</font><font color="4444FF">*</font><font color="#2040a0">c</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line25" href="#line25"> 25</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">isalnum</font><font color="4444FF">(</font><font color="4444FF">*</font><font color="#2040a0">c</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line26" href="#line26"> 26</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;%c&quot;</font>, <font color="4444FF">*</font><font color="#2040a0">c</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line27" href="#line27"> 27</a>         <font color="4444FF"><strong>}</strong></font> <strong>else</strong> <font color="4444FF"><strong>{</strong></font>
+<a name="line28" href="#line28"> 28</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;.&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line29" href="#line29"> 29</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line30" href="#line30"> 30</a>         <font color="#2040a0">c</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">;</font>
+<a name="line31" href="#line31"> 31</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line32" href="#line32"> 32</a>       <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line33" href="#line33"> 33</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line34" href="#line34"> 34</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line35" href="#line35"> 35</a> <font color="#2040a0">class</font> <font color="#2040a0">MOOV</font><font color="4444FF">:</font><font color="#2040a0">public</font> <font color="#2040a0">BaseClass</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line36" href="#line36"> 36</a>   <strong>void</strong> <font color="#2040a0">SetBuffer</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">data</font>, <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line37" href="#line37"> 37</a>     <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;hi!<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line38" href="#line38"> 38</a>   <font color="4444FF"><strong>}</strong></font>
+<a name="line39" href="#line39"> 39</a>   <strong>void</strong> <font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line40" href="#line40"> 40</a>   <font color="4444FF"><strong>{</strong></font>
+<a name="line41" href="#line41"> 41</a>     <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;y0y0<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line42" href="#line42"> 42</a>   <font color="4444FF"><strong>}</strong></font>
+<a name="line43" href="#line43"> 43</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line44" href="#line44"> 44</a> 
+<a name="line45" href="#line45"> 45</a> <font color="#2040a0">class</font> <font color="#2040a0">FRNM</font><font color="4444FF">:</font><font color="#2040a0">public</font> <font color="#2040a0">BaseClass</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line46" href="#line46"> 46</a>   <font color="#2040a0">public</font><font color="4444FF">:</font>
+<a name="line47" href="#line47"> 47</a>     <strong>void</strong> <font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line48" href="#line48"> 48</a>       <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Frame Name: &quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line49" href="#line49"> 49</a>       <font color="#2040a0">BaseClass</font><font color="4444FF">:</font><font color="4444FF">:</font><font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line50" href="#line50"> 50</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line51" href="#line51"> 51</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line52" href="#line52"> 52</a> 
+<a name="line53" href="#line53"> 53</a> <font color="#2040a0">class</font> <font color="#2040a0">FRDT</font><font color="4444FF">:</font><font color="#2040a0">public</font> <font color="#2040a0">BaseClass</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line54" href="#line54"> 54</a>   <font color="#2040a0">public</font><font color="4444FF">:</font>
+<a name="line55" href="#line55"> 55</a>     <strong>void</strong> <font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line56" href="#line56"> 56</a>       <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Frame Data: &quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line57" href="#line57"> 57</a>       <font color="#2040a0">BaseClass</font><font color="4444FF">:</font><font color="4444FF">:</font><font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line58" href="#line58"> 58</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line59" href="#line59"> 59</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line60" href="#line60"> 60</a> <font color="#2040a0">class</font> <font color="#2040a0">Hasherrific</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line61" href="#line61"> 61</a>   <font color="#2040a0">private</font><font color="4444FF">:</font>
+<a name="line62" href="#line62"> 62</a>     <font color="#2040a0">md5_state_t</font> <font color="#2040a0">sofar</font><font color="4444FF">;</font>
+<a name="line63" href="#line63"> 63</a>     <font color="#2040a0">md5_byte_t</font> <font color="#2040a0">expected</font><font color="4444FF">[</font><font color="#FF0000">16</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line64" href="#line64"> 64</a>     <font color="#2040a0">bool</font> <font color="#2040a0">finished</font><font color="4444FF">;</font>
+<a name="line65" href="#line65"> 65</a>     <font color="#2040a0">bool</font> <font color="#2040a0">matched</font><font color="4444FF">;</font>
+<a name="line66" href="#line66"> 66</a>   <font color="#2040a0">public</font><font color="4444FF">:</font>
+<a name="line67" href="#line67"> 67</a>     <font color="#2040a0">Hasherrific</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line68" href="#line68"> 68</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line69" href="#line69"> 69</a>       <font color="#2040a0">md5_init</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">sofar</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line70" href="#line70"> 70</a>       <font color="#2040a0">finished</font> <font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">;</font>
+<a name="line71" href="#line71"> 71</a>       <font color="#2040a0">matched</font> <font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">;</font>
+<a name="line72" href="#line72"> 72</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line73" href="#line73"> 73</a> 
+<a name="line74" href="#line74"> 74</a>     <strong>void</strong> <font color="#2040a0">Update</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">data</font>, <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">)</font>
+<a name="line75" href="#line75"> 75</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line76" href="#line76"> 76</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">finished</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">)</font> <font color="#2040a0">md5_append</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">sofar</font>, <font color="#2040a0">data</font>, <font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line77" href="#line77"> 77</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line78" href="#line78"> 78</a> 
+<a name="line79" href="#line79"> 79</a>     <strong>void</strong> <font color="#2040a0">SetExpected</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">data</font>, <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">)</font>
+<a name="line80" href="#line80"> 80</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line81" href="#line81"> 81</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">len</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">16</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line82" href="#line82"> 82</a>         <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">expected</font>, <font color="#2040a0">data</font>, <font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line83" href="#line83"> 83</a>       <font color="4444FF"><strong>}</strong></font> <strong>else</strong> <font color="4444FF"><strong>{</strong></font>
+<a name="line84" href="#line84"> 84</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unexpected hash size.<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line85" href="#line85"> 85</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line86" href="#line86"> 86</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line87" href="#line87"> 87</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line88" href="#line88"> 88</a> 
+<a name="line89" href="#line89"> 89</a>     <font color="#2040a0">bool</font> <font color="#2040a0">Matches</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line90" href="#line90"> 90</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line91" href="#line91"> 91</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">finished</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line92" href="#line92"> 92</a>         <font color="#2040a0">finished</font> <font color="4444FF">=</font> <font color="#2040a0">true</font><font color="4444FF">;</font>
+<a name="line93" href="#line93"> 93</a>         <font color="#2040a0">md5_byte_t</font> <font color="#2040a0">tmp</font><font color="4444FF">[</font><font color="#FF0000">16</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line94" href="#line94"> 94</a>         <font color="#2040a0">md5_finish</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">sofar</font>, <font color="#2040a0">tmp</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line95" href="#line95"> 95</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">expected</font>, <font color="#2040a0">tmp</font>, <font color="#FF0000">16</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line96" href="#line96"> 96</a>           <font color="#2040a0">matched</font> <font color="4444FF">=</font> <font color="#2040a0">true</font><font color="4444FF">;</font>
+<a name="line97" href="#line97"> 97</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line98" href="#line98"> 98</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line99" href="#line99"> 99</a>       <strong>return</strong> <font color="#2040a0">matched</font><font color="4444FF">;</font>
+<a name="line100" href="#line100">100</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line101" href="#line101">101</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line102" href="#line102">102</a> 
+<a name="line103" href="#line103">103</a> <font color="#2040a0">class</font> <font color="#2040a0">Processor</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line104" href="#line104">104</a>   <font color="#2040a0">private</font><font color="4444FF">:</font>
+<a name="line105" href="#line105">105</a>     <strong>int</strong> <font color="#2040a0">fd</font><font color="4444FF">;</font>
+<a name="line106" href="#line106">106</a>     <font color="#2040a0">Hasherrific</font> <font color="4444FF">*</font><font color="#2040a0">hash</font><font color="4444FF">;</font>
+<a name="line107" href="#line107">107</a>   <font color="#2040a0">public</font><font color="4444FF">:</font>
+<a name="line108" href="#line108">108</a>     <font color="#2040a0">Processor</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line109" href="#line109">109</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line110" href="#line110">110</a>       <font color="#2040a0">hash</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">Hasherrific</font><font color="4444FF">;</font>
+<a name="line111" href="#line111">111</a>       <font color="#2040a0">fd</font> <font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">;</font>
+<a name="line112" href="#line112">112</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line113" href="#line113">113</a> 
+<a name="line114" href="#line114">114</a>     ~<font color="#2040a0">Processor</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line115" href="#line115">115</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line116" href="#line116">116</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">fd</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line117" href="#line117">117</a>         <font color="#2040a0">close</font><font color="4444FF">(</font><font color="#2040a0">fd</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line118" href="#line118">118</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line119" href="#line119">119</a>       <font color="#2040a0">delete</font> <font color="#2040a0">hash</font><font color="4444FF">;</font>
+<a name="line120" href="#line120">120</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line121" href="#line121">121</a> 
+<a name="line122" href="#line122">122</a>     <strong>void</strong> <font color="#2040a0">Open</font><font color="4444FF">(</font><strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">filename</font><font color="4444FF">)</font>
+<a name="line123" href="#line123">123</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line124" href="#line124">124</a>       <font color="#2040a0">fd</font> <font color="4444FF">=</font> <font color="#2040a0">open</font><font color="4444FF">(</font><font color="#2040a0">filename</font>, <font color="#2040a0">O_RDONLY</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line125" href="#line125">125</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">fd</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line126" href="#line126">126</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Critical faiure: Failed to open %s: %s<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">filename</font>, <font color="#2040a0">strerror</font><font color="4444FF">(</font><font color="#2040a0">errno</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line127" href="#line127">127</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line128" href="#line128">128</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line129" href="#line129">129</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line130" href="#line130">130</a> 
+<a name="line131" href="#line131">131</a>     <strong>void</strong> <font color="#2040a0">CheckHash</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line132" href="#line132">132</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line133" href="#line133">133</a>       <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">;</font>
+<a name="line134" href="#line134">134</a>       <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">tag</font><font color="4444FF">[</font><font color="#FF0000">4</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line135" href="#line135">135</a>       <strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line136" href="#line136">136</a>       <strong>while</strong><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line137" href="#line137">137</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="4444FF">&amp;</font><font color="#2040a0">len</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line138" href="#line138">138</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;File is corrupted - hash token not found<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line139" href="#line139">139</a>           <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line140" href="#line140">140</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line141" href="#line141">141</a> 
+<a name="line142" href="#line142">142</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">tag</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line143" href="#line143">143</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;File is corrupted - hash token not found<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line144" href="#line144">144</a>           <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line145" href="#line145">145</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line146" href="#line146">146</a>         <strong>if</strong><font color="4444FF">(</font><font color="4444FF">(</font><font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#008000">&quot;HASH&quot;</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF">&amp;</font><font color="4444FF">&amp;</font> <font color="4444FF">(</font><font color="#2040a0">ntohl</font><font color="4444FF">(</font><font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">20</font><font color="4444FF">)</font><font color="4444FF">)</font> <strong>break</strong><font color="4444FF">;</font>
+<a name="line147" href="#line147">147</a>         //<font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;%d<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#008000">&quot;HASH&quot;</font>, <font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line148" href="#line148">148</a>         //<font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;got %4s:%d<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">tag</font>, <font color="#2040a0">ntohl</font><font color="4444FF">(</font><font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line149" href="#line149">149</a>         <font color="#2040a0">hash</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Update</font><font color="4444FF">(</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">)</font><font color="4444FF">&amp;</font><font color="#2040a0">len</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line150" href="#line150">150</a>         <font color="#2040a0">hash</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Update</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line151" href="#line151">151</a>         <font color="#2040a0">len</font> <font color="4444FF">=</font> <font color="#2040a0">ntohl</font><font color="4444FF">(</font><font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line152" href="#line152">152</a>         <font color="#2040a0">len</font> <font color="4444FF">-</font><font color="4444FF">=</font> <font color="#FF0000">4</font><font color="4444FF">;</font>
+<a name="line153" href="#line153">153</a> 
+<a name="line154" href="#line154">154</a>         <font color="#2040a0">buf</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <strong>unsigned</strong> <strong>char</strong><font color="4444FF">[</font><font color="#2040a0">len</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line155" href="#line155">155</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">buf</font>, <font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line156" href="#line156">156</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;File is corrupted - record seems corrupt<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line157" href="#line157">157</a>           <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line158" href="#line158">158</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line159" href="#line159">159</a>         <font color="#2040a0">hash</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Update</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line160" href="#line160">160</a>         <font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line161" href="#line161">161</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line162" href="#line162">162</a>       <font color="#2040a0">buf</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <strong>unsigned</strong> <strong>char</strong><font color="4444FF">[</font><font color="#FF0000">16</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line163" href="#line163">163</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">buf</font>, <font color="#FF0000">16</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">16</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line164" href="#line164">164</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;File is corrupted - unable to read in hash value<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line165" href="#line165">165</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line166" href="#line166">166</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line167" href="#line167">167</a>       <font color="#2040a0">hash</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">SetExpected</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#FF0000">16</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line168" href="#line168">168</a>       <font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line169" href="#line169">169</a> 
+<a name="line170" href="#line170">170</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">hash</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Matches</font><font color="4444FF">(</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line171" href="#line171">171</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;File is corrupted - checksum does not match<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line172" href="#line172">172</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line173" href="#line173">173</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line174" href="#line174">174</a> 
+<a name="line175" href="#line175">175</a>       // <font color="#2040a0">Almost</font> <font color="#2040a0">finished</font> <font color="4444FF">-</font> <font color="#2040a0">let</font>'<font color="#2040a0">s</font> <font color="#2040a0">point</font> <font color="#2040a0">fd</font> <font color="#2040a0">back</font> <font color="#2040a0">to</font> <font color="#2040a0">the</font> <font color="#2040a0">start</font>.
+<a name="line176" href="#line176">176</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">lseek</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#FF0000">0</font>, <font color="#2040a0">SEEK_SET</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line177" href="#line177">177</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to wind back file, exiting.<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line178" href="#line178">178</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line179" href="#line179">179</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line180" href="#line180">180</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line181" href="#line181">181</a> 
+<a name="line182" href="#line182">182</a>     <font color="#2040a0">BaseClass</font><font color="4444FF">*</font> <font color="#2040a0">HandleMOOV</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">)</font>
+<a name="line183" href="#line183">183</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line184" href="#line184">184</a>       <font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">ret</font>, <font color="4444FF">*</font><font color="#2040a0">p</font><font color="4444FF">;</font>
+<a name="line185" href="#line185">185</a>       <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">;</font>
+<a name="line186" href="#line186">186</a>       <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">tlen</font><font color="4444FF">;</font>
+<a name="line187" href="#line187">187</a>       <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">tag</font><font color="4444FF">[</font><font color="#FF0000">4</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line188" href="#line188">188</a>       <strong>unsigned</strong> <strong>char</strong> <font color="4444FF">*</font><font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line189" href="#line189">189</a>       <font color="#2040a0">bool</font> <font color="#2040a0">known</font><font color="4444FF">;</font>
+<a name="line190" href="#line190">190</a> 
+<a name="line191" href="#line191">191</a>       <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">p</font> <font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">;</font>
+<a name="line192" href="#line192">192</a>       <font color="#2040a0">buf</font> <font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">;</font>
+<a name="line193" href="#line193">193</a> 
+<a name="line194" href="#line194">194</a>       <strong>while</strong><font color="4444FF">(</font><font color="#2040a0">len</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line195" href="#line195">195</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="4444FF">&amp;</font><font color="#2040a0">tlen</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line196" href="#line196">196</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Tag len invalid&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line197" href="#line197">197</a>           <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line198" href="#line198">198</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line199" href="#line199">199</a>         <font color="#2040a0">tlen</font> <font color="4444FF">=</font> <font color="#2040a0">ntohl</font><font color="4444FF">(</font><font color="#2040a0">tlen</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line200" href="#line200">200</a>         <font color="#2040a0">tlen</font> <font color="4444FF">-</font><font color="4444FF">=</font> <font color="#FF0000">4</font><font color="4444FF">;</font>
+<a name="line201" href="#line201">201</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">tag</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line202" href="#line202">202</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to read tag<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line203" href="#line203">203</a>           <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line204" href="#line204">204</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line205" href="#line205">205</a> 
+<a name="line206" href="#line206">206</a>         <font color="#2040a0">known</font> <font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">;</font>
+<a name="line207" href="#line207">207</a> 
+<a name="line208" href="#line208">208</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#008000">&quot;FRNM&quot;</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line209" href="#line209">209</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line210" href="#line210">210</a>             <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">FRNM</font><font color="4444FF">;</font>
+<a name="line211" href="#line211">211</a>             <font color="#2040a0">p</font> <font color="4444FF">=</font> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line212" href="#line212">212</a>           <font color="4444FF"><strong>}</strong></font> <strong>else</strong> <font color="4444FF"><strong>{</strong></font>
+<a name="line213" href="#line213">213</a>             <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">next</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">FRNM</font><font color="4444FF">;</font>
+<a name="line214" href="#line214">214</a>             <font color="#2040a0">p</font> <font color="4444FF">=</font> <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">next</font><font color="4444FF">;</font>
+<a name="line215" href="#line215">215</a>           <font color="4444FF"><strong>}</strong></font>
+<a name="line216" href="#line216">216</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;p is at 0x%08x<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">p</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line217" href="#line217">217</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">buf</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">)</font> <font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line218" href="#line218">218</a>           <font color="#2040a0">buf</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <strong>unsigned</strong> <strong>char</strong><font color="4444FF">[</font><font color="#2040a0">tlen</font><font color="4444FF">+</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line219" href="#line219">219</a>           <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;buf is at 0x%08x<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">buf</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line220" href="#line220">220</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">buf</font>, <font color="#2040a0">tlen</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">tlen</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line221" href="#line221">221</a>             <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to read frame name buffer<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line222" href="#line222">222</a>             <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line223" href="#line223">223</a>           <font color="4444FF"><strong>}</strong></font>
+<a name="line224" href="#line224">224</a>           <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">SetBuffer</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#2040a0">tlen</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line225" href="#line225">225</a>           //<font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line226" href="#line226">226</a>           <font color="#2040a0">known</font> <font color="4444FF">=</font> <font color="#2040a0">true</font><font color="4444FF">;</font>
+<a name="line227" href="#line227">227</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line228" href="#line228">228</a> 
+<a name="line229" href="#line229">229</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#008000">&quot;FRDT&quot;</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line230" href="#line230">230</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line231" href="#line231">231</a>             <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">FRDT</font><font color="4444FF">;</font>
+<a name="line232" href="#line232">232</a>             <font color="#2040a0">p</font> <font color="4444FF">=</font> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line233" href="#line233">233</a>           <font color="4444FF"><strong>}</strong></font> <strong>else</strong> <font color="4444FF"><strong>{</strong></font>
+<a name="line234" href="#line234">234</a>             <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">next</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">FRNM</font><font color="4444FF">;</font>
+<a name="line235" href="#line235">235</a>             <font color="#2040a0">p</font> <font color="4444FF">=</font> <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">next</font><font color="4444FF">;</font>
+<a name="line236" href="#line236">236</a>           <font color="4444FF"><strong>}</strong></font>
+<a name="line237" href="#line237">237</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">buf</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">)</font> <font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line238" href="#line238">238</a>           <font color="#2040a0">buf</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <strong>unsigned</strong> <strong>char</strong><font color="4444FF">[</font><font color="#2040a0">tlen</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line239" href="#line239">239</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">buf</font>, <font color="#2040a0">tlen</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">tlen</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line240" href="#line240">240</a>             <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to read frame data buffer<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line241" href="#line241">241</a>             <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line242" href="#line242">242</a>           <font color="4444FF"><strong>}</strong></font>
+<a name="line243" href="#line243">243</a>           //<font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line244" href="#line244">244</a>           <font color="#2040a0">p</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">SetBuffer</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#2040a0">tlen</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line245" href="#line245">245</a>           <font color="#2040a0">known</font> <font color="4444FF">=</font> <font color="#2040a0">true</font><font color="4444FF">;</font>
+<a name="line246" href="#line246">246</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line247" href="#line247">247</a> 
+<a name="line248" href="#line248">248</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">known</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="#2040a0">false</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line249" href="#line249">249</a>           <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">lseek</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">tlen</font>, <font color="#2040a0">SEEK_CUR</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line250" href="#line250">250</a>             <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to adjust file index<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line251" href="#line251">251</a>             <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line252" href="#line252">252</a>           <font color="4444FF"><strong>}</strong></font>
+<a name="line253" href="#line253">253</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line254" href="#line254">254</a>         <font color="#2040a0">len</font> <font color="4444FF">-</font><font color="4444FF">=</font> <font color="#2040a0">tlen</font><font color="4444FF">;</font>
+<a name="line255" href="#line255">255</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line256" href="#line256">256</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">buf</font><font color="4444FF">)</font> <font color="#2040a0">delete</font> <font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line257" href="#line257">257</a>       <strong>return</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line258" href="#line258">258</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line259" href="#line259">259</a> 
+<a name="line260" href="#line260">260</a>     <font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">Process</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line261" href="#line261">261</a>     <font color="4444FF"><strong>{</strong></font>
+<a name="line262" href="#line262">262</a>       <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">len</font><font color="4444FF">;</font>
+<a name="line263" href="#line263">263</a>       <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">tag</font><font color="4444FF">[</font><font color="#FF0000">4</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line264" href="#line264">264</a>       <font color="#2040a0">this</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">CheckHash</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line265" href="#line265">265</a>       <font color="#2040a0">MOOV</font> <font color="4444FF">*</font><font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line266" href="#line266">266</a> 
+<a name="line267" href="#line267">267</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="4444FF">&amp;</font><font color="#2040a0">len</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line268" href="#line268">268</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to read from file.<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line269" href="#line269">269</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line270" href="#line270">270</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line271" href="#line271">271</a> 
+<a name="line272" href="#line272">272</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="#2040a0">tag</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line273" href="#line273">273</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Unable to read initial tag<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line274" href="#line274">274</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line275" href="#line275">275</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line276" href="#line276">276</a> 
+<a name="line277" href="#line277">277</a>       <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">memcmp</font><font color="4444FF">(</font><font color="#2040a0">tag</font>, <font color="#008000">&quot;MOOV&quot;</font>, <font color="#FF0000">4</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line278" href="#line278">278</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Initial tag is not a MOOVie<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line279" href="#line279">279</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line280" href="#line280">280</a>       <font color="4444FF"><strong>}</strong></font>
+<a name="line281" href="#line281">281</a>       <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">MOOV</font><font color="4444FF">;</font>
+<a name="line282" href="#line282">282</a>       <font color="#2040a0">ret</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">child</font> <font color="4444FF">=</font> <font color="#2040a0">this</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">HandleMOOV</font><font color="4444FF">(</font><font color="#2040a0">ntohl</font><font color="4444FF">(</font><font color="#2040a0">len</font><font color="4444FF">)</font><font color="4444FF">-</font><font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line283" href="#line283">283</a> 
+<a name="line284" href="#line284">284</a>       <strong>return</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line285" href="#line285">285</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line286" href="#line286">286</a> <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line287" href="#line287">287</a> 
+<a name="line288" href="#line288">288</a> <strong>void</strong> <font color="#2040a0">wipearray</font><font color="4444FF">(</font><strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">array</font><font color="4444FF">)</font>
+<a name="line289" href="#line289">289</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line290" href="#line290">290</a>   <font color="#444444">/*
+<a name="line291" href="#line291">291</a>    * This should be pretty trivial without relying on stack
+<a name="line292" href="#line292">292</a>    * values :)
+<a name="line293" href="#line293">293</a>    */</font>
+<a name="line294" href="#line294">294</a> 
+<a name="line295" href="#line295">295</a>   <strong>while</strong><font color="4444FF">(</font><font color="4444FF">*</font><font color="#2040a0">array</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line296" href="#line296">296</a>     <font color="#2040a0">memset</font><font color="4444FF">(</font><font color="4444FF">*</font><font color="#2040a0">array</font>, <font color="#FF0000">0</font>, <font color="#2040a0">strlen</font><font color="4444FF">(</font><font color="4444FF">*</font><font color="#2040a0">array</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line297" href="#line297">297</a>     <font color="#2040a0">array</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">;</font>
+<a name="line298" href="#line298">298</a>   <font color="4444FF"><strong>}</strong></font>
+<a name="line299" href="#line299">299</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line300" href="#line300">300</a> 
+<a name="line301" href="#line301">301</a> <strong>void</strong> <font color="#2040a0">wipeenv</font><font color="4444FF">(</font><strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">envp</font><font color="4444FF">)</font>
+<a name="line302" href="#line302">302</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line303" href="#line303">303</a>   <font color="#2040a0">wipearray</font><font color="4444FF">(</font><font color="#2040a0">argv</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line304" href="#line304">304</a>   <font color="#2040a0">wipearray</font><font color="4444FF">(</font><font color="#2040a0">envp</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line305" href="#line305">305</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line306" href="#line306">306</a> 
+<a name="line307" href="#line307">307</a> <strong>void</strong> <font color="#2040a0">DebugTree</font><font color="4444FF">(</font><font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">obj</font>, <strong>int</strong> <font color="#2040a0">spaces</font><font color="4444FF">)</font>
+<a name="line308" href="#line308">308</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line309" href="#line309">309</a>   <strong>int</strong> <font color="#2040a0">i</font><font color="4444FF">;</font>
+<a name="line310" href="#line310">310</a>   //<font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;DebugTree: %08x<font color="#77dd77">\n</font>&quot;</font>, <font color="#2040a0">obj</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line311" href="#line311">311</a> 
+<a name="line312" href="#line312">312</a>   <strong>for</strong><font color="4444FF">(</font><font color="4444FF">;</font> <font color="#2040a0">obj</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#2040a0">NULL</font><font color="4444FF">;</font> <font color="#2040a0">obj</font> <font color="4444FF">=</font> <font color="#2040a0">obj</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">next</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line313" href="#line313">313</a>     //<font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;printing spaces<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line314" href="#line314">314</a> 
+<a name="line315" href="#line315">315</a>     <strong>for</strong><font color="4444FF">(</font><font color="#2040a0">i</font> <font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">;</font> <font color="#2040a0">i</font> <font color="4444FF">&lt;</font> <font color="#2040a0">spaces</font><font color="4444FF">;</font> <font color="#2040a0">i</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">)</font> <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot; &quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line316" href="#line316">316</a>     <font color="#2040a0">obj</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">PrintBuffer</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line317" href="#line317">317</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">obj</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">child</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line318" href="#line318">318</a>       //<font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Recursing..<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line319" href="#line319">319</a>       <font color="#2040a0">DebugTree</font><font color="4444FF">(</font><font color="#2040a0">obj</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">child</font>, <font color="#2040a0">spaces</font> <font color="4444FF">+</font> <font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line320" href="#line320">320</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line321" href="#line321">321</a> 
+<a name="line322" href="#line322">322</a>   <font color="4444FF"><strong>}</strong></font><font color="4444FF">;</font>
+<a name="line323" href="#line323">323</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line324" href="#line324">324</a> 
+<a name="line325" href="#line325">325</a> <strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">argc</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">envp</font><font color="4444FF">)</font>
+<a name="line326" href="#line326">326</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line327" href="#line327">327</a>   <strong>int</strong> <font color="#2040a0">fd</font><font color="4444FF">;</font>
+<a name="line328" href="#line328">328</a>   <font color="#2040a0">BaseClass</font> <font color="4444FF">*</font><font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line329" href="#line329">329</a> 
+<a name="line330" href="#line330">330</a>   <font color="#2040a0">bool</font> <font color="#2040a0">debug</font> <font color="4444FF">=</font> <font color="#2040a0">getenv</font><font color="4444FF">(</font><font color="#008000">&quot;DEBUG&quot;</font><font color="4444FF">)</font> ? <font color="#2040a0">true</font> <font color="4444FF">:</font> <font color="#2040a0">false</font><font color="4444FF">;</font>
+<a name="line331" href="#line331">331</a> 
+<a name="line332" href="#line332">332</a>   <font color="#2040a0">Processor</font> <font color="4444FF">*</font><font color="#2040a0">processor</font><font color="4444FF">;</font>
+<a name="line333" href="#line333">333</a> 
+<a name="line334" href="#line334">334</a>   <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">argc</font> <font color="4444FF">&lt;</font> <font color="#FF0000">2</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line335" href="#line335">335</a>     <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;No filename specified<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line336" href="#line336">336</a>     <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line337" href="#line337">337</a>   <font color="4444FF"><strong>}</strong></font>
+<a name="line338" href="#line338">338</a> 
+<a name="line339" href="#line339">339</a>   <font color="#2040a0">processor</font> <font color="4444FF">=</font> <font color="#2040a0">new</font> <font color="#2040a0">Processor</font><font color="4444FF">;</font>
+<a name="line340" href="#line340">340</a>   <font color="#2040a0">processor</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Open</font><font color="4444FF">(</font><font color="#2040a0">argv</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line341" href="#line341">341</a> 
+<a name="line342" href="#line342">342</a>   <font color="#2040a0">wipeenv</font><font color="4444FF">(</font><font color="#2040a0">argv</font>, <font color="#2040a0">envp</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line343" href="#line343">343</a> 
+<a name="line344" href="#line344">344</a>   <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">processor</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">Process</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line345" href="#line345">345</a>   <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">debug</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line346" href="#line346">346</a>     <font color="#2040a0">DebugTree</font><font color="4444FF">(</font><font color="#2040a0">ret</font>, <font color="#FF0000">0</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line347" href="#line347">347</a>   <font color="4444FF"><strong>}</strong></font>
+<a name="line348" href="#line348">348</a> <font color="4444FF"><strong>}</strong></font>

@@ -1,0 +1,16 @@
+<!--#set var="PageTitle" value="Wargames - Behemoth - Level 5" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/behemoth">Discuss this level on the forum</a>
+</div>
+<h1>Level 5</h1>
+
+There is no information for this level.
+<p>If you would like to see the description of this level expanded, please consider to <a href=/about/contribute.shtml>contribute</a> to OTW!</p>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

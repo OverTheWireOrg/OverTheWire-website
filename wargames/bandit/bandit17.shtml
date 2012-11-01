@@ -1,0 +1,27 @@
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 17" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
+</div>
+<h1>Level 17</h1>
+
+<dl>
+<dt>Level Goal</dt>
+<dd>
+The password for the next level can be retrieved by submitting the password of the current level to <b>a port on localhost in the range 31000 to 32000</b>. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don't. There is only 1 server that will give the next password, the others will simply send back to you whatever you send to it.
+</dd>
+</dl>
+
+<dl>
+<dt>Commands you may need to solve this level</dt>
+<dd>ssh, telnet, nc, openssl, s_client, nmap</dd>
+<dt>Helpful Reading Material</dt>
+<dd><a href="http://en.wikipedia.org/wiki/Port_scanner">Port scanner on Wikipedia</a></dd>
+</dl>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

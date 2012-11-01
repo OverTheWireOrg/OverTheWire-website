@@ -1,0 +1,43 @@
+<!--#set var="PageTitle" value="Wargames - Narnia" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/narnia">Discuss this wargame on the forum</a>
+</div>
+<h1>Narnia <star>&#9733;<not>&#9733;&#9733;&#9733;&#9733;</not></star></h1>
+<h3>We all have to start somewhere.</h3>
+
+<p>Narnia is a wargame that has been rescued from the demise of <b>intruded.net</b>, previously hosted on narnia.intruded.net.
+<b>Big thanks to adc, morla and reth</b> for their help in resurrecting this game!</p>
+
+<p>What follows below is the original description of narnia, copied from intruded.net:</p>
+
+<pre>
+<b>Summary:</b>
+Difficulty:     2/10
+Levels:	        10
+Platform:	Linux/x86
+
+<b>Author:</b>
+nite
+
+<b>Special Thanks:</b>
+lx_jakal for pointing out a bug that made a level easier =)
+
+<b>Description:</b>
+This wargame is for the ones that want to learn basic exploitation. You can see the most
+common bugs in this game and we've tried to make them easy to exploit. You'll get the
+source code of each level to make it easier for you to spot the vuln and abuse it. The
+difficulty of the game is somewhere between Leviathan and Behemoth, but some of the
+levels could be quite tricky.
+</pre>
+
+<p>Narnia's levels are called <b>narnia0, narnia1, ... etc.</b> and can be accessed on <b>narnia.labs.overthewire.org</b> through SSH.<br>
+Data for the levels can be found in <b>/narnia/</b>.</p> 
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

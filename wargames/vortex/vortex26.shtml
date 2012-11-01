@@ -1,0 +1,16 @@
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 26" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
+</div>
+<h1>Level 26</h1>
+<dl>
+<dt>Create your own challenges</dt>
+<dd>Due to the overwhelming flood of new levels, vortex26 shall be to make a level, along with exploit, and email it to <a href="mailto:andrewg@felinemenace.org">andrewg</a>.</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

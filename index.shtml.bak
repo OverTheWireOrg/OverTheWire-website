@@ -1,0 +1,5 @@
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="LOCALHEADER.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->

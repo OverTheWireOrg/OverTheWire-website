@@ -1,0 +1,15 @@
+<!--#set var="PageTitle" value="Wargames - Drifter - Level 10" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this level on the forum</a>
+</div>
+<h1>Level 10</h1>
+<p>If you're not a pro at this stuff yet, here's some additional practice. Beware of the nonexec stack. Go go power reverser.</p>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

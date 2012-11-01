@@ -1,0 +1,15 @@
+<!--#set var="PageTitle" value="Wargames - Manpage - Level 0" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/manpage">Discuss this level on the forum</a>
+</div>
+<h1>Level 0</h1>
+
+The password for this level is the same as the username. Use SSH to login.
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

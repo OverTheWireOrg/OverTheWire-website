@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="kitten-pirate.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/deepstar/Documents/OverTheWire/Site_CSS/otw/img/kitten-pirate.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2447"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3410"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1599"
+     inkscape:window-height="1125"
+     inkscape:window-x="1400"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="389.20215"
+       x="115.82751"
+       id="image3412"
+       height="200"
+       width="530"
+       sodipodi:absref="/home/deepstar/Documents/OverTheWire/Site_CSS/otw/img/kitten.png"
+       xlink:href="kitten.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4.60234976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 284.15911,460.21398 L 355.26744,494.45173"
+       id="path2455" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3239"
+       sodipodi:cx="37.880722"
+       sodipodi:cy="363.43814"
+       sodipodi:rx="14.647212"
+       sodipodi:ry="14.647212"
+       d="M 52.527934,363.43814 A 14.647212,14.647212 0 1 1 23.23351,363.43814 A 14.647212,14.647212 0 1 1 52.527934,363.43814 z"
+       transform="matrix(0.8275862,0,0,0.8275862,302.00078,186.91051)" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3241"
+       sodipodi:cx="37.880722"
+       sodipodi:cy="363.43814"
+       sodipodi:rx="14.647212"
+       sodipodi:ry="14.647212"
+       d="M 52.527934,363.43814 A 14.647212,14.647212 0 1 1 23.23351,363.43814 A 14.647212,14.647212 0 1 1 52.527934,363.43814 z"
+       transform="matrix(1.0172414,0,0,1.0172414,246.07663,187.43059)" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3243"
+       sodipodi:cx="195.46452"
+       sodipodi:cy="331.11325"
+       sodipodi:expansion="1"
+       sodipodi:revolution="0.69132018"
+       sodipodi:radius="5.490087"
+       sodipodi:argument="-18.48086"
+       sodipodi:t0="0"
+       d="M 195.46452,331.11325 C 196.57877,331.54375 195.43394,332.82762 194.749,332.96519 C 192.89285,333.33801 191.66299,331.29351 191.76064,329.6822 C 191.88361,327.65293 193.54734,326.06454 195.46452,325.62316"
+       transform="matrix(2.9343249,0,0,2.9343249,-290.65273,-392.51812)" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:2.70145631px;stroke-linejoin:round"
+       d="M 465.16364,468.41448 L 457.10457,450.0984 C 462.19818,446.1212 471.269,439.8414 471.12945,428.1191 C 471.20445,410.44195 447.11366,399.34003 428.32215,399.54602 C 403.34251,399.51113 384.43334,412.55916 384.46823,428.01445 C 384.50311,448.94711 413.73906,462.55334 443.60299,455.33157 L 465.16364,468.41448 z"
+       id="path3315" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="402.54578"
+       y="431.11835"
+       id="text3325"><tspan
+         sodipodi:role="line"
+         id="tspan3327"
+         x="402.54578"
+         y="431.11835">ARRRRR</tspan></text>
+  </g>
+</svg>

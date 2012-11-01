@@ -1,0 +1,25 @@
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 2" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
+</div>
+<h1>Level 2</h1>
+<dl>
+<dt>Dynamic tricks</dt>
+<dd>
+This program checks your user ID.<br>
+<br>
+Perhaps you can trick it, so that it thinks you have a different one.<br>
+<br>
+Think dynamically.<br>
+</dd>
+<dt>Reading Material</dt>
+<dd> <a href=http://www.google.com/search?q=linux+function+interception>Link</a> 
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

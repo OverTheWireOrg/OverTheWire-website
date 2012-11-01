@@ -1,0 +1,25 @@
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 1" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
+</div>
+<h1>Level 1</h1>
+
+<dl>
+<dt>Level Goal</dt>
+<dd>
+The password for the next level is stored in a file called <b>readme</b> located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game.
+</dd>
+</dl>
+
+<dl>
+<dt>Commands you may need to solve this level</dt>
+<dd>ls, cd, cat, file, du, find</dd>
+</dl>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

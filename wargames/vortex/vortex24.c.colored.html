@@ -1,0 +1,58 @@
+<a name="line1" href="#line1"> 1</a> <font color="#444444">/*
+<a name="line2" href="#line2"> 2</a> Written by conscon
+<a name="line3" href="#line3"> 3</a> 
+<a name="line4" href="#line4"> 4</a> 
+<a name="line5" href="#line5"> 5</a> Hint: Analyze random_r.c from GLIBC Source
+<a name="line6" href="#line6"> 6</a> */</font>
+<a name="line7" href="#line7"> 7</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
+<a name="line8" href="#line8"> 8</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;unistd.h&gt;</font></strong></font>
+<a name="line9" href="#line9"> 9</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
+<a name="line10" href="#line10">10</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;sys/types.h&gt;</font></strong></font>
+<a name="line11" href="#line11">11</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;fcntl.h&gt;</font></strong></font>
+<a name="line12" href="#line12">12</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;signal.h&gt;</font></strong></font>
+<a name="line13" href="#line13">13</a> 
+<a name="line14" href="#line14">14</a> <strong>void</strong> <font color="#2040a0">alrm</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">signo</font><font color="4444FF">)</font>
+<a name="line15" href="#line15">15</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line16" href="#line16">16</a>         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;Operation timed out<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line17" href="#line17">17</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line18" href="#line18">18</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line19" href="#line19">19</a> <strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line20" href="#line20">20</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line21" href="#line21">21</a>         <strong>int</strong> <font color="#2040a0">fd</font>, <font color="#2040a0">i</font>, <font color="#2040a0">j</font>,<font color="#2040a0">word</font><font color="4444FF">;</font>
+<a name="line22" href="#line22">22</a>         <strong>int</strong> <font color="#2040a0">seed</font>,<font color="#2040a0">guess</font><font color="4444FF">;</font>
+<a name="line23" href="#line23">23</a>         <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">rr</font><font color="4444FF">[</font><font color="#FF0000">31</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line24" href="#line24">24</a> 
+<a name="line25" href="#line25">25</a>         <font color="#2040a0">fd</font> <font color="4444FF">=</font> <font color="#2040a0">open</font><font color="4444FF">(</font><font color="#008000">&quot;/dev/urandom&quot;</font>, <font color="#2040a0">O_RDONLY</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line26" href="#line26">26</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">fd</font> <font color="4444FF">&lt;</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line27" href="#line27">27</a>                 <font color="#2040a0">perror</font><font color="4444FF">(</font><font color="#008000">&quot;/dev/urandom&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line28" href="#line28">28</a>                 <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line29" href="#line29">29</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line30" href="#line30">30</a>         <font color="#2040a0">alarm</font><font color="4444FF">(</font><font color="#FF0000">60</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line31" href="#line31">31</a>         <font color="#2040a0">signal</font><font color="4444FF">(</font><font color="#2040a0">SIGALRM</font>, <font color="#2040a0">alrm</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line32" href="#line32">32</a> 
+<a name="line33" href="#line33">33</a>         <strong>for</strong><font color="4444FF">(</font><font color="#2040a0">j</font><font color="4444FF">=</font><font color="#FF0000">0</font><font color="4444FF">;</font><font color="#2040a0">j</font><font color="4444FF">&lt;</font><font color="#FF0000">20</font><font color="4444FF">;</font><font color="#2040a0">j</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">)</font>
+<a name="line34" href="#line34">34</a>         <font color="4444FF"><strong>{</strong></font>
+<a name="line35" href="#line35">35</a> 
+<a name="line36" href="#line36">36</a>                 <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">fd</font>, <font color="4444FF">&amp;</font><font color="#2040a0">seed</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>unsigned</strong> <strong>int</strong><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line37" href="#line37">37</a>                         <font color="#2040a0">perror</font><font color="4444FF">(</font><font color="#008000">&quot;read /dev/urandom&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line38" href="#line38">38</a>                         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line39" href="#line39">39</a>                 <font color="4444FF"><strong>}</strong></font>
+<a name="line40" href="#line40">40</a> 
+<a name="line41" href="#line41">41</a>                 <font color="#2040a0">srand</font><font color="4444FF">(</font><font color="#2040a0">seed</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line42" href="#line42">42</a> 
+<a name="line43" href="#line43">43</a>                 <strong>for</strong><font color="4444FF">(</font><font color="#2040a0">i</font> <font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">;</font> <font color="#2040a0">i</font> <font color="4444FF">&lt;</font> <font color="#FF0000">29</font><font color="4444FF">;</font> <font color="#2040a0">i</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line44" href="#line44">44</a>                         <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot; %d&quot;</font>,<font color="#2040a0">rand</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line45" href="#line45">45</a>                         <strong>if</strong><font color="4444FF">(</font><font color="4444FF">(</font><font color="#2040a0">i</font><font color="4444FF">%</font><font color="#FF0000">5</font><font color="4444FF">)</font><font color="4444FF">=</font><font color="4444FF">=</font><font color="#FF0000">4</font><font color="4444FF">)</font><font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line46" href="#line46">46</a>                 <font color="4444FF"><strong>}</strong></font>
+<a name="line47" href="#line47">47</a>                 <font color="#2040a0">printf</font><font color="4444FF">(</font><font color="#008000">&quot;<font color="#77dd77">\n</font>&quot;</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line48" href="#line48">48</a>                 <font color="#2040a0">fflush</font><font color="4444FF">(</font><font color="#2040a0">stdout</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line49" href="#line49">49</a>                 <font color="#2040a0">scanf</font><font color="4444FF">(</font><font color="#008000">&quot;%d&quot;</font>,<font color="4444FF">&amp;</font><font color="#2040a0">guess</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line50" href="#line50">50</a>                 <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">guess</font><font color="4444FF">!</font><font color="4444FF">=</font><font color="#2040a0">seed</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_FAILURE</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line51" href="#line51">51</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line52" href="#line52">52</a> 
+<a name="line53" href="#line53">53</a>         <font color="#2040a0">setresgid</font><font color="4444FF">(</font><font color="#2040a0">getegid</font><font color="4444FF">(</font><font color="4444FF">)</font>, <font color="#2040a0">getegid</font><font color="4444FF">(</font><font color="4444FF">)</font>, <font color="#2040a0">getegid</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line54" href="#line54">54</a>         <font color="#2040a0">setresuid</font><font color="4444FF">(</font><font color="#2040a0">geteuid</font><font color="4444FF">(</font><font color="4444FF">)</font>,<font color="#2040a0">geteuid</font><font color="4444FF">(</font><font color="4444FF">)</font>, <font color="#2040a0">geteuid</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line55" href="#line55">55</a>         <font color="#2040a0">execlp</font><font color="4444FF">(</font><font color="#008000">&quot;/bin/sh&quot;</font>, <font color="#008000">&quot;sh&quot;</font>, <font color="#2040a0">NULL</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line56" href="#line56">56</a> 
+<a name="line57" href="#line57">57</a>         <strong>return</strong> <font color="#FF0000">0</font><font color="4444FF">;</font>
+<a name="line58" href="#line58">58</a> <font color="4444FF"><strong>}</strong></font>

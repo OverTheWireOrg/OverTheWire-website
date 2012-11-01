@@ -1,0 +1,15 @@
+<!--#set var="PageTitle" value="Wargames - Drifter - Level 11" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this level on the forum</a>
+</div>
+<h1>Level 11 - Randomized fun</h1>
+<p>This level randomizes the executable base and stack -- can you beat the randomisation to get code execution?</p>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

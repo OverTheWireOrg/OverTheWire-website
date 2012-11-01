@@ -1,0 +1,34 @@
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 10" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
+</div>
+<h1>Level 10</h1>
+<dl>
+<dt>Hacking szene</dt>
+<dd>
+<b>Thanks to zaphod and Mush for finding a bugs in this level</b><br>
+<br>
+Do you know these hacking movies where they push some buttons, then the evil hacker script window turns up and a percentage bar is showing how far the password cracking has gone?<br>
+<br>
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100% password cracked!<br>
+<br>
+Ever wanted to do it yourself? Here is your chance.<br>
+<br>
+This level implements a weakness in the authentication scheme used by M$ win95 and win98 for the netbios shares.<br>
+<br>
+There is a TCP daemon on brebera port 24019. It authenticates your password. Once you send the correct password, it echoes it back. Well, let the source speak for itself. As far as brute force may take you, a little brain is never bad :P Perhaps you have heard of pqwak?<br>
+</dd>
+<dt>Code listing (<a href="semtex10.c">semtex10.c</a>)</dt>
+<dd>
+<pre>
+<!--#include virtual="semtex10.c.colored.html" -->
+</pre>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

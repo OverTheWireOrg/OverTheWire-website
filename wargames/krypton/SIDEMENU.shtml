@@ -1,0 +1,13 @@
+<div id="sidemenu">
+    <ul>
+	<li><a href="/wargames/krypton/"><sh>Krypton</sh></a></li>
+        <li><a href="/wargames/krypton/krypton0.shtml">Level 0</a></li>
+        <li><a href="/wargames/krypton/krypton1.shtml">Level 1</a></li>
+        <li><a href="/wargames/krypton/krypton2.shtml">Level 2</a></li>
+        <li><a href="/wargames/krypton/krypton3.shtml">Level 3</a></li>
+        <li><a href="/wargames/krypton/krypton4.shtml">Level 4</a></li>
+        <li><a href="/wargames/krypton/krypton5.shtml">Level 5</a></li>
+        <li><a href="/wargames/krypton/krypton6.shtml">Level 6</a></li>
+    </ul>
+</div>
+

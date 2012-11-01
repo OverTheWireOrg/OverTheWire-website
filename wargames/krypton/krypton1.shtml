@@ -1,0 +1,28 @@
+<!--#set var="PageTitle" value="Wargames - Krypton - Level 1" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/krypton">Discuss this level on the forum</a>
+</div>
+<h1>Level 1</h1>
+
+<dl>
+<dt>Level Info:</dt>
+<dd>
+The password for level 2 is in the file
+'krypton2'.  It is 'encrypted' using a simple rotation.  It is also
+in non-standard ciphertext format.  When using alpha characters for
+cipher text it is normal to group the letters into 5 letter clusters,
+regardless of word boundaries.  This helps obfuscate any patterns.
+
+This file has kept the plain text word boundaries and carried them to
+the cipher text.
+
+Enjoy!
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

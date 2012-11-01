@@ -1,0 +1,20 @@
+<!--#set var="PageTitle" value="Wargames - Drifter - Level 2" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this level on the forum</a>
+</div>
+<h1>Level 2</h1>
+<p>Simple stack overflow, but with a side effect that affects debugging, and executing problems. Keep in mind that a straight execve() will not work, due to kernel issuing a breakpoint.</p>
+
+<dt>Code listing (<a href="level2.c">level2.c</a>)</dt>
+<pre>
+<!--#include virtual="level2.c.colored.html" -->
+</pre>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

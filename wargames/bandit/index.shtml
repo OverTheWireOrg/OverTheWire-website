@@ -1,0 +1,39 @@
+<!--#set var="PageTitle" value="Wargames - Bandit" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this wargame on the forum</a>
+</div>
+<h1>Bandit <star>&#9733;<not>&#9733;&#9733;&#9733;&#9733;</not></star></h1>
+<p>
+The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. <b>If you notice something essential is missing
+or have ideas for new levels, please let us know!</b>
+</p>
+
+<h2>Note for beginners</h2>
+
+<p>
+This game, like most other games, is organised in levels. You start at Level 0 and try to "beat" or "finish" it. Finishing a level results in information on how to start
+the next level. The pages on this website for "Level &lt;X&gt;" contain information on how to start level X from the previous level. E.g. The page for <a href="/wargames/bandit/bandit1.shtml">Level 1</a> has information on how to gain access from <a href="/wargames/bandit/bandit0.shtml">Level 0</a> to <a href="/wargames/bandit/bandit1.shtml">Level 1</a>. All levels in this game have a page on this website, and they are all linked to from the sidemenu on the left of this page.
+</p>
+
+<p>
+You will encounter many situations in which you have no idea what you are supposed to do. <b>Don't panic! Don't give up!</b>
+The purpose of this game is for you to learn the basics. Part of learning the basics, is reading a lot of new information.
+</p>
+<p>
+There are several things you can try when you are unsure how to continue:
+</p>
+<ul>
+<li>First, if you know a command, but don't know how to use it, try the <b>manual</b> (<a href="http://en.wikipedia.org/wiki/Man_page">man page</a>) by entering "<b>man &lt;command&gt;</b>" (without the quotes). e.g. if you know about the "ls" command, type: man ls. The "man" command also has a manual, try it. Press q to quit the man command.</li>
+<li>Second, if there is no man page, the command might be a <b>shell built-in</b>. In that case use the "<b>help &lt;X&gt;</b>" command. E.g. help cd</li>
+<li>Also, your favorite <b>search-engine</b> is your friend. Learn how to use it! I recommend <a href="http://www.google.com">Google</a>.</li>
+<li>Lastly, if you are still stuck, you can join us on our IRC server at <b>irc.overthewire.org, channel #wargames</b>. If you don't know <a href="http://www.irchelp.org/irchelp/irctutorial.html">how to use IRC</a>, use google to find out</li>
+</ul>
+
+<p>You're ready to start! Begin with <a href="/wargames/bandit/bandit0.shtml">Level 0</a>, linked at the left of this page. Good luck!</p>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

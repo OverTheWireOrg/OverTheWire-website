@@ -1,0 +1,27 @@
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 12" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
+</div>
+<h1>Level 12</h1>
+
+<dl>
+<dt>Level Goal</dt>
+<dd>
+The password for the next level is stored in the file <b>data.txt</b>, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+</dd>
+</dl>
+
+<dl>
+<dt>Commands you may need to solve this level</dt>
+<dd>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</dd>
+<dt>Helpful Reading Material</dt>
+<dd><a href="http://en.wikipedia.org/wiki/Rot13">Rot13 on Wikipedia</a></dd>
+</dl>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

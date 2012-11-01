@@ -1,0 +1,16 @@
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 14" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
+</div>
+<h1>Level 14</h1>
+<dl>
+<dt>Bad Encryption</dt>
+<dd>Based on something seen in the "real world", it has weak encryption usage, used over a TCP/IP connection. This level requires you to apply some logic to the challenge at hand. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

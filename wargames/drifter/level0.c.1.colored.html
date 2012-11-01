@@ -1,0 +1,176 @@
+<pre>
+<font color="#444444">/*
+ * Level 0 for drifter - Jan 16th, 2008
+ *
+ * This is an extremely simple / stupid remote procedure call implementation
+ * that allows system calls and parameters to be supplied directly, and
+ * return codes written to the caller.
+ *
+ * For security reasons, it is chrooted and drops privileges, and in addition,
+ * the connection is encrypted. (The previous sentence is a joke..)
+ *
+ * In the chroot directory, there is a file called 'instructions', open that,
+ * read the contents, and you'll know what to do next.
+ *
+ * In order to make things easier for yourself, there is plenty of tools
+ * out there already - I suggest that you read up and learn about them.
+ *
+ * - a scripting language (I humbly suggest Python, but whatever you're most
+ *   comfortable with)
+ * - &lt;a href=&quot;http://oss.coresecurity.com/projects/inlineegg.html
+ &quot; title=&quot;http://oss.coresecurity.com/projects/inlineegg.html
+ &quot;&gt;http://oss.coresecurity.com/projects/inlineegg.html
+ &lt;/a&gt; * - mosdef - &lt;a href=&quot;http://www.immunitysec.com/resources-freesoftware.shtml
+ &quot; title=&quot;http://www.immunitysec.com/resources-freesoftware.shtml
+ &quot;&gt;http://www.immunitysec.com/resources-freesoftware.shtml
+ &lt;/a&gt; * - &lt;a href=&quot;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+ &quot; title=&quot;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+ &quot;&gt;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+ &lt;/a&gt; * - metasploit.com
+ * - Plenty of other things :)
+ *
+ * To compile this code, gcc level0.c rc4.c -o /drifter/level0
+ */</font>
+
+<font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;unistd.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;sys/socket.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;fcntl.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;string.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;sys/syscall.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;signal.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;netinet/in.h&gt;</font></strong></font>
+<font color="0000ff"><strong>#include <font color="#008000">&lt;netinet/tcp.h&gt;</font></strong></font>
+
+<font color="0000ff"><strong>#include <font color="#008000">&quot;rc4.h&quot;</font></strong></font>
+
+<strong>void</strong> <font color="#2040a0">setup_stuff</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    <font color="#444444">/* Become a daemon, and drop privileges, chroot off, etc. */</font>
+
+    <font color="#2040a0">signal</font><font color="4444FF">(</font><font color="#2040a0">SIGCHLD</font>, <font color="#2040a0">SIG_IGN</font><font color="4444FF">)</font><font color="4444FF">;</font> // <font color="#2040a0">ignore</font> <font color="#2040a0">children</font>.. <font color="#2040a0">seems</font> <font color="#2040a0">to</font> <font color="#2040a0">work</font> <font color="4444FF">:</font><font color="#2040a0">p</font>
+
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">daemon</font><font color="4444FF">(</font><font color="#FF0000">0</font>, <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">chroot</font><font color="4444FF">(</font><font color="#008000">&quot;/home/drifter/drifter0/chroot&quot;</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">chdir</font><font color="4444FF">(</font><font color="#008000">&quot;/&quot;</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">3</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<font color="4444FF"><strong>}</strong></font>
+
+<strong>void</strong> <font color="#2040a0">dropprivs</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    <strong>int</strong> <font color="#2040a0">groups</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">;</font>
+
+<font color="0000ff"><strong>#define LEVEL0 1000</strong></font>
+    <font color="#2040a0">groups</font><font color="4444FF">[</font><font color="#FF0000">0</font><font color="4444FF">]</font> <font color="4444FF">=</font> <font color="#2040a0">LEVEL0</font><font color="4444FF">;</font>
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setgroups</font><font color="4444FF">(</font><font color="#FF0000">1</font>, <font color="#2040a0">groups</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">15</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setresgid</font><font color="4444FF">(</font><font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setresuid</font><font color="4444FF">(</font><font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">5</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<font color="0000ff"><strong>#undef LEVEL0</strong></font>
+<font color="4444FF"><strong>}</strong></font>
+
+<strong>int</strong> <font color="#2040a0">create_socket</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    <font color="#444444">/* Create / bind / listen on socket */</font>
+
+    <strong>int</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+    <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="#2040a0">sin</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">socket</font><font color="4444FF">(</font><font color="#2040a0">AF_INET</font>, <font color="#2040a0">SOCK_STREAM</font>, <font color="#FF0000">0</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">6</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">memset</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <font color="#FF0000">0</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="#2040a0">sin</font>.<font color="#2040a0">sin_family</font> <font color="4444FF">=</font> <font color="#2040a0">AF_INET</font>,
+        <font color="#2040a0">sin</font>.<font color="#2040a0">sin_addr</font>.<font color="#2040a0">s_addr</font> <font color="4444FF">=</font> <font color="#2040a0">htonl</font><font color="4444FF">(</font><font color="#2040a0">INADDR_ANY</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="#2040a0">sin</font>.<font color="#2040a0">sin_port</font> <font color="4444FF">=</font> <font color="#2040a0">htons</font><font color="4444FF">(</font><font color="#FF0000">1111</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">bind</font><font color="4444FF">(</font><font color="#2040a0">ret</font>, <font color="4444FF">(</font><strong>void</strong> <font color="4444FF">*</font><font color="4444FF">)</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">7</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">listen</font><font color="4444FF">(</font><font color="#2040a0">ret</font>, <font color="#FF0000">5</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">8</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>return</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+
+<font color="4444FF"><strong>}</strong></font>
+
+<strong>void</strong> <font color="#2040a0">handle_client</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">skt</font>, <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="4444FF">*</font><font color="#2040a0">sin</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    // <font color="#2040a0">Handle</font> <font color="#2040a0">the</font> <font color="#2040a0">client</font> <font color="#2040a0">connection</font>, <font color="#2040a0">and</font> <font color="#2040a0">perform</font> <font color="#2040a0">the</font> <font color="#2040a0">requested</font> <font color="#2040a0">operations</font>.
+
+    <font color="#2040a0">rc4_key</font> <font color="#2040a0">key_in</font>, <font color="#2040a0">key_out</font><font color="4444FF">;</font>
+    <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">keymat</font><font color="4444FF">[</font><font color="#FF0000">6</font><font color="4444FF">]</font><font color="4444FF">;</font>
+    <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">9</font><font color="4444FF">]</font><font color="4444FF">;</font>
+    <strong>int</strong> <font color="#2040a0">i</font>, <font color="#2040a0">ret</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">dropprivs</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="4444FF">&amp;</font><font color="4444FF">(</font><font color="#2040a0">sin</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">sin_addr</font>.<font color="#2040a0">s_addr</font><font color="4444FF">)</font>, <font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">keymat</font><font color="4444FF">+</font><font color="#FF0000">4</font>, <font color="4444FF">&amp;</font><font color="4444FF">(</font><font color="#2040a0">sin</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">sin_port</font><font color="4444FF">)</font>, <font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">prepare_key</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="#2040a0">prepare_key</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>for</strong><font color="4444FF">(</font><font color="#2040a0">i</font><font color="4444FF">=</font><font color="#FF0000">0</font><font color="4444FF">;</font><font color="#2040a0">i</font><font color="4444FF">&lt;</font><font color="#FF0000">42</font><font color="4444FF">;</font><font color="#2040a0">i</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+        // <font color="#2040a0">cycle</font> <font color="#2040a0">through</font> <font color="#2040a0">first</font> <font color="#FF0000">256</font> <font color="#2040a0">bytes</font>
+        <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+    <strong>while</strong><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+        <font color="#2040a0">alarm</font><font color="4444FF">(</font><font color="#FF0000">60</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <font color="#2040a0">sleep</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">&amp;</font><font color="#2040a0">args</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">args</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">syscall</font><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">0</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">2</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">3</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">4</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">5</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">6</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">7</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">8</font><font color="4444FF">]</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">ret</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>int</strong><font color="4444FF">)</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">write</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">&amp;</font><font color="#2040a0">ret</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <font color="4444FF"><strong>}</strong></font>
+
+<font color="4444FF"><strong>}</strong></font>
+
+<strong>void</strong> <font color="#2040a0">mainloop</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    <strong>int</strong> <font color="#2040a0">skt</font><font color="4444FF">;</font>
+    <strong>int</strong> <font color="#2040a0">cli</font><font color="4444FF">;</font>
+    <strong>int</strong> <font color="#2040a0">so</font><font color="4444FF">;</font>
+    <strong>int</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+
+    <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="#2040a0">sin</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">skt</font> <font color="4444FF">=</font> <font color="#2040a0">create_socket</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <strong>while</strong><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+        <font color="#2040a0">so</font> <font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <font color="#2040a0">cli</font> <font color="4444FF">=</font> <font color="#2040a0">accept</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">(</font><strong>void</strong> <font color="4444FF">*</font><font color="4444FF">)</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <font color="4444FF">&amp;</font><font color="#2040a0">so</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">cli</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">9</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">fork</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">10</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+        // <font color="#2040a0">parent</font>
+
+        <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+            <font color="#2040a0">close</font><font color="4444FF">(</font><font color="#2040a0">cli</font><font color="4444FF">)</font><font color="4444FF">;</font>
+            <strong>continue</strong><font color="4444FF">;</font>
+        <font color="4444FF"><strong>}</strong></font>
+
+        // <font color="#2040a0">child</font>
+        <font color="#2040a0">close</font><font color="4444FF">(</font><font color="#2040a0">skt</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <font color="#2040a0">handle_client</font><font color="4444FF">(</font><font color="#2040a0">cli</font>, <font color="4444FF">&amp;</font><font color="#2040a0">sin</font><font color="4444FF">)</font><font color="4444FF">;</font>
+        <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+<font color="4444FF"><strong>}</strong></font>
+
+<strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">argc</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font><font color="4444FF">)</font>
+<font color="4444FF"><strong>{</strong></font>
+    <font color="#2040a0">setup_stuff</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+
+    <font color="#2040a0">mainloop</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>    
+<font color="4444FF"><strong>}</strong></font>
+
+</pre>

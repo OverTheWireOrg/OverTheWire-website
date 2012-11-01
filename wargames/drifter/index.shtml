@@ -1,0 +1,21 @@
+<!--#set var="PageTitle" value="Wargames - Drifter" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/drifter">Discuss this wargame on the forum</a>
+</div>
+<h1>Drifter</h1>
+
+<div style='border: solid 1px black; background: #ccffcc; padding: 10px;'>
+<h3>2011-11-17 - drifter is temporarily down</h3>
+The drifter wargame is temporarily down because we are migrating wargames to a new server. It will come back soon.
+</div>
+
+<p>Drifter is a wargame along the lines of Vortex. </p>
+
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

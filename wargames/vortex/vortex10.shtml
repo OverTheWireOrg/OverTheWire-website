@@ -1,0 +1,16 @@
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 10" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
+</div>
+<h1>Level 10</h1>
+<dl>
+<dt>Random?</dt>
+<dd>Read in 20 integers and write the seed used to generate those numbers in unsigned little endian format. You have a time limit of 30 seconds to do this. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a></dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

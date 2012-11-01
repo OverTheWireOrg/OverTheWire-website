@@ -1,0 +1,35 @@
+<!--#set var="PageTitle" value="Wargames - Blacksun - Level 0" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/blacksun">Discuss this level on the forum</a>
+</div>
+<h1>Level 0</h1>
+
+<p>Level0 is a remote format string intended to get you started with blacksun. It is a remote format string bug with you being able to see the reply, with address space randomisation enabled. You'll need to use the direct parameter access method to analyse the stack and to manipulate it.</p>
+<p>Once getting access to a shell, read /etc/motd for more information</p>
+<center>
+<table border=0>
+	<tr><th colspan=2>Binary information</th></tr>
+	<tr><th>Stack smashing protection (SSP):</th><td class="enabled">Enabled</td></tr>
+	<tr><th>Postition Independent Executable (PIE):</th><td class="enabled">Enabled</td></tr>
+	<tr><th>Address space layout randomisation (ASLR):</th><td class="enabled">Enabled</td></tr>
+	<tr><th>Non-executable pages:</th><td class="disabled">None / disabled</td></tr>
+	<tr><td colspan=2><hr/></td></tr>
+	<tr><th>Location:</th><td><p>Connect to blacksun.overthewire.org on port 79</p><p>Alternatively, there is a debug version on port 78 if you need help understanding what you're seeing</p></td></tr>
+</table>
+</center>
+
+<dl>
+<dt>Code listing (<a href="level0.c">level0.c</a>)</dt>
+<dd>
+<pre>
+<!--#include virtual="level0.c.colored.html" -->
+</pre>
+</dd>
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

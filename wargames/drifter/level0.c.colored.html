@@ -1,0 +1,173 @@
+<a name="line1" href="#line1">  1</a> <font color="#444444">/*
+<a name="line2" href="#line2">  2</a>  * Level 0 for drifter - Jan 16th, 2008
+<a name="line3" href="#line3">  3</a>  *
+<a name="line4" href="#line4">  4</a>  * This is an extremely simple / stupid remote procedure call implementation
+<a name="line5" href="#line5">  5</a>  * that allows system calls and parameters to be supplied directly, and
+<a name="line6" href="#line6">  6</a>  * return codes written to the caller.
+<a name="line7" href="#line7">  7</a>  *
+<a name="line8" href="#line8">  8</a>  * For security reasons, it is chrooted and drops privileges, and in addition,
+<a name="line9" href="#line9">  9</a>  * the connection is encrypted. (The previous sentence is a joke..)
+<a name="line10" href="#line10"> 10</a>  *
+<a name="line11" href="#line11"> 11</a>  * In the chroot directory, there is a file called 'instructions', open that,
+<a name="line12" href="#line12"> 12</a>  * read the contents, and you'll know what to do next.
+<a name="line13" href="#line13"> 13</a>  *
+<a name="line14" href="#line14"> 14</a>  * In order to make things easier for yourself, there is plenty of tools
+<a name="line15" href="#line15"> 15</a>  * out there already - I suggest that you read up and learn about them.
+<a name="line16" href="#line16"> 16</a>  *
+<a name="line17" href="#line17"> 17</a>  * - a scripting language (I humbly suggest Python, but whatever you're most
+<a name="line18" href="#line18"> 18</a>  *   comfortable with)
+<a name="line19" href="#line19"> 19</a>  * - &lt;a href=&quot;http://oss.coresecurity.com/projects/inlineegg.html
+<a name="line20" href="#line20"> 20</a>  &quot; title=&quot;http://oss.coresecurity.com/projects/inlineegg.html
+<a name="line21" href="#line21"> 21</a>  &quot;&gt;http://oss.coresecurity.com/projects/inlineegg.html
+<a name="line22" href="#line22"> 22</a>  &lt;/a&gt; * - mosdef - &lt;a href=&quot;http://www.immunitysec.com/resources-freesoftware.shtml
+<a name="line23" href="#line23"> 23</a>  &quot; title=&quot;http://www.immunitysec.com/resources-freesoftware.shtml
+<a name="line24" href="#line24"> 24</a>  &quot;&gt;http://www.immunitysec.com/resources-freesoftware.shtml
+<a name="line25" href="#line25"> 25</a>  &lt;/a&gt; * - &lt;a href=&quot;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+<a name="line26" href="#line26"> 26</a>  &quot; title=&quot;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+<a name="line27" href="#line27"> 27</a>  &quot;&gt;http://archives.neohapsis.com/archives/vuln-dev/2003-q4/0006.html
+<a name="line28" href="#line28"> 28</a>  &lt;/a&gt; * - metasploit.com
+<a name="line29" href="#line29"> 29</a>  * - Plenty of other things :)
+<a name="line30" href="#line30"> 30</a>  *
+<a name="line31" href="#line31"> 31</a>  * To compile this code, gcc level0.c rc4.c -o /drifter/level0
+<a name="line32" href="#line32"> 32</a>  */</font>
+<a name="line33" href="#line33"> 33</a> 
+<a name="line34" href="#line34"> 34</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
+<a name="line35" href="#line35"> 35</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;unistd.h&gt;</font></strong></font>
+<a name="line36" href="#line36"> 36</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
+<a name="line37" href="#line37"> 37</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;sys/socket.h&gt;</font></strong></font>
+<a name="line38" href="#line38"> 38</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;fcntl.h&gt;</font></strong></font>
+<a name="line39" href="#line39"> 39</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;string.h&gt;</font></strong></font>
+<a name="line40" href="#line40"> 40</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;sys/syscall.h&gt;</font></strong></font>
+<a name="line41" href="#line41"> 41</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;signal.h&gt;</font></strong></font>
+<a name="line42" href="#line42"> 42</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;netinet/in.h&gt;</font></strong></font>
+<a name="line43" href="#line43"> 43</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;netinet/tcp.h&gt;</font></strong></font>
+<a name="line44" href="#line44"> 44</a> 
+<a name="line45" href="#line45"> 45</a> <font color="0000ff"><strong>#include <font color="#008000">&quot;rc4.h&quot;</font></strong></font>
+<a name="line46" href="#line46"> 46</a> 
+<a name="line47" href="#line47"> 47</a> <strong>void</strong> <font color="#2040a0">setup_stuff</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line48" href="#line48"> 48</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line49" href="#line49"> 49</a>     <font color="#444444">/* Become a daemon, and drop privileges, chroot off, etc. */</font>
+<a name="line50" href="#line50"> 50</a> 
+<a name="line51" href="#line51"> 51</a>     <font color="#2040a0">signal</font><font color="4444FF">(</font><font color="#2040a0">SIGCHLD</font>, <font color="#2040a0">SIG_IGN</font><font color="4444FF">)</font><font color="4444FF">;</font> // <font color="#2040a0">ignore</font> <font color="#2040a0">children</font>.. <font color="#2040a0">seems</font> <font color="#2040a0">to</font> <font color="#2040a0">work</font> <font color="4444FF">:</font><font color="#2040a0">p</font>
+<a name="line52" href="#line52"> 52</a> 
+<a name="line53" href="#line53"> 53</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">daemon</font><font color="4444FF">(</font><font color="#FF0000">0</font>, <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line54" href="#line54"> 54</a> 
+<a name="line55" href="#line55"> 55</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">chroot</font><font color="4444FF">(</font><font color="#008000">&quot;/home/drifter/drifter0/chroot&quot;</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line56" href="#line56"> 56</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">chdir</font><font color="4444FF">(</font><font color="#008000">&quot;/&quot;</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">3</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line57" href="#line57"> 57</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line58" href="#line58"> 58</a> 
+<a name="line59" href="#line59"> 59</a> <strong>void</strong> <font color="#2040a0">dropprivs</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line60" href="#line60"> 60</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line61" href="#line61"> 61</a>     <strong>int</strong> <font color="#2040a0">groups</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line62" href="#line62"> 62</a> 
+<a name="line63" href="#line63"> 63</a> <font color="0000ff"><strong>#define LEVEL0 1000</strong></font>
+<a name="line64" href="#line64"> 64</a>     <font color="#2040a0">groups</font><font color="4444FF">[</font><font color="#FF0000">0</font><font color="4444FF">]</font> <font color="4444FF">=</font> <font color="#2040a0">LEVEL0</font><font color="4444FF">;</font>
+<a name="line65" href="#line65"> 65</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setgroups</font><font color="4444FF">(</font><font color="#FF0000">1</font>, <font color="#2040a0">groups</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">15</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line66" href="#line66"> 66</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setresgid</font><font color="4444FF">(</font><font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line67" href="#line67"> 67</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">setresuid</font><font color="4444FF">(</font><font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font>, <font color="#2040a0">LEVEL0</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">5</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line68" href="#line68"> 68</a> <font color="0000ff"><strong>#undef LEVEL0</strong></font>
+<a name="line69" href="#line69"> 69</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line70" href="#line70"> 70</a> 
+<a name="line71" href="#line71"> 71</a> <strong>int</strong> <font color="#2040a0">create_socket</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line72" href="#line72"> 72</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line73" href="#line73"> 73</a>     <font color="#444444">/* Create / bind / listen on socket */</font>
+<a name="line74" href="#line74"> 74</a> 
+<a name="line75" href="#line75"> 75</a>     <strong>int</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line76" href="#line76"> 76</a>     <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="#2040a0">sin</font><font color="4444FF">;</font>
+<a name="line77" href="#line77"> 77</a> 
+<a name="line78" href="#line78"> 78</a>     <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">socket</font><font color="4444FF">(</font><font color="#2040a0">AF_INET</font>, <font color="#2040a0">SOCK_STREAM</font>, <font color="#FF0000">0</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line79" href="#line79"> 79</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">6</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line80" href="#line80"> 80</a> 
+<a name="line81" href="#line81"> 81</a>     <font color="#2040a0">memset</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <font color="#FF0000">0</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line82" href="#line82"> 82</a>     <font color="#2040a0">sin</font>.<font color="#2040a0">sin_family</font> <font color="4444FF">=</font> <font color="#2040a0">AF_INET</font>,
+<a name="line83" href="#line83"> 83</a>         <font color="#2040a0">sin</font>.<font color="#2040a0">sin_addr</font>.<font color="#2040a0">s_addr</font> <font color="4444FF">=</font> <font color="#2040a0">htonl</font><font color="4444FF">(</font><font color="#2040a0">INADDR_ANY</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line84" href="#line84"> 84</a>     <font color="#2040a0">sin</font>.<font color="#2040a0">sin_port</font> <font color="4444FF">=</font> <font color="#2040a0">htons</font><font color="4444FF">(</font><font color="#FF0000">1111</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line85" href="#line85"> 85</a> 
+<a name="line86" href="#line86"> 86</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">bind</font><font color="4444FF">(</font><font color="#2040a0">ret</font>, <font color="4444FF">(</font><strong>void</strong> <font color="4444FF">*</font><font color="4444FF">)</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">7</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line87" href="#line87"> 87</a> 
+<a name="line88" href="#line88"> 88</a>     <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">listen</font><font color="4444FF">(</font><font color="#2040a0">ret</font>, <font color="#FF0000">5</font><font color="4444FF">)</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">8</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line89" href="#line89"> 89</a> 
+<a name="line90" href="#line90"> 90</a>     <strong>return</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line91" href="#line91"> 91</a> 
+<a name="line92" href="#line92"> 92</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line93" href="#line93"> 93</a> 
+<a name="line94" href="#line94"> 94</a> <strong>void</strong> <font color="#2040a0">handle_client</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">skt</font>, <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="4444FF">*</font><font color="#2040a0">sin</font><font color="4444FF">)</font>
+<a name="line95" href="#line95"> 95</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line96" href="#line96"> 96</a>     // <font color="#2040a0">Handle</font> <font color="#2040a0">the</font> <font color="#2040a0">client</font> <font color="#2040a0">connection</font>, <font color="#2040a0">and</font> <font color="#2040a0">perform</font> <font color="#2040a0">the</font> <font color="#2040a0">requested</font> <font color="#2040a0">operations</font>.
+<a name="line97" href="#line97"> 97</a> 
+<a name="line98" href="#line98"> 98</a>     <font color="#2040a0">rc4_key</font> <font color="#2040a0">key_in</font>, <font color="#2040a0">key_out</font><font color="4444FF">;</font>
+<a name="line99" href="#line99"> 99</a>     <strong>unsigned</strong> <strong>char</strong> <font color="#2040a0">keymat</font><font color="4444FF">[</font><font color="#FF0000">6</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line100" href="#line100">100</a>     <strong>unsigned</strong> <strong>int</strong> <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">9</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line101" href="#line101">101</a>     <strong>int</strong> <font color="#2040a0">i</font>, <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line102" href="#line102">102</a> 
+<a name="line103" href="#line103">103</a>     <font color="#2040a0">dropprivs</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line104" href="#line104">104</a> 
+<a name="line105" href="#line105">105</a>     <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="4444FF">&amp;</font><font color="4444FF">(</font><font color="#2040a0">sin</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">sin_addr</font>.<font color="#2040a0">s_addr</font><font color="4444FF">)</font>, <font color="#FF0000">4</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line106" href="#line106">106</a>     <font color="#2040a0">memcpy</font><font color="4444FF">(</font><font color="#2040a0">keymat</font><font color="4444FF">+</font><font color="#FF0000">4</font>, <font color="4444FF">&amp;</font><font color="4444FF">(</font><font color="#2040a0">sin</font><font color="4444FF">-</font><font color="4444FF">&gt;</font><font color="#2040a0">sin_port</font><font color="4444FF">)</font>, <font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line107" href="#line107">107</a> 
+<a name="line108" href="#line108">108</a>     <font color="#2040a0">prepare_key</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line109" href="#line109">109</a>     <font color="#2040a0">prepare_key</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line110" href="#line110">110</a> 
+<a name="line111" href="#line111">111</a>     <strong>for</strong><font color="4444FF">(</font><font color="#2040a0">i</font><font color="4444FF">=</font><font color="#FF0000">0</font><font color="4444FF">;</font><font color="#2040a0">i</font><font color="4444FF">&lt;</font><font color="#FF0000">42</font><font color="4444FF">;</font><font color="#2040a0">i</font><font color="4444FF">+</font><font color="4444FF">+</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line112" href="#line112">112</a>         // <font color="#2040a0">cycle</font> <font color="#2040a0">through</font> <font color="#2040a0">first</font> <font color="#FF0000">256</font> <font color="#2040a0">bytes</font>
+<a name="line113" href="#line113">113</a>         <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line114" href="#line114">114</a>         <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="#2040a0">keymat</font>, <font color="#FF0000">6</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line115" href="#line115">115</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line116" href="#line116">116</a> 
+<a name="line117" href="#line117">117</a>     <strong>while</strong><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line118" href="#line118">118</a>         <font color="#2040a0">alarm</font><font color="4444FF">(</font><font color="#FF0000">60</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line119" href="#line119">119</a>         <font color="#2040a0">sleep</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line120" href="#line120">120</a> 
+<a name="line121" href="#line121">121</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">read</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">&amp;</font><font color="#2040a0">args</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line122" href="#line122">122</a> 
+<a name="line123" href="#line123">123</a>         <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">args</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">)</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line124" href="#line124">124</a> 
+<a name="line125" href="#line125">125</a>         <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">syscall</font><font color="4444FF">(</font><font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">0</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">2</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">3</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">4</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">5</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">6</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">7</font><font color="4444FF">]</font>, <font color="#2040a0">args</font><font color="4444FF">[</font><font color="#FF0000">8</font><font color="4444FF">]</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line126" href="#line126">126</a> 
+<a name="line127" href="#line127">127</a>         <font color="#2040a0">rc4</font><font color="4444FF">(</font><font color="4444FF">&amp;</font><font color="#2040a0">ret</font>, <strong>sizeof</strong><font color="4444FF">(</font><strong>int</strong><font color="4444FF">)</font>, <font color="4444FF">&amp;</font><font color="#2040a0">key_out</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line128" href="#line128">128</a> 
+<a name="line129" href="#line129">129</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">write</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">&amp;</font><font color="#2040a0">ret</font>, <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line130" href="#line130">130</a> 
+<a name="line131" href="#line131">131</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line132" href="#line132">132</a> 
+<a name="line133" href="#line133">133</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line134" href="#line134">134</a> 
+<a name="line135" href="#line135">135</a> <strong>void</strong> <font color="#2040a0">mainloop</font><font color="4444FF">(</font><font color="4444FF">)</font>
+<a name="line136" href="#line136">136</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line137" href="#line137">137</a>     <strong>int</strong> <font color="#2040a0">skt</font><font color="4444FF">;</font>
+<a name="line138" href="#line138">138</a>     <strong>int</strong> <font color="#2040a0">cli</font><font color="4444FF">;</font>
+<a name="line139" href="#line139">139</a>     <strong>int</strong> <font color="#2040a0">so</font><font color="4444FF">;</font>
+<a name="line140" href="#line140">140</a>     <strong>int</strong> <font color="#2040a0">ret</font><font color="4444FF">;</font>
+<a name="line141" href="#line141">141</a> 
+<a name="line142" href="#line142">142</a>     <strong>struct</strong> <font color="#2040a0">sockaddr_in</font> <font color="#2040a0">sin</font><font color="4444FF">;</font>
+<a name="line143" href="#line143">143</a> 
+<a name="line144" href="#line144">144</a>     <font color="#2040a0">skt</font> <font color="4444FF">=</font> <font color="#2040a0">create_socket</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line145" href="#line145">145</a> 
+<a name="line146" href="#line146">146</a>     <strong>while</strong><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line147" href="#line147">147</a>         <font color="#2040a0">so</font> <font color="4444FF">=</font> <strong>sizeof</strong><font color="4444FF">(</font><strong>struct</strong> <font color="#2040a0">sockaddr_in</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line148" href="#line148">148</a>         <font color="#2040a0">cli</font> <font color="4444FF">=</font> <font color="#2040a0">accept</font><font color="4444FF">(</font><font color="#2040a0">skt</font>, <font color="4444FF">(</font><strong>void</strong> <font color="4444FF">*</font><font color="4444FF">)</font><font color="4444FF">&amp;</font><font color="#2040a0">sin</font>, <font color="4444FF">&amp;</font><font color="#2040a0">so</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line149" href="#line149">149</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">cli</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">9</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line150" href="#line150">150</a> 
+<a name="line151" href="#line151">151</a>         <font color="#2040a0">ret</font> <font color="4444FF">=</font> <font color="#2040a0">fork</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line152" href="#line152">152</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font> <font color="4444FF">=</font><font color="4444FF">=</font> <font color="4444FF">-</font><font color="#FF0000">1</font><font color="4444FF">)</font> <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">10</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line153" href="#line153">153</a> 
+<a name="line154" href="#line154">154</a>         // <font color="#2040a0">parent</font>
+<a name="line155" href="#line155">155</a> 
+<a name="line156" href="#line156">156</a>         <strong>if</strong><font color="4444FF">(</font><font color="#2040a0">ret</font><font color="4444FF">)</font> <font color="4444FF"><strong>{</strong></font>
+<a name="line157" href="#line157">157</a>             <font color="#2040a0">close</font><font color="4444FF">(</font><font color="#2040a0">cli</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line158" href="#line158">158</a>             <strong>continue</strong><font color="4444FF">;</font>
+<a name="line159" href="#line159">159</a>         <font color="4444FF"><strong>}</strong></font>
+<a name="line160" href="#line160">160</a> 
+<a name="line161" href="#line161">161</a>         // <font color="#2040a0">child</font>
+<a name="line162" href="#line162">162</a>         <font color="#2040a0">close</font><font color="4444FF">(</font><font color="#2040a0">skt</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line163" href="#line163">163</a>         <font color="#2040a0">handle_client</font><font color="4444FF">(</font><font color="#2040a0">cli</font>, <font color="4444FF">&amp;</font><font color="#2040a0">sin</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line164" href="#line164">164</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#2040a0">EXIT_SUCCESS</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line165" href="#line165">165</a>     <font color="4444FF"><strong>}</strong></font>
+<a name="line166" href="#line166">166</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line167" href="#line167">167</a> 
+<a name="line168" href="#line168">168</a> <strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">argc</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font><font color="4444FF">)</font>
+<a name="line169" href="#line169">169</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line170" href="#line170">170</a>     <font color="#2040a0">setup_stuff</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line171" href="#line171">171</a> 
+<a name="line172" href="#line172">172</a>     <font color="#2040a0">mainloop</font><font color="4444FF">(</font><font color="4444FF">)</font><font color="4444FF">;</font>    
+<a name="line173" href="#line173">173</a> <font color="4444FF"><strong>}</strong></font>

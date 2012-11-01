@@ -1,0 +1,33 @@
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 4" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+<a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
+</div>
+<h1>Level 4</h1>
+<dl>
+<dt>Ptrace your way</dt>
+<dd>
+Pass prints the password for the level you are on. Try to make it print the next level's password.<br>
+This time it is not so easy:<br>
+/semtex/semtex4: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, for GNU/Linux 2.6.15, stripped<br>
+</dd>
+<dt>Tip :</dt>
+<dd>
+<ul>
+<li>Pass uses geteuid() to get its information.</li>
+<li>Read man ptrace</li>
+</ul>
+<dd>
+<!--
+<dt>Semtex3 Solutions</dt>
+<dd>
+look at the readme in your home directory to find cool and interesting solutions to semtex3
+</dd>
+-->
+</dl>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+

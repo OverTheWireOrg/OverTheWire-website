@@ -1,0 +1,17 @@
+<!--#set var="PageTitle" value="Wargames - Genesis - Level 2" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+
+<!--#include virtual="SIDEMENU.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<div id="discuss">
+  <a href="http://forum.overthewire.org/wargames/genesis">Discuss this wargame on the forum</a>
+</div>
+<h1>Level 2 - Learning more about commands</h1>
+
+<pre>
+- what others are doing: man
+</pre>
+
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+
