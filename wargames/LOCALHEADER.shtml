@@ -62,11 +62,6 @@
 	<!--#endif -->
 
 
-	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/monxla/" -->
-	<li><a class='selected' href="/wargames/monxla">Monxla</a></li>
-	<!--#else -->
-	<li><a href="/wargames/monxla">Monxla</a></li>
-	<!--#endif -->
 
 	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/natas/" -->
 	<li><a class='selected' href="/wargames/natas">Natas</a></li>
@@ -94,6 +89,12 @@
 
 	<ul>
 	<li><sh>Currently down</sh></li>
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/monxla/" -->
+	<li><a class='selected' href="/wargames/monxla">Monxla</a></li>
+	<!--#else -->
+	<li><a href="/wargames/monxla">Monxla</a></li>
+	<!--#endif -->
+
 	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/blacksun/" -->
 	<li><a class='selected' href="/wargames/blacksun">Blacksun</a></li>
 	<!--#else -->
