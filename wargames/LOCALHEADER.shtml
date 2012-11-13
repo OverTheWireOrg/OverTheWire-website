@@ -84,16 +84,17 @@
 	<!--#else -->
 	<li><a href="/wargames/abraxas">Abraxas</a></li>
 	<!--#endif -->
-	</ul>
-	<br />
 
-	<ul>
-	<li><sh>Currently down</sh></li>
 	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/monxla/" -->
 	<li><a class='selected' href="/wargames/monxla">Monxla</a></li>
 	<!--#else -->
 	<li><a href="/wargames/monxla">Monxla</a></li>
 	<!--#endif -->
+	</ul>
+	<br />
+
+	<ul>
+	<li><sh>Currently down</sh></li>
 
 	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/blacksun/" -->
 	<li><a class='selected' href="/wargames/blacksun">Blacksun</a></li>
