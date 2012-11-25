@@ -29,7 +29,7 @@ There are several things you can try when you are unsure how to continue:
 <li>First, if you know a command, but don't know how to use it, try the <b>manual</b> (<a href="http://en.wikipedia.org/wiki/Man_page">man page</a>) by entering "<b>man &lt;command&gt;</b>" (without the quotes). e.g. if you know about the "ls" command, type: man ls. The "man" command also has a manual, try it. Press q to quit the man command.</li>
 <li>Second, if there is no man page, the command might be a <b>shell built-in</b>. In that case use the "<b>help &lt;X&gt;</b>" command. E.g. help cd</li>
 <li>Also, your favorite <b>search-engine</b> is your friend. Learn how to use it! I recommend <a href="http://www.google.com">Google</a>.</li>
-<li>Lastly, if you are still stuck, you can join us on our IRC server at <b>irc.overthewire.org, channel #wargames</b>. If you don't know <a href="http://www.irchelp.org/irchelp/irctutorial.html">how to use IRC</a>, use google to find out</li>
+<li>Lastly, if you are still stuck, you can <a href="/about/contact.shtml">join us on IRC</a></li>
 </ul>
 
 <p>You're ready to start! Begin with <a href="/wargames/bandit/bandit0.shtml">Level 0</a>, linked at the left of this page. Good luck!</p>
