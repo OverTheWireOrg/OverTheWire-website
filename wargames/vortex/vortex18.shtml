@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 18" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 17 &rarr; Level 18" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 18</h1>
+<h1>Level 17 &rarr; Level 18</h1>
 <dl>
 <dt>urandom seeds</dt>
 <dd>Take advantage of the application's urandom dependency.</dd>

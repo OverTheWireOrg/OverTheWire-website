@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 16" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 15 &rarr; Level 16" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 16</h1>
+<h1>Level 15 &rarr; Level 16</h1>
 <dl>
 <dt>The BOFH</dt>
 <dd>This level requires finding 100 bits out of a 128 bit randomly generated hashed key. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>

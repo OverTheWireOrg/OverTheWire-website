@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 17" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 16 &rarr; Level 17" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 17</h1>
+<h1>Level 16 &rarr; Level 17</h1>
 <dl>
 <dt>Working Backwards</dt>
 <dd>This level requires you to work backwards to find out what's happening then exploit it. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>

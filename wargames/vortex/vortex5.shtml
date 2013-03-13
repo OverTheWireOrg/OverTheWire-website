@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 5" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 4 &rarr; Level 5" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 5</h1>
+<h1>Level 4 &rarr; Level 5</h1>
 <dl>
 <dt>MD5 Brute Force</dt>
 <dd>A password is required for the next level. vortex5.c and md5.h. a-z,A-Z,0-9 is the search space. The password length is 5 chars long, it was originally 7 chars long.

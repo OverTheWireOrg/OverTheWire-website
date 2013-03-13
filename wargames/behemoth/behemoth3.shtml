@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Behemoth - Level 3" -->
+<!--#set var="PageTitle" value="Wargames - Behemoth - Level 2 &rarr; Level 3" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/behemoth">Discuss this level on the forum</a>
 </div>
-<h1>Level 3</h1>
+<h1>Level 2 &rarr; Level 3</h1>
 
 There is no information for this level.
 <p>If you would like to see the description of this level expanded, please consider to <a href=/about/contribute.shtml>contribute</a> to OTW!</p>

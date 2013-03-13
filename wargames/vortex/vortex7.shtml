@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 7" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 6 &rarr; Level 7" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 7</h1>
+<h1>Level 6 &rarr; Level 7</h1>
 <dl>
 <dt>Checksum Fun</dt>
 <dd>This level requires CRC_32(argv[1], strlen(argv[1])) to be 0xe1ca95ee. You might need to extract the crc tables from the program.</dd>

@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 9" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 8 &rarr; Level 9" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 9</h1>
+<h1>Level 8 &rarr; Level 9</h1>
 <dl>
 <dt>BlackBox</dt>
 <dd>There is no information available for this level. Login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> and check it out.</dd>

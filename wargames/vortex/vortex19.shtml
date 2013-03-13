@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 19" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 18 &rarr; Level 19" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 19</h1>
+<h1>Level 18 &rarr; Level 19</h1>
 <dl>
 <dt>Key Generation</dt>
 <dd>This level requires you to "keygen" the level, with a minor obstacle of a weak form of binary encryption in place.</dd>

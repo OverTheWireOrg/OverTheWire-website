@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Semtex - Level 9" -->
+<!--#set var="PageTitle" value="Wargames - Semtex - Level 8 &rarr; Level 9" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
 </div>
-<h1>Level 9</h1>
+<h1>Level 8 &rarr; Level 9</h1>
 <dl>
 <dt>Tunneling your firewall</dt>
 <dd>
