@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Bandit - Level 15" -->
+<!--#set var="PageTitle" value="Wargames - Bandit - Level 14 Level 15rarr; Level 15" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/bandit">Discuss this level on the forum</a>
 </div>
-<h1>Level 15</h1>
+<h1>Level 14 Level 15rarr; Level 15</h1>
 
 <dl>
 <dt>Level Goal</dt>
