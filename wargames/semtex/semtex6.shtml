@@ -18,7 +18,7 @@ You find more specific information in your home directory.
 <dd><a href="http://www.faqs.org/rfcs/rfc792.html">ICMP Request For Comment</a></dd>
 <dd><a href="http://mixter.void.ru/rawip.html">Mixter's raw socket tutorial</a></dd>
 <dt>Note:</dt>
-<dd> <b>You will have to use /rdx/rawwrapper. Take a look at the source</b> </dd>
+<dd> <b>You will have to use /semtex/semtexraw. Take a look at the source</b> </dd>
 <dt>Code listing (<a href="semtex6.rawwrapper.c">semtex6.rawwrapper.c</a>)</dt>
 <dd>
 <pre>
