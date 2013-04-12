@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 5 &rarr; Level 6" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 6 &rarr; Level 7" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 5 &rarr; Level 6</h1>
+<h1>Level 6 &rarr; Level 7</h1>
 <dl>
 <dt>Generic Binary Exploitation</dt>
 <dd>You must disassemble this level's exploitable application in order to find the hole.</dd>

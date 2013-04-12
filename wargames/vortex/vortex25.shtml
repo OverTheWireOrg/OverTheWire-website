@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 24 &rarr; Level 25" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 25 &rarr; Level 26" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 24 &rarr; Level 25</h1>
+<h1>Level 25 &rarr; Level 26</h1>
 <dl>
 <dt>Crackploit</dt>
 <dd>There are two challenges for this level. One is to work out the password for the binary (a dictionary search should get it), and then work how you can exploit the level. A world readable binary is in /levels/decode. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>

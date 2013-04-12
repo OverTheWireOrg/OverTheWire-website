@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 14 &rarr; Level 15" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 15 &rarr; Level 16" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 14 &rarr; Level 15</h1>
+<h1>Level 15 &rarr; Level 16</h1>
 <dl>
 <dt>Weak Encryption</dt>
 <dd>You have found an encrypted file, decrypt it (some reversing, crypt and general analysis needed, and if you're lazy, the password is 8-bytes long and contains values between A and Z). You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>

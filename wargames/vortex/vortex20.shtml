@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 19 &rarr; Level 20" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 20 &rarr; Level 21" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 19 &rarr; Level 20</h1>
+<h1>Level 20 &rarr; Level 21</h1>
 <dl>
 <dt>Remote Integer Fun</dt>
 <dd>The source code for the exploitable application can be found in "/home/vortex20". You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>

@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 3 &rarr; Level 4" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 4 &rarr; Level 5" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 3 &rarr; Level 4</h1>
+<h1>Level 4 &rarr; Level 5</h1>
 <dl>
 <dt>To exec or not to exec</dt>
 <dd> This is the common format string bug, exploit it with care though as a check is made with argc. What is the layout of a process's memory? How are programs executed?  </dd>

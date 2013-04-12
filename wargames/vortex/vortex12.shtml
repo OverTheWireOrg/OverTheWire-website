@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 11 &rarr; Level 12" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 12 &rarr; Level 13" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 11 &rarr; Level 12</h1>
+<h1>Level 12 &rarr; Level 13</h1>
 <dl>
 <dt>We don't want no executable stack</dt>
 <dd>Exploit this level knowing that the stack is not executable. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level..</dd>

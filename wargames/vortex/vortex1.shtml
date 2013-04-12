@@ -1,4 +1,4 @@
-<!--#set var="PageTitle" value="Wargames - Vortex - Level 0 &rarr; Level 1" -->
+<!--#set var="PageTitle" value="Wargames - Vortex - Level 1 &rarr; Level 2" -->
 <!--#include virtual="/GLOBALHEADER.shtml" -->
 
 <!--#include virtual="SIDEMENU.shtml" -->
@@ -6,7 +6,7 @@
 <div id="discuss">
 <a href="http://forum.overthewire.org/wargames/vortex">Discuss this level on the forum</a>
 </div>
-<h1>Level 0 &rarr; Level 1</h1>
+<h1>Level 1 &rarr; Level 2</h1>
 <dl>
 <dt>Canary Values</dt>
 <dd>We are looking for a specific value in ptr. You may need to consider how bash handles EOF..</dd>
