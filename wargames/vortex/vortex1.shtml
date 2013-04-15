@@ -12,6 +12,7 @@
 <dd>We are looking for a specific value in ptr. You may need to consider how bash handles EOF..</dd>
 <dt>Reading Material</dt>
 <dd><a href="http://www.phrack.com/issues.html?issue=49&id=14&mode=txt">Smashing the Stack for Fun and Profit</a></dd>
+<dd><a href="http://www.ethicalhacker.net/content/view/122/2/">Smashing The Modern Stack For Fun And Profit</a></dd>
 <dt>Code listing (<a href="vortex1.c">vortex1.c</a>)</dt>
 <dd>
 <pre>
