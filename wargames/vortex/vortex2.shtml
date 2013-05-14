@@ -11,7 +11,7 @@
 <dt>Level Goal:</dt>
 <dd>Create a special tar file</dd>
 <dt>Helpful Reading Material</dt>
-<dd><a href="http://www.penguin-soft.com/penguin/man/1/tar.html">GNU tar manual</a></dd>
+<dd><a href="http://linux.die.net/man/1/tar">GNU tar manual</a></dd>
 <dt>Code listing (<a href="vortex2.c">vortex2.c</a>)</dt>
 <dd>
 <pre>
