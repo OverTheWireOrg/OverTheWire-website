@@ -1,0 +1,13 @@
+<!--#set var="PageTitle" value="Wargames - Kishi (HES2013 and NSC2013)" -->
+<!--#include virtual="/GLOBALHEADER.shtml" -->
+<!--#include virtual="LOCALHEADER.shtml" -->
+<!--#include virtual="STARTCONTENT.shtml" -->
+<h1>Kishi (HES2013 and NSC2013)</h1>
+<p>This wargame was introduced at the <a href="http://hackitoergosum.org/">Hackito Ergo Sum (HES)</a> 2013 and <a href="http://nosuchcon.org">No Such Con (NSC)</a> 2013 conferences in Paris and is centered around
+the <b>fictictious North-Korean cyberops training facility Kishi</b></p>
+<p>
+The wargame has its own website at <a href="http://kishi.labs.overthewire.org">http://kishi.labs.overthewire.org</a>.
+</p>
+<!--#include virtual="ENDCONTENT.shtml" -->
+<!--#include virtual="/FOOTER.shtml" -->
+
