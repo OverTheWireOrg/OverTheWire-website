@@ -4,7 +4,6 @@
  * Joel Eriksson <je@0xbadc0ded.org>
  */
 
-
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,7 +26,8 @@ int main(int argc, char **argv)
 
         tmp = *lpp;
         **lpp = (unsigned long) &buf;
-        *lpp = tmp;
+        // *lpp = tmp; // Fix suggested by Michael Weissbacher @mweissbacher 2013-06-30
 
         exit(0);
 }
+

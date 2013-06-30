@@ -4,30 +4,29 @@
 <a name="line4" href="#line4"> 4</a>  * Joel Eriksson &lt;je@0xbadc0ded.org&gt;
 <a name="line5" href="#line5"> 5</a>  */</font>
 <a name="line6" href="#line6"> 6</a> 
-<a name="line7" href="#line7"> 7</a> 
-<a name="line8" href="#line8"> 8</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;string.h&gt;</font></strong></font>
-<a name="line9" href="#line9"> 9</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
-<a name="line10" href="#line10">10</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
-<a name="line11" href="#line11">11</a> 
-<a name="line12" href="#line12">12</a> <strong>unsigned</strong> <strong>long</strong> <font color="#2040a0">val</font> <font color="4444FF">=</font> <font color="#FF0000">31337</font><font color="4444FF">;</font>
-<a name="line13" href="#line13">13</a> <strong>unsigned</strong> <strong>long</strong> <font color="4444FF">*</font><font color="#2040a0">lp</font> <font color="4444FF">=</font> <font color="4444FF">&amp;</font><font color="#2040a0">val</font><font color="4444FF">;</font>
-<a name="line14" href="#line14">14</a> 
-<a name="line15" href="#line15">15</a> <strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">argc</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font><font color="4444FF">)</font>
-<a name="line16" href="#line16">16</a> <font color="4444FF"><strong>{</strong></font>
-<a name="line17" href="#line17">17</a>         <strong>unsigned</strong> <strong>long</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="4444FF">&amp;</font><font color="#2040a0">lp</font>, <font color="4444FF">*</font><font color="#2040a0">tmp</font><font color="4444FF">;</font>
-<a name="line18" href="#line18">18</a>         <strong>char</strong> <font color="#2040a0">buf</font><font color="4444FF">[</font><font color="#FF0000">128</font><font color="4444FF">]</font><font color="4444FF">;</font>
-<a name="line19" href="#line19">19</a> 
-<a name="line20" href="#line20">20</a>         <strong>if</strong> <font color="4444FF">(</font><font color="#2040a0">argc</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">2</font><font color="4444FF">)</font>
-<a name="line21" href="#line21">21</a>                 <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
-<a name="line22" href="#line22">22</a> 
-<a name="line23" href="#line23">23</a>         <font color="#2040a0">strcpy</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#2040a0">argv</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">)</font><font color="4444FF">;</font>
-<a name="line24" href="#line24">24</a> 
-<a name="line25" href="#line25">25</a>         <strong>if</strong> <font color="4444FF">(</font><font color="4444FF">(</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>long</strong><font color="4444FF">)</font> <font color="#2040a0">lpp</font> <font color="4444FF">&amp;</font> <font color="#FF0000">0xffff0000</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0x08040000</font><font color="4444FF">)</font>
-<a name="line26" href="#line26">26</a>                 <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
-<a name="line27" href="#line27">27</a> 
-<a name="line28" href="#line28">28</a>         <font color="#2040a0">tmp</font> <font color="4444FF">=</font> <font color="4444FF">*</font><font color="#2040a0">lpp</font><font color="4444FF">;</font>
-<a name="line29" href="#line29">29</a>         <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="4444FF">(</font><strong>unsigned</strong> <strong>long</strong><font color="4444FF">)</font> <font color="4444FF">&amp;</font><font color="#2040a0">buf</font><font color="4444FF">;</font>
-<a name="line30" href="#line30">30</a>         <font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="#2040a0">tmp</font><font color="4444FF">;</font>
-<a name="line31" href="#line31">31</a> 
-<a name="line32" href="#line32">32</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">0</font><font color="4444FF">)</font><font color="4444FF">;</font>
-<a name="line33" href="#line33">33</a> <font color="4444FF"><strong>}</strong></font>
+<a name="line7" href="#line7"> 7</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;string.h&gt;</font></strong></font>
+<a name="line8" href="#line8"> 8</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdlib.h&gt;</font></strong></font>
+<a name="line9" href="#line9"> 9</a> <font color="0000ff"><strong>#include <font color="#008000">&lt;stdio.h&gt;</font></strong></font>
+<a name="line10" href="#line10">10</a> 
+<a name="line11" href="#line11">11</a> <strong>unsigned</strong> <strong>long</strong> <font color="#2040a0">val</font> <font color="4444FF">=</font> <font color="#FF0000">31337</font><font color="4444FF">;</font>
+<a name="line12" href="#line12">12</a> <strong>unsigned</strong> <strong>long</strong> <font color="4444FF">*</font><font color="#2040a0">lp</font> <font color="4444FF">=</font> <font color="4444FF">&amp;</font><font color="#2040a0">val</font><font color="4444FF">;</font>
+<a name="line13" href="#line13">13</a> 
+<a name="line14" href="#line14">14</a> <strong>int</strong> <font color="#2040a0">main</font><font color="4444FF">(</font><strong>int</strong> <font color="#2040a0">argc</font>, <strong>char</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">argv</font><font color="4444FF">)</font>
+<a name="line15" href="#line15">15</a> <font color="4444FF"><strong>{</strong></font>
+<a name="line16" href="#line16">16</a>         <strong>unsigned</strong> <strong>long</strong> <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="4444FF">&amp;</font><font color="#2040a0">lp</font>, <font color="4444FF">*</font><font color="#2040a0">tmp</font><font color="4444FF">;</font>
+<a name="line17" href="#line17">17</a>         <strong>char</strong> <font color="#2040a0">buf</font><font color="4444FF">[</font><font color="#FF0000">128</font><font color="4444FF">]</font><font color="4444FF">;</font>
+<a name="line18" href="#line18">18</a> 
+<a name="line19" href="#line19">19</a>         <strong>if</strong> <font color="4444FF">(</font><font color="#2040a0">argc</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">2</font><font color="4444FF">)</font>
+<a name="line20" href="#line20">20</a>                 <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">1</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line21" href="#line21">21</a> 
+<a name="line22" href="#line22">22</a>         <font color="#2040a0">strcpy</font><font color="4444FF">(</font><font color="#2040a0">buf</font>, <font color="#2040a0">argv</font><font color="4444FF">[</font><font color="#FF0000">1</font><font color="4444FF">]</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line23" href="#line23">23</a> 
+<a name="line24" href="#line24">24</a>         <strong>if</strong> <font color="4444FF">(</font><font color="4444FF">(</font><font color="4444FF">(</font><strong>unsigned</strong> <strong>long</strong><font color="4444FF">)</font> <font color="#2040a0">lpp</font> <font color="4444FF">&amp;</font> <font color="#FF0000">0xffff0000</font><font color="4444FF">)</font> <font color="4444FF">!</font><font color="4444FF">=</font> <font color="#FF0000">0x08040000</font><font color="4444FF">)</font>
+<a name="line25" href="#line25">25</a>                 <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">2</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line26" href="#line26">26</a> 
+<a name="line27" href="#line27">27</a>         <font color="#2040a0">tmp</font> <font color="4444FF">=</font> <font color="4444FF">*</font><font color="#2040a0">lpp</font><font color="4444FF">;</font>
+<a name="line28" href="#line28">28</a>         <font color="4444FF">*</font><font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="4444FF">(</font><strong>unsigned</strong> <strong>long</strong><font color="4444FF">)</font> <font color="4444FF">&amp;</font><font color="#2040a0">buf</font><font color="4444FF">;</font>
+<a name="line29" href="#line29">29</a>         // <font color="4444FF">*</font><font color="#2040a0">lpp</font> <font color="4444FF">=</font> <font color="#2040a0">tmp</font><font color="4444FF">;</font> // <font color="#2040a0">Fix</font> <font color="#2040a0">suggested</font> <font color="#2040a0">by</font> <font color="#2040a0">Michael</font> <font color="#2040a0">Weissbacher</font> @<font color="#2040a0">mweissbacher</font> <font color="#FF0000">2013</font><font color="4444FF">-</font><font color="#FF0000">06</font><font color="4444FF">-</font><font color="#FF0000">30</font>
+<a name="line30" href="#line30">30</a> 
+<a name="line31" href="#line31">31</a>         <font color="#2040a0">exit</font><font color="4444FF">(</font><font color="#FF0000">0</font><font color="4444FF">)</font><font color="4444FF">;</font>
+<a name="line32" href="#line32">32</a> <font color="4444FF"><strong>}</strong></font>
