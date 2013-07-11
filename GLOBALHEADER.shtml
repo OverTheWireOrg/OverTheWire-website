@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
 <link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
+<link rel="stylesheet" href="/css/jquery-ui.css" />
+<link rel="stylesheet" href="/css/wechall.css" />
+<script src="/js/jquery-1.9.1.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/wechall.js"></script>
+
 <!--
 <link rel="stylesheet" href="https://tracker.overthewire.org/css/otw-hof.css" type="text/css" media="screen" />
 <script src="https://tracker.overthewire.org/js/jquery-1.7.2.min.js"></script>

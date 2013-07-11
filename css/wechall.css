@@ -1,0 +1,20 @@
+﻿#wechallform {
+    position: absolute;
+    background: #122639;
+    color: white;
+    padding: 10px;
+    padding-left: 70px;
+    padding-right: 0px;
+    width: 200px;
+
+    right: 30px;
+    top: 80px;
+
+    border-radius: 15px;
+    box-shadow: 0 3px 0.7px 1px #777777, 0 -7px rgba(0, 0, 0, 0.4) inset;
+
+    background-image:url('/img/wechall.gif');
+    background-size: auto 30px;
+    background-position: left center;
+    background-repeat:no-repeat;
+}
