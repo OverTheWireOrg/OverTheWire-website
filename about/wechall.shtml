@@ -19,6 +19,7 @@ To make use of this scoreboard for OverTheWire games, you need to follow these s
 export WECHALLUSER="YourUserName"
 export WECHALLTOKEN="YOUR-WECHALL-TOKEN-HERE"
 </pre>
+You may need to logout and login again for these changes to take effect. To test whether the environment variables are registered, type "echo $WECHALLUSER", which should show that environment variable.
 </li>
 <li>Next, edit ~/.ssh/config (or create it if it doesn't exist) and add:
 <pre>
