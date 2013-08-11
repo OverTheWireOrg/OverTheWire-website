@@ -43,7 +43,7 @@
 	<li><a href="/wargames/">Wargames</a></li>
 	<!--#endif -->
 
-	<!--#if expr="${DOCUMENT_URI}=/\/about\/wechall" -->
+	<!--#if expr="${DOCUMENT_URI}=/\/about\/wechall.shtml" -->
 	<li><a class='selected' href="/about/wechall.shtml">WeChall&nbsp;Scoring</a></li>
 	<!--#else -->
 	<li><a href="/about/wechall.shtml">WeChall&nbsp;Scoring</a></li>
