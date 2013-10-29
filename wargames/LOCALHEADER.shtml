@@ -67,11 +67,6 @@
 	<li><a href="/wargames/natas">Natas</a></li>
 	<!--#endif -->
 
-	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/kishi/" -->
-	<li><a class='selected' href="/wargames/kishi">Kishi</a></li>
-	<!--#else -->
-	<li><a href="/wargames/kishi">Kishi</a></li>
-	<!--#endif -->
 	</ul>
 	<br />
 
@@ -110,6 +105,12 @@
 	<li><a class='selected' href="/wargames/drifter">Drifter</a></li>
 	<!--#else -->
 	<li><a href="/wargames/drifter">Drifter</a></li>
+	<!--#endif -->
+
+	<!--#if expr="${DOCUMENT_URI}=/\/wargames\/kishi/" -->
+	<li><a class='selected' href="/wargames/kishi">Kishi</a></li>
+	<!--#else -->
+	<li><a href="/wargames/kishi">Kishi</a></li>
 	<!--#endif -->
     </ul>
 </div>
