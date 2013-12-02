@@ -7,6 +7,12 @@
 <a href="http://forum.overthewire.org/wargames/semtex">Discuss this level on the forum</a>
 </div>
 <h1>Level 5 &rarr; Level 6</h1>
+
+<div style='border: solid 1px black; background: #ccffcc; padding: 10px;'>
+<h3>semtex6 is broken</h3>
+<p>Semtex6 is broken and you can not beat it on semtex right now.</p>
+</div>
+
 <dl>
 <dt>ICMP forging</dt>
 <dd>
