@@ -25,7 +25,14 @@ generous <a href="/about/us.shtml">sponsors</a>, our servers would have disappea
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </p>
-
-
+<p>
+We also happily accept donations in various crypto currencies:<br/>
+<br>
+<a href="http://bitcoin.org"><img width="45px" height="45px" src="../img/bc-logo.png"/></a> Bitcoin: 1JSLymNDWggo6VJErcPfE7fwPdzRfJumNt<br/>
+<br/>
+<a href="http://dogecoin.com"><img width="45px" height="45px" src="../img/dc-logo.png"/></a> DogeCoin: DSfAoubPUAhKnF3FBqyha8d7XK6x6NTBNm<br/>
+<br/>
+<a href="https://litecoin.org/"><img width="45px" height="45px" src="../img/lc-logo.png"/></a> Litecoin: LYJD1cuEouA8hVyoJ7pzh4JkXb5EAKad1i
+</p>
 <!--#include virtual="ENDCONTENT.shtml" -->
 <!--#include virtual="/FOOTER.shtml" -->
