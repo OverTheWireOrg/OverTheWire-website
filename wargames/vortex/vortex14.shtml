@@ -10,6 +10,8 @@
 <dl>
 <dt>Bad Encryption</dt>
 <dd>Based on something seen in the "real world", it has weak encryption usage, used over a TCP/IP connection. This level requires you to apply some logic to the challenge at hand. You must login to <a href="ssh://vortex.labs.overthewire.org">vortex.labs.overthewire.org</a> to complete this level.</dd>
+<dd>The &gt; indicates traffic "from the server, to the client", and the &lt; indicates traffic "from the client, to the server".</dd>
+<dd>If you need some hints, consider how you can divide and conquer the problem. For example, does it look like symmetric encryption, or asymmetric encryption? How can you further classify them?</dd>
 </dl>
 <!--#include virtual="ENDCONTENT.shtml" -->
 <!--#include virtual="/FOOTER.shtml" -->
