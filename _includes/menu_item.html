@@ -1,0 +1,14 @@
+{% if include.name == nil %}
+    {% assign name = include.link | capitalize %}
+{% else %}
+    {% assign name = include.name %}
+{% endif %}
+
+{% assign linklen = include.link | size | plus:3 %}
+{% assign currprefix = page.url | truncate:linklen | remove:"..." %}
+
+{% if currprefix == include.link %}
+	<li><a class='selected' href="{{ include.link }}">{{ name }}</a></li>
+{% else %}
+	<li><a href="{{ include.link }}">{{ name}}</a></li>
+{% endif %}

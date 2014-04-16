@@ -1,0 +1,9 @@
+<div>
+{% if include.name == nil %}
+{% assign name = include.path %}
+{% else %}
+{% assign name = include.name %}
+{% endif %}
+Included file: <a href="{{include.path}}">{{name}}</a>
+<script>renderCode("{{include.path}}")</script>
+</div>

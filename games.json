@@ -1,0 +1,18 @@
+{
+    "vortex": {
+        "lastlevel": 26,
+	"specialNumbering": true
+    },
+    "semtex": { "lastlevel": 12 },
+    "krypton": { "lastlevel": 6 },
+    "bandit": { "lastlevel": 25 },
+    "leviathan": { "lastlevel": 7 },
+    "narnia": { "lastlevel": 9 },
+    "behemoth": { "lastlevel": 8 },
+    "utumno": { "lastlevel": 8 },
+    "maze": { "lastlevel": 9 },
+    "manpage": { "lastlevel": 7 },
+    "natas": { "lastlevel": 27 },
+    "blacksun": { "lastlevel": 4 },
+    "drifter": { "lastlevel": 15 }
+}

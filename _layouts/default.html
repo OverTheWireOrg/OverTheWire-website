@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='shortcut icon' href='/img/favicon.ico' />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/highlightcode.css">
+<script src="/js/highlight.min.js"></script>
+<script src="/js/otwcrap.js"></script>
+<title>{{page.title}}</title>
+</head>
+<body>
+<div id="sitename"><a href="/">OverTheWire</a></div>
+<div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
+<div id="topmenu">
+    <ul>
+    {% include menu_item.html link="/wargames" name="Wargames" %}
+    {% include menu_item.html link="/news" name="News" %}
+    {% include menu_item.html link="/about/wechall.html" name="Wechall&nbsp;Scoring" %}
+    {% include menu_item.html link="/about" name="About" %}
+    </ul>
+</div>
+{% if page.listgames != nil %}
+{% include games.md %}
+{% endif %}
+{% if page.listabout != nil %}
+{% include about.md %}
+{% endif %}
+{% if page.listnews != nil %}
+{% include news.md %}
+{% endif %}
+{% if page.gamename != nil %}
+<div id="sidemenu"></div>
+<script>renderLevelsMenu("{{page.gamename}}");</script>
+{% endif %}
+<div id="content">
+{% if page.level != nil %}
+<div id="title"></div>
+<script>renderLevelTitle("{{page.gamename}}", {{page.level}});</script>
+{% endif %}
+{{ content }}
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2560031-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

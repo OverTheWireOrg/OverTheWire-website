@@ -165,17 +165,11 @@
     color: #CCC;
 }
 
-pre {
+pre.standalone {
     font-family: 'Inconsolata','Monaco','Andale Mono','Courier New',monospace;
     background-color: #EEE;
     line-height: 100%;
     padding: 20px 10px 10px 10px;
-}
-
-pre a[href^="#line"] {
-    text-decoration: none;
-    border-right: solid 1px #999;
-    padding-right: 5px;
 }
 
 dl dt {
