@@ -4,6 +4,12 @@ layout: default
 News
 ====
 
+2014-04-16  Website moved
+-------------------------
+
+This website moved to github pages, allowing easier edits by the community
+in the form of pull requests towards the [OverTheWire website repository][github]
+
 2013-10-29  Kishi is down
 --------------------------
 
@@ -126,4 +132,4 @@ More information about this soon!
 [here]: /wargames/hes2010
 [3]: /wargames/abraxas
 [contribute it]: /about/contribute.html
-
+[github]: https://github.com/StevenVanAcker/OverTheWire-website
