@@ -18,5 +18,5 @@ Reading Material
 {% include showFile.html path="vortex4.c" %}
 
 [Format String Technique]: http://julianor.tripod.com/bc/NN-formats.txt
-[Exploiting Format String Vulnerabilities]: readingmaterial/teso_format.txt
+[Exploiting Format String Vulnerabilities]: http://julianor.tripod.com/bc/formatstring-1.2.pdf
 [Bypassing StackGuard and StackShield]: http://www.phrack.org/issues.html?issue=56&id=5#article
