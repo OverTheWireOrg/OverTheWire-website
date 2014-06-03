@@ -12,5 +12,5 @@ passwords.new**. The password for the next level is in
 
 Commands you may need to solve this level
 -----------------------------------------
-cat, grep, ls
+cat, grep, ls, diff
 
