@@ -19,6 +19,9 @@ gladly accept any donations, even if you have only $1 to donate.**
 Donations can be made through PayPal. Please contact us if you want to
 contribute in another way.
 
+*** NOTE: PayPal has been so kind as to block our donations account. We are working on resolving that. ***
+
+<!--
 <p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -28,6 +31,7 @@ contribute in another way.
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </p>
+-->
 
 We also happily accept donations in various crypto currencies:
  
