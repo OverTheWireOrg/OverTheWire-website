@@ -24,4 +24,4 @@ Helpful Reading Material
 - [Testing SSL with commandline tools][]
 
 [Secure Socket Layer/Transport Layer Security on Wikipedia]: http://en.wikipedia.org/wiki/Secure_Socket_Layer
-[Testing SSL with commandline tools]: http://advosys.ca/viewpoints/2006/08/testing-ssl-with-command-line-tools/
+[Testing SSL with commandline tools]: https://web.archive.org/web/20070512053927/http://advosys.ca/viewpoints/2006/08/testing-ssl-with-command-line-tools/
