@@ -19,9 +19,17 @@ gladly accept any donations, even if you have only $1 to donate.**
 Donations can be made through PayPal. Please contact us if you want to
 contribute in another way.
 
-*** NOTE: PayPal has been so kind as to block our donations account. We are working on resolving that. ***
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="HRWBHKNQ4DF6S">
+<input type="image" src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</p>
 
 <!--
+*** NOTE: PayPal has been so kind as to block our donations account. We are working on resolving that. ***
 <p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
