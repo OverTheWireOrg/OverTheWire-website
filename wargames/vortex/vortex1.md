@@ -15,5 +15,5 @@ Reading Material
 
 {% include showFile.html path="vortex1.c" %}
 
-[Smashing the Stack for Fun and Profit]: http://www.phrack.com/issues.html?issue=49&id=14&mode=txt
+[Smashing the Stack for Fun and Profit]: http://www.phrack.com/issues/49/14.html#article
 [Smashing The Modern Stack For Fun And Profit]: http://www.ethicalhacker.net/content/view/122/2/
