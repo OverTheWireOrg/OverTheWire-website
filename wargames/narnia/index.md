@@ -35,4 +35,9 @@ intruded.net:
 Narnia's levels are called **narnia0, narnia1, ... etc.** and can be
 accessed on **narnia.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    Username: narnia0
+    Passowrd: narnia0
+
 Data for the levels can be found in **/narnia/**.

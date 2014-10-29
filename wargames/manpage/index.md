@@ -33,4 +33,9 @@ intruded.net:
 Manpage's levels are called **manpage0, manpage1, ... etc.** and can be
 accessed on **manpage.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    Username: manpage0
+    Passowrd: manpage0
+
 Data for the levels can be found in **/manpage/**.

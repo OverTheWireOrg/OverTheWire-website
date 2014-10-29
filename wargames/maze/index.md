@@ -35,4 +35,9 @@ intruded.net:
 Maze's levels are called **maze0, maze1, ... etc.** and can be accessed
 on **maze.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    Username: maze0
+    Passowrd: maze0
+
 Data for the levels can be found in **/maze/**.
