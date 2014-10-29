@@ -38,7 +38,7 @@ can be accessed on **leviathan.labs.overthewire.org** through SSH.
 
 To login to the first level use:
 
-    **Username: leviathan0**
-    **Passowrd: leviathan0**
+    Username: leviathan0
+    Passowrd: leviathan0
 
 Data for the levels can be found in **the homedirectories**.
