@@ -36,4 +36,9 @@ intruded.net:
 Leviathan's levels are called **leviathan0, leviathan1, ... etc.** and
 can be accessed on **leviathan.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    **Username: leviathan0**
+    **Passowrd: leviathan0**
+
 Data for the levels can be found in **the homedirectories**.
