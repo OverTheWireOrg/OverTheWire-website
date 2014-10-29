@@ -34,4 +34,9 @@ intruded.net:
 Behemoth's levels are called **behemoth0, behemoth1, ... etc.** and can
 be accessed on **behemoth.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    Username: behemoth0
+    Passowrd: behemoth0
+
 Data for the levels can be found in **/behemoth/**.

@@ -33,4 +33,9 @@ intruded.net:
 Utumno's levels are called **utumno0, utumno1, ... etc.** and can be
 accessed on **utumno.labs.overthewire.org** through SSH.
 
+To login to the first level use:
+
+    Username: utumno0
+    Passowrd: utumno0
+
 Data for the levels can be found in **/utumno/**.
