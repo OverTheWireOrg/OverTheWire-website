@@ -4,6 +4,13 @@ layout: default
 News
 ====
 
+2014-12-24  Kishi released
+--------------------------
+
+The kishi wargame had been offline for a while, but has now been released
+as a Vagrant VM. More information on [kishi][]. Merry christmas and best wishes
+for 2015! May the year 2015 bring you many 0days!
+
 2014-04-16  Website moved
 -------------------------
 
