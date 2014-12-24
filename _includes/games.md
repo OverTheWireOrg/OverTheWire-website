@@ -20,12 +20,12 @@
 {% include menu_item.html link="/wargames/hes2010" name="HES2010" %}
 {% include menu_item.html link="/wargames/abraxas" name="Abraxas" %}
 {% include menu_item.html link="/wargames/monxla" name="Monxla" %}
+{% include menu_item.html link="/wargames/kishi" name="Kishi" %}
 	</ul>
 	<br />
 	<ul>
 	<li><sh>Currently down</sh></li>
 {% include menu_item.html link="/wargames/blacksun" name="Blacksun" %}
 {% include menu_item.html link="/wargames/drifter" name="Drifter" %}
-{% include menu_item.html link="/wargames/kishi" name="Kishi" %}
     </ul>
 </div>
