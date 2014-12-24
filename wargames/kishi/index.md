@@ -2,8 +2,8 @@
 layout: default
 listgames: true
 ---
-Kishi (HES2013 and NSC2013)
-===========================
+[RELEASED] Kishi (HES2013 and NSC2013)
+======================================
 
 This wargame was introduced at the [Hackito Ergo Sum (HES)][HES] 2013 and [No Such Con (NSC)][NSC] 2013 conferences in Paris and is centered around
 the **fictictious North-Korean cyberops training facility Kishi**
