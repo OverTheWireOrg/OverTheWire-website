@@ -9,9 +9,10 @@ This wargame was introduced at the [Hackito Ergo Sum (HES)][HES] 2013 and [No Su
 the **fictictious North-Korean cyberops training facility Kishi**
 
 As of December 2014, the Kishi game has been released to the public and can be
-downloaded through [Vagrant] by typing:
+downloaded through [Vagrant] for VirtualBox by typing:
 
-	vagrant up StevenVanAcker/kishi --provider virtualbox
+	vagrant init StevenVanAcker/kishi
+	vagrant up
 
 Kishi listens on ports 22, 80 and 2222, which are forwarded from the VM host
 through ports 6622, 6680 and 3322 respectively.
