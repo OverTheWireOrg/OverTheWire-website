@@ -4,6 +4,13 @@ layout: default
 News
 ====
 
+2014-12-29  Drifter back online
+-------------------------------
+
+The drifter wargame had also been offline for a while, but has now been
+revived.  You can find it at [drifter][]. Please enjoy this late
+holiday-present and report any (unintended) bugs.
+
 2014-12-24  Kishi released
 --------------------------
 
@@ -121,6 +128,7 @@ advantages to releasing old wargames:
 
 More information about this soon!
 
+[drifter]: /wargames/drifter/
 [kishi]: /wargames/kishi/
 [natas]: /wargames/natas/
 [WeChall]: https://www.wechall.net

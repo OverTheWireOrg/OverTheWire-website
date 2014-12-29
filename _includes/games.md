@@ -12,6 +12,7 @@
 {% include menu_item.html link="/wargames/maze" name="Maze" %}
 {% include menu_item.html link="/wargames/manpage" name="Manpage" %}
 {% include menu_item.html link="/wargames/natas" name="Natas" %}
+{% include menu_item.html link="/wargames/drifter" name="Drifter" %}
 	</ul>
 	<br />
 
@@ -26,6 +27,5 @@
 	<ul>
 	<li><sh>Currently down</sh></li>
 {% include menu_item.html link="/wargames/blacksun" name="Blacksun" %}
-{% include menu_item.html link="/wargames/drifter" name="Drifter" %}
     </ul>
 </div>
