@@ -18,6 +18,4 @@ One last hint: In order to correctly overflow the objects / pointers,
 the allocation size will have to be similar to the class size ;) Even
 blindly messing around will lead to code execution sooner or later
 
-{% include showFile.html path="drifter1.c" %}
-
   [SMASHING C++ VPTRS]: http://www.phrack.org/issues.html?issue=56&id=8

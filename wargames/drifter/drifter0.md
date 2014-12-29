@@ -7,8 +7,8 @@ Drifter can be accessed on drifter.labs.overthewire.org. Level 0 listens
 on port 1111.
 
 Level0 is an extremely trivial, encrypted, remote syscall proxy. Your
-aim is to read the contents of a file called "instructions" to get the
-username / password contents.
+aim is to read the contents of a file called "drifter0.password" to get the
+password for user drifter0.
 
 Upon connection, it sets up an encrypted rc4 key (based on the
 connecting IP address / port), read()'s in 9 integers, and then decrypts
@@ -59,11 +59,7 @@ If this level is too complicated / involved, please leave a comment.
 While it's complicated than adding several little endian integers
 together, I don't want the initial level to be overkill.
 
-{% include showFile.html path="drifter0.c" %}
-
-Here is the rc4 code that I used:
-
-{% include showFile.html path="rc4.c" %}
+The sourcecode is located in /drifter/drifter0_src/. You can login using bandit0/bandit0
 
   [mmap2()]: http://www.linuxinfor.com/english/man2/mmap2.html
   [read()]: http://www.linuxinfor.com/english/man2/read.html
