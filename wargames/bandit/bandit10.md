@@ -6,7 +6,7 @@ level: 10
 Level Goal
 ----------
 The password for the next level is stored in the file **data.txt**
-among of few lines of human-readable strings starting with '='
+in one of the few human-readable strings, beginning with several '='
 characters.
 
 Commands you may need to solve this level
