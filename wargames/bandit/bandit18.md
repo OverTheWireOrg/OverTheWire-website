@@ -15,5 +15,5 @@ to log into bandit18, this is related to the next level, bandit19**
 
 Commands you may need to solve this level
 -----------------------------------------
-cat, grep, ls
+cat, grep, ls, diff
 
