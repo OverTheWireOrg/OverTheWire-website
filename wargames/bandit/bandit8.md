@@ -11,9 +11,3 @@ next to the word **millionth**
 Commands you may need to solve this level
 -----------------------------------------
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
-
-Helpful Reading Material
-------------------------
-- [The unix commandline: pipes and redirects][]
-
-[The unix commandline: pipes and redirects]: http://www.westwind.com/reference/os-x/commandline/pipes.html
