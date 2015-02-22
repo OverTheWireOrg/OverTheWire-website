@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: manpage
+title: Manpage
 ---
+
 Manpage
 =======
 

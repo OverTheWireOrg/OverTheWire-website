@@ -1,7 +1,9 @@
 ---
 layout: default
 listgames: true
+title: [RELEASED] Monxla (HES2012)
 ---
+
 [RELEASED] Monxla (HES2012)
 ===========================
 

@@ -1,7 +1,9 @@
 ---
 layout: default
 listabout: true
+title: Contributing
 ---
+
 Contributing
 ============
 

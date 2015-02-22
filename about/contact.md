@@ -1,7 +1,9 @@
 ---
 layout: default
 listabout: true
+title: Contact Us
 ---
+
 Contact Us
 ==========
 

@@ -1,7 +1,9 @@
 ---
 layout: default
 listgames: true
+title: [RELEASED] Kishi (HES2013 and NSC2013)
 ---
+
 [RELEASED] Kishi (HES2013 and NSC2013)
 ======================================
 

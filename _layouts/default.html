@@ -7,7 +7,11 @@
 <link rel="stylesheet" href="/css/highlightcode.css">
 <script src="/js/highlight.min.js"></script>
 <script src="/js/otwcrap.js"></script>
-<title>{{page.title}}</title>
+{% if page.title != nil %}
+<title>OverTheWire: {{page.title}}</title>
+{% else %}
+<title>OverTheWire</title>
+{% endif %}
 </head>
 <body>
 <div id="sitename"><a href="/">OverTheWire</a></div>

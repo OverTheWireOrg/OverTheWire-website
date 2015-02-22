@@ -1,7 +1,9 @@
 ---
 layout: default
 listgames: true
+title: [RELEASED] Abraxas (HES2011)
 ---
+
 [RELEASED] Abraxas (HES2011)
 ============================
 

@@ -76,8 +76,10 @@ function renderLevelTitle(name, level) {
 	} else {
 		title = capitaliseFirstLetter(name) + " Level "+level+" &rarr; Level "+(level+1);
 	}
-
         newDiv.innerHTML = "<h1>"+title+"</h1>";
+
+        // also set the webpage title
+        document.title += ": " + title;
     };
     oReq.open("GET", "/games.json", true);
     oReq.send();

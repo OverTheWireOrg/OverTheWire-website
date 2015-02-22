@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: behemoth
+title: Behemoth
 ---
+
 Behemoth
 ========
 

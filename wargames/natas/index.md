@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: natas
+title: Natas
 ---
+
 Natas
 =====
 
