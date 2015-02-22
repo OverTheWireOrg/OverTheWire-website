@@ -79,7 +79,7 @@ function renderLevelTitle(name, level) {
         newDiv.innerHTML = "<h1>"+title+"</h1>";
 
         // also set the webpage title
-        document.title += ": " + title;
+        document.title += ": " + title.replace('&rarr;', '\u2192');
     };
     oReq.open("GET", "/games.json", true);
     oReq.send();
