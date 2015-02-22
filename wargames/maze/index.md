@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: maze
+title: Maze
 ---
+
 Maze
 ====
 

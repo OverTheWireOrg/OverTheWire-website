@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: blacksun
+title: Reading material
 ---
+
 Reading material
 ================
 

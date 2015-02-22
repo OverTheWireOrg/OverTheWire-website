@@ -1,6 +1,7 @@
 ---
 layout: default
 listgames: true
+title: [RELEASED] HES2010
 ---
 
 [RELEASED] HES2010

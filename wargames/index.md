@@ -1,6 +1,7 @@
 ---
 layout: default
 listgames: true
+title: Wargames
 ---
 
 Wargames

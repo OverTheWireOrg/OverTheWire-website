@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: bandit
+title: Bandit
 ---
+
 Bandit
 ======
 

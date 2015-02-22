@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: narnia
+title: Narnia
 ---
+
 Narnia
 ======
 

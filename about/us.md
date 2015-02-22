@@ -1,6 +1,7 @@
 ---
 layout: default
 listabout: true
+title: About Us
 ---
 
 About Us

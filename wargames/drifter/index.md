@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: drifter
+title: Drifter
 ---
+
 Drifter
 =======
 

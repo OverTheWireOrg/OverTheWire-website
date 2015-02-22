@@ -1,7 +1,9 @@
 ---
 layout: default
 gamename: leviathan
+title: Leviathan
 ---
+
 Leviathan
 =========
 
