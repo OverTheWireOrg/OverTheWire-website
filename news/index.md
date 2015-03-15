@@ -6,6 +6,13 @@ title: News
 News
 ====
 
+2015-03-15  IRC network upgrades
+--------------------------------
+
+On March 18th, all servers in the IRC network will be upgraded to
+only accept TLS with perfect forward secrecy ciphersuites. If your client
+does not support this, upgrade your client or use an unencrypted connection.
+
 2014-12-29  Drifter back online
 -------------------------------
 
