@@ -1,6 +1,5 @@
 ---
 layout: default
-listgames: false
 title: Warzone
 ---
 
