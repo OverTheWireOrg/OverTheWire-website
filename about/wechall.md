@@ -24,6 +24,10 @@ you need to follow these steps:
         export WECHALLUSER="YourUserName"
         export WECHALLTOKEN="YOUR-WECHALL-TOKEN-HERE"
 
+    For `fish` users, you may run:
+
+        set -Ux WECHALLUSER "YourUserName"
+
     You may need to logout and login again for these changes to take
     effect. To test whether the environment variables are registered,
     type "echo $WECHALLUSER", which should show that environment
@@ -33,8 +37,8 @@ you need to follow these steps:
     add:
 
         Host *.labs.overthewire.org
-        SendEnv WECHALLTOKEN
-        SendEnv WECHALLUSER
+          SendEnv WECHALLTOKEN
+          SendEnv WECHALLUSER
 
     This configures your SSH client to transmit both username and token
     to your remote session, so it can be used there.
