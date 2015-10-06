@@ -18,6 +18,12 @@ exploitation, etc.
 
 Currently, we are gathering feedback on the warzone to help steer its development.
 
+{% include beginNote.html title="WARNING" %}
+The warzone is an experimental network without any protection. Just like on the
+real Internet, your computer is exposed to attacks.  If you connect to the
+warzone, use adequate protection (e.g. a firewall).
+{% include endNote.html %}
+
 To make the place more interesting, we have created a setup (named tsutomu)
 that encourages you to recreate the Mitnick Attack in real life.  More
 information on tsutomu can be be found at <http://172.16.66.66> once you are
