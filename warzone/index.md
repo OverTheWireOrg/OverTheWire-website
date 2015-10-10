@@ -36,3 +36,13 @@ please join the #wargames channel on ircs.overthewire.org (SSL).
 To sign up for the warzone, visit <https://draco.overthewire.org> and ignore the
 invalid certificate for now.
 
+Helping out
+-----------
+
+Some ways to help beta-test the warzone, are by giving us feedback on the
+following points:
+
+* Are the signup instructions clear to you? Did you have any trouble signing up?  
+* Is the web interface easy enough to use? Would you recommend any changes? The public repo of the website can be found at <https://github.com/StevenVanAcker/OverTheWire-draco-website>, you may raise issues and send in pull requests for them if you can. 
+* What (extra?) information or functionality would you like to see?
+
