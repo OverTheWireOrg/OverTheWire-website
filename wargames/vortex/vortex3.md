@@ -22,5 +22,5 @@ Reading Material
 {% include showFile.html path="vortex3.c" %}
 
 [here]: http://unix.stackexchange.com/questions/8062/dtors-looks-writable-but-attempts-to-write-segfault
-[Smashing the Stack for Fun and Profit]: http://www.phrack.com/issues.html?issue=49&id=14&mode=txt
+[Smashing the Stack for Fun and Profit]: http://phrack.org/issues/49/14.html#article
 [Bypassing StackGuard and StackShield]: http://www.phrack.org/issues.html?issue=56&id=5#article
