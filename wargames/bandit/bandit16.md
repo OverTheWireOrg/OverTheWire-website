@@ -24,4 +24,4 @@ Helpful Reading Material
 - [Testing SSL with commandline tools][]
 
 [Secure Socket Layer/Transport Layer Security on Wikipedia]: http://en.wikipedia.org/wiki/Secure_Socket_Layer
-[OpenSSL Cookbook - Testing with OpenSSL]: https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
+[Testing SSL with commandline tools]: https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
