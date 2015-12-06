@@ -21,7 +21,7 @@ ssh, telnet, nc, openssl, s\_client, nmap
 Helpful Reading Material
 ------------------------
 - [Secure Socket Layer/Transport Layer Security on Wikipedia][]
-- [Testing SSL with commandline tools][]
+- [OpenSSL Cookbook - Testing with OpenSSL][]
 
 [Secure Socket Layer/Transport Layer Security on Wikipedia]: http://en.wikipedia.org/wiki/Secure_Socket_Layer
-[Testing SSL with commandline tools]: https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
+[OpenSSL Cookbook - Testing with OpenSSL]: https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
