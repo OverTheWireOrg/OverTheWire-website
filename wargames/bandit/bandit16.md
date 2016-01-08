@@ -10,7 +10,7 @@ password of the current level to **port 30001 on localhost** using
 SSL encryption.
 
  **Helpful note: Getting "HEARTBEATING" and "Read R BLOCK"? Use
--quiet and read the "CONNECTED COMMANDS" section in the manpage.
+-ign_eof and read the "CONNECTED COMMANDS" section in the manpage.
 Next to 'R' and 'Q', the 'B' command also works in this version of
 that command...**
 
