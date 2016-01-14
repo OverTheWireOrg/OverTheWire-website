@@ -40,6 +40,6 @@ accessed on **narnia.labs.overthewire.org** through SSH.
 To login to the first level use:
 
     Username: narnia0
-    Passowrd: narnia0
+    Password: narnia0
 
 Data for the levels can be found in **/narnia/**.
