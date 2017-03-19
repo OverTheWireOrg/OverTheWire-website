@@ -41,7 +41,7 @@ continue:
     built-in**. In that case use the "**help <X\>**" command. E.g. help
     cd
 -   Also, your favorite **search-engine** is your friend. Learn how to
-    use it! I recommend [Google][].
+    use it! I recommend [DuckDuckGo][].
 -   Lastly, if you are still stuck, you can [join us on IRC][]
 
 You're ready to start! Begin with [Level 0][], linked at the left of
