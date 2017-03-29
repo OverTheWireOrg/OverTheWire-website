@@ -38,6 +38,6 @@ accessed on **manpage.labs.overthewire.org** through SSH.
 To login to the first level use:
 
     Username: manpage0
-    Passowrd: manpage0
+    Password: manpage0
 
 Data for the levels can be found in **/manpage/**.
