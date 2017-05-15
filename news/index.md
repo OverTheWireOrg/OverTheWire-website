@@ -6,6 +6,12 @@ title: News
 News
 ====
 
+2017-05-15  SSH setup changed
+-----------------------------
+
+Each game now has its own SSH port, in anticipation of a move to a new server
+which has a similar setup.
+
 2015-03-15  IRC network upgrades
 --------------------------------
 
