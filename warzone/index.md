@@ -6,6 +6,10 @@ title: Warzone
 Warzone
 ========
 
+{% include beginNote.html title="Warzone offline" %}
+The warzone is currently offline undergoing an overhaul.
+{% include endNote.html %}
+
 The warzone is an isolated network simulating the entire IPv4 Internet, on
 which all connected devices are targets to be hacked. Unlike other wargames,
 the warzone allows players to connect their own hackable servers or devices
