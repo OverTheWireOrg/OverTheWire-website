@@ -59,7 +59,11 @@ If this level is too complicated / involved, please leave a comment.
 While it's complicated than adding several little endian integers
 together, I don't want the initial level to be overkill.
 
-The sourcecode is located in /drifter/drifter0_src/. 
+The following sourcecode is located in /drifter/drifter0_src/ :
+
+{% include showFile.html path="drifter0.c" %}
+{% include showFile.html path="rc4.c" %}
+{% include showFile.html path="rc4.h" %}
 
   [mmap2()]: http://www.linuxinfor.com/english/man2/mmap2.html
   [read()]: http://www.linuxinfor.com/english/man2/read.html
