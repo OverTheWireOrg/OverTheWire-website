@@ -3,7 +3,7 @@ layout: default
 gamename: drifter
 level: 0
 ---
-Drifter can be accessed on drifter.labs.overthewire.org. Level 0 listens
+Drifter can be accessed on drifter.labs.overthewire.org via SSH on port 2230. Level 0 listens
 on port 1111.
 
 Level0 is an extremely trivial, encrypted, remote syscall proxy. Your
@@ -59,7 +59,7 @@ If this level is too complicated / involved, please leave a comment.
 While it's complicated than adding several little endian integers
 together, I don't want the initial level to be overkill.
 
-The sourcecode is located in /drifter/drifter0_src/. You can login using bandit0/bandit0
+The sourcecode is located in /drifter/drifter0_src/. 
 
   [mmap2()]: http://www.linuxinfor.com/english/man2/mmap2.html
   [read()]: http://www.linuxinfor.com/english/man2/read.html

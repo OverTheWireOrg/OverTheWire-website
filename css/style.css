@@ -210,3 +210,17 @@ dl dt {
     bottom: 0px;
     z-index: 10;
 }
+
+#sshinfo {
+    color: white;
+    background-color: black;
+    font-size: 9pt;
+    margin-left: 5px;
+    padding: 4px;
+    border: 1px solid #00ff00;
+}
+
+#sshinfo sh {
+    color: #00ff00;
+    font-size: 12pt;
+}

@@ -30,8 +30,13 @@ function renderLevelsMenu(name) {
     var oReq = new XMLHttpRequest();
     oReq.onload = function() {
         var newDiv = document.getElementById("sidemenu");
-	var newHTML = "<ul><li><a href=\"/wargames/"+name+"\"><sh>"+capitaliseFirstLetter(name)+"</sh></a></li>";
 	var data = JSON.parse(this.responseText);
+	
+	var newHTML = "";
+	if("host" in data[name] && "port" in data[name]) {
+	    newHTML += "<div id='sshinfo'><sh>SSH Information</sh><br>Host: "+data[name].host+"<br>Port: "+data[name].port+"</div>";
+	}
+	newHTML += "<ul><li><a href=\"/wargames/"+name+"\"><sh>"+capitaliseFirstLetter(name)+"</sh></a></li>";
 
 	for(var i = 0; i <= data[name].lastlevel; i++) {
 	    var url = "";
@@ -85,3 +90,10 @@ function renderLevelTitle(name, level) {
     oReq.send();
 }
 
+function checkAdBlock() {
+    if(typeof fuckAdBlock === 'undefined') {
+	alert("congrats on running adblock");
+    } else {
+	alert("not running adblock");
+    }
+}

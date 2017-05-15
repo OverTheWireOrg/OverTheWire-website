@@ -35,7 +35,7 @@ intruded.net:
     to use gdb.
 
 Maze's levels are called **maze0, maze1, ... etc.** and can be accessed
-on **maze.labs.overthewire.org** through SSH.
+on **maze.labs.overthewire.org** through SSH on port 2225.
 
 To login to the first level use:
 

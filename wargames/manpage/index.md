@@ -33,7 +33,7 @@ intruded.net:
     unusual behavior. Many of these levels were inspired by the famous work of Ilja.
 
 Manpage's levels are called **manpage0, manpage1, ... etc.** and can be
-accessed on **manpage.labs.overthewire.org** through SSH.
+accessed on **manpage.labs.overthewire.org** through SSH on port 2224.
 
 To login to the first level use:
 

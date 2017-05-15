@@ -33,7 +33,7 @@ intruded.net:
     first.
 
 Utumno's levels are called **utumno0, utumno1, ... etc.** and can be
-accessed on **utumno.labs.overthewire.org** through SSH.
+accessed on **utumno.labs.overthewire.org** through SSH on port 2227.
 
 To login to the first level use:
 

@@ -36,7 +36,7 @@ intruded.net:
     the players. Hopefully we made an interesting challenge for the new ones.
 
 Leviathan's levels are called **leviathan0, leviathan1, ... etc.** and
-can be accessed on **leviathan.labs.overthewire.org** through SSH.
+can be accessed on **leviathan.labs.overthewire.org** through SSH on port 2223.
 
 To login to the first level use:
 
