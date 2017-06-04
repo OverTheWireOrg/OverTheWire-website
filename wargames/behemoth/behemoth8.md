@@ -3,4 +3,8 @@ layout: default
 gamename: behemoth
 level: 8
 ---
-There is no information for this level, intentionally.
+Reading Material
+----------------
+- [Ascii shellcode][]
+
+[Ascii shellcode]: https://nets.ec/Ascii_shellcode
