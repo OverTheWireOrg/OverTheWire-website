@@ -26,7 +26,7 @@ Assuming you are using the correct operating system and shell, edit your
 
 You may need to logout and login again for these changes to take
 effect. To test whether the environment variables are registered,
-type "echo $WECHALLUSER", which should show that environment
+type "echo $OTWUSERDIR", which should show that environment
 variable.
 </li>
 <li>
