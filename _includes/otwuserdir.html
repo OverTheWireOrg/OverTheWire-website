@@ -1,0 +1,26 @@
+<div>
+<pre>
+	export OTWUSERDIR="<span id="otwuserdir"></span>"
+	<button type="button" id="regenBtn" onclick="generateOTWUserDir()">&#x21bb; Try another one</button>
+</pre>
+</div>
+
+<script>
+	// based on: https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+	function makeid(maxlen)
+	{
+	    var text = "";
+	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < maxlen; i++ )
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	    return text;
+	}
+
+	function generateOTWUserDir() {
+		var el = document.getElementById("otwuserdir");
+		el.innerText = "/d/" + makeid(20);
+	}
+	generateOTWUserDir();
+</script>

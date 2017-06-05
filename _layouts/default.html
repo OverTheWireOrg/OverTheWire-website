@@ -21,12 +21,15 @@
     {% include menu_item.html link="/wargames" name="Wargames" %}
     {% include menu_item.html link="/warzone" name="Warzone" %}
     {% include menu_item.html link="/news" name="News" %}
-    {% include menu_item.html link="/about/wechall.html" name="Wechall&nbsp;Scoring" %}
+    {% include menu_item.html link="/help" name="Help" %}
     {% include menu_item.html link="/about" name="About" %}
     </ul>
 </div>
 {% if page.listgames != nil %}
 {% include games.md %}
+{% endif %}
+{% if page.listhelp != nil %}
+{% include help.md %}
 {% endif %}
 {% if page.listabout != nil %}
 {% include about.md %}
