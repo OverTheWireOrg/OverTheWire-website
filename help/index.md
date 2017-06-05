@@ -7,12 +7,14 @@ title: Problems?
 Problems?
 =========
 
-Here are some pages with help for you
+If you run into problems, please feel free to contact us via IRC:
 
+	Encrypted IRC:
+		Host: ircs.overthewire.org
+		Port: 6697 (with SSL)
 
-* persistent storage
-* understanding the setup
-* connecting multiple times
-* network connections?
-* tag files
-* help on IRC
+	Non-encrypted IRC:
+		Host: irs.overthewire.org
+		Port: 6667
+
+	Channel: #wargames (for talk related to the games) or #social (for general talk)
