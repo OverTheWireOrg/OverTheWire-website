@@ -14,7 +14,7 @@ If you run into problems, please feel free to contact us via IRC:
 		Port: 6697 (with SSL)
 
 	Non-encrypted IRC:
-		Host: irs.overthewire.org
+		Host: irc.overthewire.org
 		Port: 6667
 
 	Channel: #wargames (for talk related to the games) or #social (for general talk)
