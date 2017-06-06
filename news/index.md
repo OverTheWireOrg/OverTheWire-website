@@ -6,6 +6,14 @@ title: News
 News
 ====
 
+2017-06-06  Migrated to Docker + SSH keys changed
+-------------------------------------------------
+
+All shell-based games have been migrated to Docker. A consequence of that is that the SSH keys have been changed
+and your SSH client will complain about it if you've connected to the games before. Read more about this
+on the [Help page for SSH and infrastructure].
+
+
 2017-05-15  SSH setup changed
 -----------------------------
 
@@ -163,3 +171,4 @@ More information about this soon!
 [3]: /wargames/abraxas
 [contribute it]: /about/contribute.html
 [github]: https://github.com/StevenVanAcker/OverTheWire-website
+[Help page for SSH and infrastructure]: /help/sshinfra.html
