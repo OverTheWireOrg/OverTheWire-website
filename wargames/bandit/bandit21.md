@@ -19,5 +19,5 @@ works as you think
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, nc, cat, bash, screen, tmux
+ssh, nc, cat, bash, screen (no present on server), tmux
 
