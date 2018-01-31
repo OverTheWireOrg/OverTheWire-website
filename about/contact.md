@@ -16,4 +16,4 @@ you don't know [how to use IRC][], use google to find out.
 
 [ircs.overthewire.org]: ircs://ircs.overthewire.org/social
 [irc.overthewire.org]: irc://irc.overthewire.org/social
-[how to use IRC]: http://www.irchelp.org/irchelp/irctutorial.html
+[how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
