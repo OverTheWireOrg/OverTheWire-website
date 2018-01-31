@@ -19,6 +19,7 @@ list, then don't hesitate to contact us so we can correct this mistake!*
 Staff
 ------
 - Steven "Steven" Van Acker
+- morla
 
 Alumni
 ------
