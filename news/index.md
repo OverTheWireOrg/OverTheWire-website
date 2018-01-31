@@ -6,6 +6,12 @@ title: News
 News
 ====
 
+2018-01-31  Migrated to VMs + SSH keys changed
+-------------------------------------------------
+
+Some of the games have been moved to a VM based setup again. SSH keys are not persisted over redeployments. Don't be scared if you get a host key warning. What is at risk any way? You are connecting to a public box full of hackers any way, right? Good luck!
+
+
 2017-06-06  Migrated to Docker + SSH keys changed
 -------------------------------------------------
 
