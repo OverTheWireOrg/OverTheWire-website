@@ -19,5 +19,5 @@ works as you think
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, nc, cat, bash, screen, tmux, Unix Background Jobs (bg, fg, jobs, &, CTRL-Z, ...)
+ssh, nc, cat, bash, screen, tmux, Unix 'job control' (bg, fg, jobs, &, CTRL-Z, ...)
 
