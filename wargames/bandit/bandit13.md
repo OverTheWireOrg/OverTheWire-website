@@ -15,7 +15,7 @@ manpages!)
 Commands you may need to solve this level
 -----------------------------------------
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir,
-cp, mv
+cp, mv, file
 
 Helpful Reading Material
 ------------------------
