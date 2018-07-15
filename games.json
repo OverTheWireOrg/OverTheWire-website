@@ -6,7 +6,7 @@
     },
     "semtex": { "lastlevel": 12, "host": "semtex.labs.overthewire.org", "port": 2229 },
     "krypton": { "lastlevel": 6, "host": "krypton.labs.overthewire.org", "port": 2222 },
-    "bandit": { "lastlevel": 28, "host": "bandit.labs.overthewire.org", "port": 2220 },
+    "bandit": { "lastlevel": 31, "host": "bandit.labs.overthewire.org", "port": 2220 },
     "leviathan": { "lastlevel": 7, "host": "leviathan.labs.overthewire.org", "port": 2223 },
     "narnia": { "lastlevel": 9, "host": "narnia.labs.overthewire.org", "port": 2226 },
     "behemoth": { "lastlevel": 8, "host": "behemoth.labs.overthewire.org", "port": 2221 },
