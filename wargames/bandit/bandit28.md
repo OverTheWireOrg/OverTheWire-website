@@ -5,10 +5,9 @@ level: 28
 ---
 Level Goal
 ----------
-There is a bare git repository at `~/repo.git`. Clone it and find the password for the next level.
-This time someone cleaned up a bit.
+There is a git repository at `ssh://bandit27-git@localhost`. The password for the user `bandit27-git` is the same as for the user `bandit27`.
 
-Hint: To clone the repository you have to use the `file://` protocol handler.
+Clone the repository and find the password for the next level.
 
 
 Commands you may need to solve this level
