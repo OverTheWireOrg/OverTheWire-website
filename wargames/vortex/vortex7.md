@@ -12,7 +12,9 @@ program.
 Reading Material
 ----------------
 - [CRC and How to Reverse It][]
+- [CRC and How to Reverse It (mirror)]
 
 {% include showFile.html path="vortex7.c" %}
 
 [CRC and How to Reverse It]: http://www.woodmann.com/fravia/crctut1.htm
+[CRC and How to Reverse It (mirror)]: http://taz.newffr.com/TAZ/Reverse_Engineering/CRC.html
