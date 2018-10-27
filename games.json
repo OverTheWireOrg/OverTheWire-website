@@ -13,7 +13,7 @@
     "utumno": { "lastlevel": 8, "host": "utumno.labs.overthewire.org", "port": 2227 },
     "maze": { "lastlevel": 9, "host": "maze.labs.overthewire.org", "port": 2225 },
     "manpage": { "lastlevel": 7, "host": "manpage.labs.overthewire.org", "port": 2224 },
-    "natas": { "lastlevel": 33 },
+    "natas": { "lastlevel": 34 },
     "blacksun": { "lastlevel": 4 },
     "drifter": { "lastlevel": 15, "host": "drifter.labs.overthewire.org", "port": 2230 }
 }
