@@ -6,6 +6,12 @@ title: News
 News
 ====
 
+2018-10-28  Warzone back online
+-------------------------------
+
+After a long hiatus, the [warzone][] is back online in it's basic form.
+The first warzone challenge, named tsutomu, is also up and running. Good luck!
+
 2018-01-31  Migrated to VMs + SSH keys changed
 -------------------------------------------------
 
@@ -176,3 +182,4 @@ More information about this soon!
 [3]: /wargames/abraxas
 [contribute it]: /about/contribute.html
 [github]: https://github.com/StevenVanAcker/OverTheWire-website
+[warzone]: /warzone/
