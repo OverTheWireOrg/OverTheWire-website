@@ -4,7 +4,7 @@ The wargames offered by the OverTheWire community can help you to learn and prac
 
 If you have a problem, a question or a suggestion, you can join us on [IRC](http://overthewire.org/about/contact.html).
 
-*!!! Do not file issues for game-related questions. This repository is for the website only !!!*
+**!!! Do not file issues for game-related questions. This repository is for the website only !!!**
 
 ## Contributing to this website
 
