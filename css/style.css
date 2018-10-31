@@ -126,6 +126,7 @@
 #content {
     /* top right bottom left */
     margin: 110px 36px 20px 236px;
+	width: 600px; /* does this look natural? */
 }
 
 #content h1 {
@@ -163,6 +164,10 @@
 
 #content a:hover {
     color: #CCC;
+}
+
+pre {
+	width: calc(100vw - 280px);
 }
 
 pre.standalone {
