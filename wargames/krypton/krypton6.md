@@ -38,9 +38,6 @@ first 256 bytes of 'A Tale of Two Cities'. The file 'cipher1' is the
 cipher text of plain1. As you can see (and try) it is very difficult
 to break the cipher without the key knowledge.
 
-(NOTE - it is possible though. Using plain language as a one time
-pad key has a weakness. As a secondary challenge, open README2)
-
 If the encryption is truly random letters, and only used once, then
 it is impossible to break. A truly random "One Time Pad" key cannot
 be broken. Consider intercepting a ciphertext message of 1000 bytes.
