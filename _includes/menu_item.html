@@ -8,7 +8,14 @@
 {% assign currprefix = page.url | truncate:linklen | remove:"..." %}
 
 {% if currprefix == include.link %}
-	<li><a class='selected' href="{{ include.link }}">{{ name }}</a></li>
+	{% assign cssclasses = "updatedmarkercontainer selected" %}
 {% else %}
-	<li><a href="{{ include.link }}">{{ name}}</a></li>
+	{% assign cssclasses = "updatedmarkercontainer" %}
 {% endif %}
+
+{% capture updatedmarker %}
+<div class="updatedmarker" data-link="{{include.link}}"></div>
+{% endcapture %}
+
+
+<li><a class='{{ cssclasses }}' href="{{ include.link }}">{{ name }}{{ updatedmarker }}</a></li>

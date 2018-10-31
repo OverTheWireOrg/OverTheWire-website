@@ -229,3 +229,27 @@ dl dt {
     color: #00ff00;
     font-size: 12pt;
 }
+
+.updatedmarkercontainer {
+    position: relative;
+}
+
+.updatedmarker {
+}
+
+.updatedmarker-active {
+    position: absolute;
+	right: 0px;
+	top: 0px;
+    color: #fff;
+	font-size: 10px;
+    font-weight: bold;
+
+    border-radius: 4px;
+    background: #ff0000;
+    padding-left: 1px; 
+    padding-right: 2px; 
+}
+.updatedmarker-active:before {
+	content: "updated";
+}
