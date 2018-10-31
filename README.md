@@ -4,13 +4,43 @@ The wargames offered by the OverTheWire community can help you to learn and prac
 
 If you have a problem, a question or a suggestion, you can join us on [IRC](http://overthewire.org/about/contact.html).
 
-## Suggested order to play the games in
+*!!! Do not file issues for game-related questions. This repository is for the website only !!!*
 
-  1. Bandit
-  2. Leviathan or Natas or Krypton
-  3. Narnia
-  4. Behemoth
-  5. Utumno
-  6. Maze
-  7. …
+## Contributing to this website
 
+You can clone this repository and make changes to the website by issuing pull requests.
+To verify that your edits are looking like they should, you can host a local copy of this
+website using [jekyll][].
+
+After installing jekyll, use the following command in the same directory as this README file,
+to start a local webserver:
+
+```
+jekyll serve
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[jekyll]: https://jekyllrb.com/
