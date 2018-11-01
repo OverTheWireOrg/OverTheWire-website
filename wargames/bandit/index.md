@@ -51,4 +51,4 @@ this page. Good luck!
   [Level 0]: /wargames/bandit/bandit0.html
   [man page]: http://en.wikipedia.org/wiki/Man_page
   [Google]: http://www.google.com
-  [join us on IRC]: /about/contact.html
+  [join us on IRC]: /information/irc.html

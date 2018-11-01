@@ -1,6 +1,6 @@
 ---
 layout: default
-listabout: true
+listinformation: true
 title: WeChall Scoreboard
 ---
 

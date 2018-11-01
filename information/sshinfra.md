@@ -1,6 +1,6 @@
 ---
 layout: default
-listhelp: true
+listinformation: true
 title: SSH/infrastructure
 ---
 

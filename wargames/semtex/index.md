@@ -44,5 +44,5 @@ combinatorial analysis.**
 
 **Contact : [aton at packetdropped dot org][]**
 
-[contact us on IRC]: /about/contact.html
+[contact us on IRC]: /information/irc.html
 [aton at packetdropped dot org]: mailto:aton@packetdropped.org

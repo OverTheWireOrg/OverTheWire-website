@@ -28,4 +28,4 @@ Each shell game has its own SSH port
 Information about how to connect to each game using SSH, is provided in the top left corner of the page.
 Keep in mind that every game uses a different SSH port.
 
-[contactus]: /about/contact.html
+[contactus]: /information/irc.html

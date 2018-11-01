@@ -1,5 +1,6 @@
 ---
 layout: default
+listinformation: true
 title: News
 ---
 
@@ -166,7 +167,7 @@ More information about this soon!
 [kishi]: /wargames/kishi/
 [natas]: /wargames/natas/
 [WeChall]: https://www.wechall.net
-[WeChall Scoring]: /about/wechall.html
+[WeChall Scoring]: /information/wechall.html
 [1]: /wargames/kishi
 [2]: /wargames/natas
 [utumno]: /wargames/utumno
@@ -180,6 +181,6 @@ More information about this soon!
 [monxla]: /wargames/monxla
 [here]: /wargames/hes2010
 [3]: /wargames/abraxas
-[contribute it]: /about/contribute.html
-[github]: https://github.com/StevenVanAcker/OverTheWire-website
+[contribute it]: /information/donate.html
+[github]: https://github.com/OverTheWireOrg/OverTheWire-website
 [warzone]: /warzone/

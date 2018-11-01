@@ -22,9 +22,7 @@
     <ul>
     {% include menu_item.html link="/wargames/" name="Wargames" %}
     {% include menu_item.html link="/warzone/" name="Warzone" %}
-    {% include menu_item.html link="/news/" name="News" %}
-    {% include menu_item.html link="/help/" name="Need Help?" %}
-    {% include menu_item.html link="/about/" name="About" %}
+    {% include menu_item.html link="/information/donate.html" name="Information" %}
     </ul>
 </div>
 {% if page.listgames != nil %}
@@ -33,14 +31,8 @@
 {% if page.listwarzone != nil %}
 {% include warzone.md %}
 {% endif %}
-{% if page.listhelp != nil %}
-{% include help.md %}
-{% endif %}
-{% if page.listabout != nil %}
-{% include about.md %}
-{% endif %}
-{% if page.listnews != nil %}
-{% include news.md %}
+{% if page.listinformation != nil %}
+{% include information.md %}
 {% endif %}
 {% if page.gamename != nil %}
 <div id="sidemenu"></div>
@@ -54,6 +46,11 @@
 {{ content }}
 </div>
 
+<div id="shortcuts">
+	<a href="/information/donate.html"><div class="button">Donate!</div></a>
+	<a href="/information/irc.html"><div class="button">Help!?</div></a>
+</div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -63,7 +60,6 @@ try {
 var pageTracker = _gat._getTracker("UA-2560031-3");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-<a href="https://github.com/StevenVanAcker/OverTheWire-website"><img style="position: fixed; bottom: 0; right: 0; border: 0;" src="/img/github-ribbon.png" alt="Fork me on GitHub"></a>
 <script src="/js/updatedmarkers-logic.js"></script>
 </body>
 </html>
