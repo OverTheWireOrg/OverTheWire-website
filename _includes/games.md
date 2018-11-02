@@ -4,8 +4,8 @@
 {% include menu_item.html link="/wargames/bandit" name="Bandit" %}
 {% include menu_item.html link="/wargames/natas" name="Natas" %}
 {% include menu_item.html link="/wargames/leviathan" name="Leviathan" %}
-{% include menu_item.html link="/wargames/narnia" name="Narnia" %}
 {% include menu_item.html link="/wargames/krypton" name="Krypton" %}
+{% include menu_item.html link="/wargames/narnia" name="Narnia" %}
 {% include menu_item.html link="/wargames/behemoth" name="Behemoth" %}
 {% include menu_item.html link="/wargames/utumno" name="Utumno" %}
 {% include menu_item.html link="/wargames/maze" name="Maze" %}
