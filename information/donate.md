@@ -13,7 +13,7 @@ However, PayPal donations are also an option.
 
 <div class="donations-container">
 
-<a href="https://FIXME">
+<a href="https://www.patreon.com/join/StevenVanAcker">
 <div class="donation patreon">
 <img src="/img/patreon.png">
 </div>

@@ -7,6 +7,13 @@ title: News
 News
 ====
 
+2018-11-05 A bunch of improvements to the website
+-------------------------------------------------
+
+The News/Need Help?/About sections have been merged. A Donate and Help button added
+to every page, the donation section has been updated with new information and an
+IRC web client introduced on the Help pages.
+
 2018-10-28  Warzone back online
 -------------------------------
 
