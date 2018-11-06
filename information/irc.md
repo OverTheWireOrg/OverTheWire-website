@@ -21,7 +21,6 @@ If you don't know [how to use IRC][], use google to find out.
 
 	Channels: 
 		#wargames 	(for talk related to the games)
-		#wargames 	(for talk related to the warzone)
 		#social 	(for general talk)
 
 Web-based IRC client
