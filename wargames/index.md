@@ -4,6 +4,13 @@ listgames: true
 title: Wargames
 ---
 
+{% include beginNote.html title="OverTheWire Advent Bonanza 2018" %}
+Especially for this year's Advent, OverTheWire is organizing a month-long CTF
+filled with challenges. More information on <a
+href="https://advent2018.overthewire.org">https://advent2018.overthewire.org</a>.
+{% include endNote.html %}
+
+
 Wargames
 ========
 
