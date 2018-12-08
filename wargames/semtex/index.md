@@ -12,7 +12,7 @@ The semtex wargame has been migrated to a new server. Because of this
 move, some levels might no longer work as intended. If you run into
 trouble, [contact us on IRC][].
 
-We have verified that level 0 up to and including 5 work fine.
+We have verified that level 0 up to and including 4 work fine.
 
 {% include endNote.html %}
 
