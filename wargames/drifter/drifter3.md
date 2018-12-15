@@ -9,4 +9,4 @@ implementation so it should be easily exploitable :)
 
 [Once upon a free()...][] - suitable reading material, amongst others.
 
-  [Once upon a free()...]: http://www.phrack.org/archives/57/p57-0x09
+  [Once upon a free()...]: http://phrack.org/archives/issues/57/9.txt
