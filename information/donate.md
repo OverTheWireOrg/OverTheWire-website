@@ -30,5 +30,16 @@ However, PayPal donations are also an option.
 Please [contact us] if you want to donate in another way.
 
 
+Huge Thanks to Our Patrons
+==========================
+
+* Ariyan Suroosh
+* Calle Svensson
+* cyberduck
+* Fionnbharr Davies
+* Max G
+* Pontus Nyberg
+
+
 [contact us]: /information/irc.html
 
