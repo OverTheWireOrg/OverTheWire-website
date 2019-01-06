@@ -35,7 +35,10 @@ can try out this attack for yourself and test your skills.
 How to play
 -----------
 
-After connecting to the warzone, tsutomu can be found at <http://172.16.123.4>.
+This challenge is part of the OverTheWire Advent Bonanza 2018 CTF, which is
+now hosted on the warzone too.
+
+After connecting to the warzone, tsutomu can be found at <http://172.30.30.30>.
 
 To avoid interfering with others working on tsutomu, you may find it helpful to
 coordinate in the #warzone channel on our IRC server.

@@ -7,6 +7,13 @@ title: News
 News
 ====
 
+2019-01-06 Happy newyear!! Advent Bonanza CTF in the warzone
+------------------------------------------------------------
+
+Best wishes for 2019!
+After the success of the [OverTheWire Advent Bonanza 2018 CTF], we are archiving
+its challenges on the warzone.
+
 2018-11-05 A bunch of improvements to the website
 -------------------------------------------------
 
@@ -191,3 +198,4 @@ More information about this soon!
 [contribute it]: /information/donate.html
 [github]: https://github.com/OverTheWireOrg/OverTheWire-website
 [warzone]: /warzone/
+[OverTheWire Advent Bonanza 2018 CTF]: /warzone/advent2018

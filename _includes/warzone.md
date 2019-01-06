@@ -9,5 +9,6 @@
     <ul>
         <li><sh>Games</sh></li>
 {% include menu_item.html link="/warzone/tsutomu" name="Tsutomu" %}
+{% include menu_item.html link="/warzone/advent2018" name="Advent2018" %}
 	</ul>
 </div>
