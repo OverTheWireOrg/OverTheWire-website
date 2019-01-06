@@ -35,7 +35,7 @@ can try out this attack for yourself and test your skills.
 How to play
 -----------
 
-This challenge is part of the OverTheWire Advent Bonanza 2018 CTF, which is
+This challenge is part of the [OverTheWire Advent Bonanza 2018 CTF], which is
 now hosted on the warzone too.
 
 After connecting to the warzone, tsutomu can be found at <http://172.30.30.30>.
@@ -50,3 +50,5 @@ coordinate in the #warzone channel on our IRC server.
 [TCP handshake]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment
 [RFC 1984]: https://tools.ietf.org/html/rfc1948
 [Takedown]: https://www.imdb.com/title/tt0159784/
+[OverTheWire Advent Bonanza 2018 CTF]: /warzone/advent2018
+
