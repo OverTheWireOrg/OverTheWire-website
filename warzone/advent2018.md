@@ -46,7 +46,7 @@ Overview of the submissions for special challenges "Honor The Gods" on 13 Decemb
 | 0x680x740x740x700x730x3a0x2f0x2f0x620x690x740x2e0x6c0x790x2f0x310x380x670x450x430x760x79 | [1213 Honor The Gods](???) | [1221 Fashionista](???) | [1221 Our Hearts](???) | 
 | 37h3r341 | [1213 Honor The Gods](https://twitter.com/Born2bRiled/status/1075478431226347521) |  |  | 
 | Admin | [1213 Honor The Gods](https://twitter.com/StevenVanAcker/status/1073186405193523200) | [1221 Fashionista](https://twitter.com/StevenVanAcker/status/1076106270732701696) | [1221 Our Hearts](https://twitter.com/StevenVanAcker/status/1076109121852792834) | 
-| angeryreaccsonly | [1213 Honor The Gods](https://www.youtube.com/watch?time_continue=2&v=wkmko4Fm160) | [1221 Fashionista](https://twitter.com/NAKsecurity/status/1076385263021023233) | [1221 Our Hearts](???) | 
+| angeryreaccsonly | [1213 Honor The Gods](https://www.youtube.com/watch?time_continue=2&v=wkmko4Fm160) | [1221 Fashionista](https://twitter.com/NAKsecurity/status/1076385263021023233) | [1221 Our Hearts](https://twitter.com/jaythompson214/status/1076202878216404993) | 
 | aseigler | [1213 Honor The Gods](https://www.youtube.com/watch?v=OUoMdAzPGBc&feature=youtu.be) |  |  | 
 | badfirmware | [1213 Honor The Gods](https://twitter.com/badfirmware/status/1074058239904501760) | [1221 Fashionista](https://twitter.com/badfirmware/status/1077208181871398912) | [1221 Our Hearts](https://twitter.com/badfirmware/status/1076556106871308289) | 
 | bitflip | [1213 Honor The Gods](https://www.youtube.com/watch?v=KV6FaQELpww&feature=youtu.be) | [1221 Fashionista](https://twitter.com/BeetFlip/status/1077573530173214721) | [1221 Our Hearts](https://twitter.com/BeetFlip/status/1077575442670993410) | 
@@ -58,7 +58,6 @@ Overview of the submissions for special challenges "Honor The Gods" on 13 Decemb
 | exitzero |  |  | [1221 Our Hearts](https://twitter.com/goal4nd/status/1076156639416340480) | 
 | HackingForSoju | [1213 Honor The Gods](https://www.youtube.com/watch?v=4IpGcxd0Ty0) | [1221 Fashionista](https://twitter.com/avlidienbrunn/status/1076116490473099266) | [1221 Our Hearts](https://twitter.com/avlidienbrunn/status/1076116490473099266) | 
 | HacknamStyle | [1213 Honor The Gods](https://twitter.com/Snicksie/status/1073311008083578880) |  |  | 
-| ??? |  |  | [1221 Our Hearts](https://twitter.com/jaythompson214/status/1076202878216404993) | 
 | IoN |  |  | [1221 Our Hearts](https://twitter.com/jwnovak/status/1077224297553412098) | 
 | kainashi | [1213 Honor The Gods](https://www.youtube.com/watch?v=p0DwUps-uB8) | [1221 Fashionista](https://twitter.com/Quintenperquin/status/1076472735809916929) | [1221 Our Hearts (1)](https://twitter.com/Quintenperquin/status/1076092094777835522) [(2)](https://twitter.com/rchpmv/status/1076200663204294656) | 
 | LiveOverflow | [1213 Honor The Gods](https://twitter.com/LiveOverflow/status/1073325592848818177) |  |  | 
