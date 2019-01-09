@@ -34,7 +34,7 @@ Statistics
 | Active teams (at least 1 point) 	| 320 |
 | Amount of flags to be found 		| 35 (25 days worth of challenges, 1 day0 and 1 sanity check flag. 3 challenges each had 2 flags, 1 challenge had 3 flags, 3 easteregg flags)
 | Total of amount of flags found	| 1346 |
-| Donations to charities			| >403 USD + 70 EUR + 450 SEK + clothing, blood and a coder dojo session |
+| Donations to charities			| >403 USD + 70 EUR + 450 SEK + 100 PLN + clothing, blood and a coder dojo session |
 
 
 Specials
@@ -64,7 +64,7 @@ Overview of the submissions for special challenges "Honor The Gods" on 13 Decemb
 | LordIdiot | [1213 Honor The Gods](https://twitter.com/LordyBaka/status/1074556660721496065) |  |  | 
 | nora | [1213 Honor The Gods](https://www.youtube.com/watch?v=c9tPslEeHJs) | [1221 Fashionista](https://twitter.com/Imperiopolis/status/1076749450784104449) | [1221 Our Hearts](https://twitter.com/Imperiopolis/status/1076749450784104449) | 
 | room2042 | [1213 Honor The Gods](https://www.youtube.com/watch?time_continue=1&v=_rYIU82vd9Y) | [1221 Fashionista](https://twitter.com/0n3m4ns4rmy/status/1077135974814150657) | [1221 Our Hearts](???) | 
-| s0lo | [1213 Honor The Gods](https://twitter.com/Solo25529265/status/1074637202125152258) |  | [1221 Our Hearts](???) | 
+| s0lo | [1213 Honor The Gods](https://twitter.com/Solo25529265/status/1074637202125152258) |  | [1221 Our Hearts](http://tinypic.com/view.php?pic=hwlfmg&s=9#.XDVC4FVKhhE) | 
 | SIGFLAG | [1213 Honor The Gods](https://www.youtube.com/watch?v=iqFIssUBZIo) | [1221 Fashionista](https://twitter.com/SIGFLAG_CTF/status/1076441541596598272) | [1221 Our Hearts](https://twitter.com/SIGFLAG_CTF/status/1076257774814851072) | 
 | smooothies |  | [1221 Fashionista](https://twitter.com/emeliewidegren/status/1076110323860549632) | [1221 Our Hearts](https://twitter.com/emeliewidegren/status/1076091982060105728) | 
 | Smyghalloumi | [1213 Honor The Gods](https://www.youtube.com/watch?v=vBJQUO1ngYI) | [1221 Fashionista](https://twitter.com/August_Moebius/status/1076100527195332608) | [1221 Our Hearts](https://twitter.com/August_Moebius/status/1076088482362208256) | 
@@ -73,7 +73,7 @@ Overview of the submissions for special challenges "Honor The Gods" on 13 Decemb
 | That is not how you specify the port | [1213 Honor The Gods](https://imgur.com/a/0jgnFMK) | | |
 | UlisseLabBO | [1213 Honor The Gods](https://twitter.com/LabUlisse/status/1073923198645886976) |  |  | 
 | WE_0WN_Y0U | [1213 Honor The Gods](https://www.youtube.com/watch?v=nBPYHFAdxug) |  |  | 
-| WTFH4X | | [1221 Fashionista](https://wtfh4x.com/otw.jpg) | [1221 Our Hearts](???) |
+| WTFH4X | | [1221 Fashionista](https://wtfh4x.com/otw.jpg) | [1221 Our Hearts](https://wtfh4x.com/wosp.png) |
 
 
 [CTFTime.org]: https://ctftime.org/event/721
