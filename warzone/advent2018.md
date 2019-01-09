@@ -63,7 +63,7 @@ Overview of the submissions for special challenges "Honor The Gods" on 13 Decemb
 | LiveOverflow | [1213 Honor The Gods](https://twitter.com/LiveOverflow/status/1073325592848818177) |  |  | 
 | LordIdiot | [1213 Honor The Gods](https://twitter.com/LordyBaka/status/1074556660721496065) |  |  | 
 | nora | [1213 Honor The Gods](https://www.youtube.com/watch?v=c9tPslEeHJs) | [1221 Fashionista](https://twitter.com/Imperiopolis/status/1076749450784104449) | [1221 Our Hearts](https://twitter.com/Imperiopolis/status/1076749450784104449) | 
-| room2042 | [1213 Honor The Gods](https://www.youtube.com/watch?time_continue=1&v=_rYIU82vd9Y) | [1221 Fashionista](https://twitter.com/0n3m4ns4rmy/status/1077135974814150657) | [1221 Our Hearts](???) | 
+| room2042 | [1213 Honor The Gods](https://www.youtube.com/watch?time_continue=1&v=_rYIU82vd9Y) | [1221 Fashionista](https://twitter.com/0n3m4ns4rmy/status/1077135974814150657) | [1221 Our Hearts](https://prnt.sc/lz6419) | 
 | s0lo | [1213 Honor The Gods](https://twitter.com/Solo25529265/status/1074637202125152258) |  | [1221 Our Hearts](http://tinypic.com/view.php?pic=hwlfmg&s=9#.XDVC4FVKhhE) | 
 | SIGFLAG | [1213 Honor The Gods](https://www.youtube.com/watch?v=iqFIssUBZIo) | [1221 Fashionista](https://twitter.com/SIGFLAG_CTF/status/1076441541596598272) | [1221 Our Hearts](https://twitter.com/SIGFLAG_CTF/status/1076257774814851072) | 
 | smooothies |  | [1221 Fashionista](https://twitter.com/emeliewidegren/status/1076110323860549632) | [1221 Our Hearts](https://twitter.com/emeliewidegren/status/1076091982060105728) | 
