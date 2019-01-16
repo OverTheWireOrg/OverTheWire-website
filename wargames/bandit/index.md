@@ -47,6 +47,8 @@ continue:
 You're ready to start! Begin with [Level 0][], linked at the left of
 this page. Good luck!
 
+Note VMs: For unknown reasons, an error is produced sometimes when the VM network is attached to NAT (“broken pipe error”). To solve it, change the adapter to Bridged mode. 
+
   [Level 1]: /wargames/bandit/bandit1.html
   [Level 0]: /wargames/bandit/bandit0.html
   [man page]: http://en.wikipedia.org/wiki/Man_page
