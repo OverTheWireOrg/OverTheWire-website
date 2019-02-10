@@ -24,6 +24,8 @@ If you don't know [how to use IRC][], use google to find out.
 		#warzone 	(for talk related to the warzone)
 		#social 	(for general talk)
 
+NOTE: You might want to read this [article] before asking for help :) 
+
 Web-based IRC client
 --------------------
 
@@ -36,4 +38,4 @@ If you don't have access to an IRC client, you can use the web-based IRC client.
 </iframe>
 
 [how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
-
+[article]: http://catb.org/~esr/faqs/smart-questions.html
