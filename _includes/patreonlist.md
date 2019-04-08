@@ -11,3 +11,6 @@
 * AdamM
 * <anonymous>
 * mari0d
+* Shawn Harmsen
+* Kalle Vedin
+* seph17
