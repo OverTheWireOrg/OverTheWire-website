@@ -24,6 +24,12 @@ If you don't know [how to use IRC][], use google to find out.
 		#warzone 	(for talk related to the warzone)
 		#social 	(for general talk)
 
+**Warning:**
+--------------------
+- **No spoilers** in #wargames
+- Tell us the **game and level**, nothing more (salutations are accepted)
+- **Be patient**, someone will offer you a PM
+
 Web-based IRC client
 --------------------
 
