@@ -6,11 +6,9 @@
 * Pontus Nyberg
 * Chuck
 * hpmv
-* Chris Gudn
 * Christopher Greene
 * AdamM
-* <anonymous>
 * mari0d
 * Shawn Harmsen
-* Kalle Vedin
 * seph17
+* Matt Lewin
