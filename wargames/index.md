@@ -14,7 +14,7 @@ Every day of the advent season, you will be greeted with a new treat in the
 form of a challenge. You can compete as a team and there will be secrets and
 surprises littered throughout. 
 <br><br>
-You can find the CTF website at [https://advent2019.overthewire.org/][].
+You can find the CTF website at <a href="https://advent2019.overthewire.org/">https://advent2019.overthewire.org/</a>
 {% include endNote.html %}
 
 
