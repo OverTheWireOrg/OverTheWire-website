@@ -4,6 +4,20 @@ listgames: true
 title: Wargames
 ---
 
+{% include beginNote.html title="OverTheWire Advent Bonanza CTF 2019" %}
+Ho Ho Ho!
+
+OverTheWire.org is organizing a Christmas/Advent-themed CTF starting December
+1st 2019, until December 25th 2019.
+
+Every day of the advent season, you will be greeted with a new treat in the
+form of a challenge. You can compete as a team and there will be secrets and
+surprises littered throughout. Sign up your team at
+https://advent2019.overthewire.org/, join us on Discord (or IRC) and follow the
+updates on twitter @OverTheWireCTF.
+{% include endNote.html %}
+
+
 Wargames
 ========
 
