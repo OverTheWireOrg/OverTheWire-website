@@ -4,12 +4,6 @@ listgames: true
 title: Wargames
 ---
 
-Maintenance
-========
-
-Today, the 5th January 2020, we will undertake some maintenance actions. The games will be unavailable for some hours.
-This banner will be removed when the games are back up.
-
 Wargames
 ========
 
