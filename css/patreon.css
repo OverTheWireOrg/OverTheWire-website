@@ -38,17 +38,16 @@
 }
 
 .patreon-tier-angel .patron-angel .logo {
+	width: 100px;
 	min-height: 100px;
-	height: 100px;
 	float: left;
+	display: flex;
 }
 
 .patreon-tier-angel .patron-angel .logo img {
-	max-height: 100px;
 	max-width: 100px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    margin: auto;
+	flex: 1;
 }
 
 .patreon-tier-angel .patron-angel .content {
