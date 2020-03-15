@@ -73,3 +73,7 @@
 	font-size: 20pt;
 	font-weight: bold;
 }
+
+.patreon-tier-angel .patron-angel .content .text {
+	white-space: pre-wrap;
+}
