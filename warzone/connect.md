@@ -8,7 +8,8 @@ How to connect?
 ===============
 
 
-To get access to the warzone, join the #warzone channel on ircs.overthewire.org
+To get access to the warzone, go to https://warzone.overthewire.org
+and follow the instructions.
 (SSL) and request access.
 
 You will receive an OpenVPN config file containing all the information you need
@@ -23,12 +24,6 @@ openvpn myconfig.ovpn
 Of course, in order to use OpenVPN on your computer, you will need to install
 it first.  Use Google to figure out how to install OpenVPN on your Operating
 System.
-
-
-{% include beginNote.html title="Note about manual account creation" %}
-Note: in the future this will be an automated process, but since we are still
-developing, we are creating the credentials manually.
-{% include endNote.html %}
 
 {% include beginNote.html title="Warning about insecure networks" %}
 The warzone is an experimental network without any protection. Your computer

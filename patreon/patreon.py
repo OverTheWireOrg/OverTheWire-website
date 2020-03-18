@@ -8,8 +8,8 @@ with open(sys.argv[1]) as csvfile:
     csvrows = csv.DictReader(csvfile)
     for row in csvrows:
         name = row["Name"]
-        pledge = int(row["Pledge $"].replace("$",""))
-        lifetime = int(row["Lifetime $"].replace("$",""))
+        pledge = float(row["Pledge $"].replace("$",""))
+        lifetime = float(row["Lifetime $"].replace("$",""))
         status = row["Patron Status"]
         details = row["Additional Details"]
         since = row["Patronage Since Date"]

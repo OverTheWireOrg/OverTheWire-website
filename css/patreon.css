@@ -1,0 +1,79 @@
+﻿.patreon-tier {
+	margin: 10px;
+	padding: 10px;
+	padding-left: 50px;
+}
+
+.patreon-tier h1 {
+	position: relative;
+	left: -25px;
+	top: -10px;
+}
+
+/* ---------- */
+
+.patreon-tier-fancy span {
+	display: inline-block;
+
+	border-radius: 5px;
+	margin: 3px;
+	padding: 8px;
+
+	border: 1px solid #ff8040; 
+	background-color: #ffc080;
+	color: black;
+	font-weight: bold;
+}
+
+/* ---------- */
+
+.patreon-tier-angel .patron-angel {
+	border-radius: 5px;
+	margin: 3px;
+	padding: 8px;
+
+	border: 1px solid #ff8040; 
+	background-color: #ffc080;
+	color: black;
+}
+
+.patreon-tier-angel .patron-angel .logo {
+	width: 100px;
+	min-height: 100px;
+	float: left;
+	display: flex;
+}
+
+.patreon-tier-angel .patron-angel .logo img {
+	max-width: 100px;
+    margin: auto;
+	flex: 1;
+}
+
+.patreon-tier-angel .patron-angel .content {
+	position: relative;
+	min-height: 100px;
+	left: 10px;
+	padding: 8px;
+}
+
+.patreon-tier-angel .patron-angel a {
+	color: #000 !important;
+}
+
+.patreon-tier-angel .patron-angel a:hover {
+	color: #333 !important;
+}
+
+.patreon-tier-angel .patron-angel a:active {
+	color: #666 !important;
+}
+
+.patreon-tier-angel .patron-angel .content .name {
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.patreon-tier-angel .patron-angel .content .text {
+	white-space: pre-wrap;
+}
