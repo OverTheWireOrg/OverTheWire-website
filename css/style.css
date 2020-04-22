@@ -177,6 +177,10 @@ pre.standalone {
     padding: 20px 10px 10px 10px;
 }
 
+code {
+  overflow-x: auto;
+}
+
 dl dt {
     font-size: 13.5pt;
     font-weight: normal;
