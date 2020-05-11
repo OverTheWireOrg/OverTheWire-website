@@ -16,7 +16,7 @@ NOTE: You might want to read this [article] before asking for help :)
 Discord
 =======
 
-You can find our Discord server at https://discord.gg/GtxAcrT
+You can find our Discord server at <https://discord.gg/GtxAcrT>
 
 	Channels: 
 		#wargames 	(for talk related to the games)
@@ -37,6 +37,8 @@ If you don't know [how to use IRC][], use google to find out.
 	Non-encrypted IRC:
 		Host: irc.overthewire.org
 		Port: 6667
+
+The channels used on IRC are the same as on Discord.
 
 [how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
 [article]: http://catb.org/~esr/faqs/smart-questions.html

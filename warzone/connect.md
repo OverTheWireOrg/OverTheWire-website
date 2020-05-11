@@ -8,9 +8,8 @@ How to connect?
 ===============
 
 
-To get access to the warzone, go to https://warzone.overthewire.org
-and follow the instructions.
-(SSL) and request access.
+To get access to the warzone, go to the #warzone channel on our [Discord] and talk
+to the Warzone Dispenser bot.  The bot will reply to you with instructions.
 
 You will receive an OpenVPN config file containing all the information you need
 to connect to the warzone. On a Linux commandline, you can run the following
@@ -32,4 +31,4 @@ connect to.  Still, it's always a good idea to use adequate protection (e.g.
 have a firewall and/or use a virtual machine to connect to the warzone).
 {% include endNote.html %}
 
-
+[Discord]: /information/chat.html
