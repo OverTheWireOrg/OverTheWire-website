@@ -41,7 +41,7 @@ now hosted on the warzone too.
 After connecting to the warzone, tsutomu can be found at <http://172.30.30.30>.
 
 To avoid interfering with others working on tsutomu, you may find it helpful to
-coordinate in the #warzone channel on our IRC server.
+coordinate in the #warzone channel on our [chat].
 
 [Tsutomu Shimomura]: https://en.wikipedia.org/wiki/Tsutomu_Shimomura
 [Kevin Mitnick]: https://en.wikipedia.org/wiki/Kevin_Mitnick
@@ -51,4 +51,5 @@ coordinate in the #warzone channel on our IRC server.
 [RFC 1984]: https://tools.ietf.org/html/rfc1948
 [Takedown]: https://www.imdb.com/title/tt0159784/
 [OverTheWire Advent Bonanza 2018 CTF]: /warzone/advent2018
+[chat]: /information/chat.html
 

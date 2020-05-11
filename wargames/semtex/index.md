@@ -10,7 +10,7 @@ Semtex
 {% include beginNote.html title="2012-04-18 - some semtex levels verified" %}
 The semtex wargame has been migrated to a new server. Because of this
 move, some levels might no longer work as intended. If you run into
-trouble, [contact us on IRC][].
+trouble, [contact us via chat][].
 
 We have verified that level 0 up to and including 4 work fine.
 
@@ -44,5 +44,5 @@ combinatorial analysis.**
 
 **Contact : [aton at packetdropped dot org][]**
 
-[contact us on IRC]: /information/irc.html
+[contact us via chat]: /information/chat.html
 [aton at packetdropped dot org]: mailto:aton@packetdropped.org

@@ -13,6 +13,6 @@ money maintaining the infrastructure and creating new games.
 - Steven "Steven" Van Acker
 - morla
 
-If you need to, you may [contact us through IRC].
+If you need to, you may [contact us through chat].
 
-[contact us through IRC]: /information/irc.html
+[contact us through chat]: /information/chat.html

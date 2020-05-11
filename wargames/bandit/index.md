@@ -42,7 +42,7 @@ continue:
     cd
 -   Also, your favorite **search-engine** is your friend. Learn how to
     use it! I recommend [Google][].
--   Lastly, if you are still stuck, you can [join us on IRC][]
+-   Lastly, if you are still stuck, you can [join us via chat][]
 
 You're ready to start! Begin with [Level 0][], linked at the left of
 this page. Good luck!
@@ -53,4 +53,4 @@ this page. Good luck!
   [Level 0]: /wargames/bandit/bandit0.html
   [man page]: http://en.wikipedia.org/wiki/Man_page
   [Google]: http://www.google.com
-  [join us on IRC]: /information/irc.html
+  [join us via chat]: /information/chat.html

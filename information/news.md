@@ -7,6 +7,8 @@ title: News
 News
 ====
 
+**The news section of this site is no longer maintained**
+
 2019-01-06 Happy newyear!! Advent Bonanza CTF in the warzone
 ------------------------------------------------------------
 

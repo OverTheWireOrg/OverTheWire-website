@@ -2,7 +2,7 @@
 
 The wargames offered by the OverTheWire community can help you to learn and practice security concepts in the form of fun-filled games.
 
-If you have a problem, a question or a suggestion, you can join us on [IRC](http://overthewire.org/information/irc.html).
+If you have a problem, a question or a suggestion, you can join us via [chat](http://overthewire.org/information/chat.html).
 
 **!!! Do not file issues for game-related questions. This repository is for the website only !!!**
 

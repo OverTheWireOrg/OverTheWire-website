@@ -35,5 +35,5 @@ Huge Thanks to Our Patrons
 
 {% include patreonlist.md %}
 
-[contact us]: /information/irc.html
+[contact us]: /information/chat.html
 
