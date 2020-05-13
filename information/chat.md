@@ -16,7 +16,7 @@ NOTE: You might want to read this [article] before asking for help :)
 Discord
 =======
 
-You can find our Discord server at <https://discord.gg/GtxAcrT>
+You can find our Discord server at <https://discord.gg/vdZBuX>
 
 	Channels: 
 		#wargames 	(for talk related to the games)
