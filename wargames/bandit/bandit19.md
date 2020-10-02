@@ -11,5 +11,5 @@ to log you out when you log in with SSH.
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, ls, cat
+scp, ssh, ls, cat
 
