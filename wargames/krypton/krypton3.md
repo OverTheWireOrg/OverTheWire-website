@@ -19,7 +19,7 @@ found3)
 
 You know the following important details:
 
-- The message plaintexts are in English (\*\*\* very important) -
+- The message plaintexts are in American English (\*\*\* very important) -
 They were produced from the same key (\*\*\* even better!)
 
 Enjoy.
