@@ -20,7 +20,6 @@ You can find our Discord server at <https://discord.gg/CPDYM3G>
 
 	Channels: 
 		#wargames 	(for talk related to the games)
-		#warzone 	(for talk related to the warzone)
 		#social 	(for general talk)
 
 Please be aware of our rules! When you first connect, you will be reminded of them.

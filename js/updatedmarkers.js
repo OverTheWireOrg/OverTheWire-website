@@ -7,7 +7,5 @@
 // format: YYYYMMDDHHMM
 
 updatedmarkers = {
-	"/warzone/": 201901072312,
-	"/warzone/advent2018": 201901072331,
 	"/information/donate.html": 201901072331,
 };

@@ -23,15 +23,11 @@
 <div id="topmenu">
     <ul>
     {% include menu_item.html link="/wargames/" name="Wargames" %}
-    {% include menu_item.html link="/warzone/" name="Warzone" %}
     {% include menu_item.html link="/information/donate.html" name="Information" %}
     </ul>
 </div>
 {% if page.listgames != nil %}
 {% include games.md %}
-{% endif %}
-{% if page.listwarzone != nil %}
-{% include warzone.md %}
 {% endif %}
 {% if page.listinformation != nil %}
 {% include information.md %}
