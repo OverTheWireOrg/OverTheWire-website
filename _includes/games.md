@@ -22,7 +22,5 @@
 {% include menu_item.html link="/wargames/abraxas" name="Abraxas" %}
 {% include menu_item.html link="/wargames/monxla" name="Monxla" %}
 {% include menu_item.html link="/wargames/kishi" name="Kishi" %}
-{% include menu_item.html link="https://github.com/OverTheWireOrg/advent2018" name="AdventCTF 2018" %}
-{% include menu_item.html link="https://github.com/OverTheWireOrg/advent2019" name="AdventCTF 2019" %}
 	</ul>
 </div>
