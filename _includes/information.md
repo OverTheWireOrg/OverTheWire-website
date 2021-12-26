@@ -5,8 +5,6 @@
 {% include menu_item.html link="/information/website.html" name="Edit website" %}
 {% include menu_item.html link="/information/wechall.html" name="WeChall&nbsp;Scoreboard" %}
 
-{% include menu_item.html link="/information/news.html" name="News" %}
-
 {% include menu_item.html link="/information/staff.html" name="Staff" %}
 {% include menu_item.html link="/information/alumni.html" name="Alumni" %}
 
