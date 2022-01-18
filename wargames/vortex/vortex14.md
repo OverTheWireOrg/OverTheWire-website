@@ -17,4 +17,4 @@ If you need some hints, consider how you can divide and conquer the
 problem. For example, does it look like symmetric encryption, or
 asymmetric encryption? How can you further classify them?
 
-[vortex.labs.overthewire.org]: ssh://vortex.labs.overthewire.org
+[vortex.labs.overthewire.org]: ssh://vortex.labs.overthewire.org:2228

@@ -10,4 +10,4 @@ and general analysis needed, and if you're lazy, the password is
 8-bytes long and contains values between A and Z). You must login to
 [vortex.labs.overthewire.org][] to complete this level.
 
-[vortex.labs.overthewire.org]: ssh://vortex.labs.overthewire.org
+[vortex.labs.overthewire.org]: ssh://vortex.labs.overthewire.org:2228
