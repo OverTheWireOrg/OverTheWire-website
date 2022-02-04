@@ -40,6 +40,9 @@ continue:
 -   Second, if there is no man page, the command might be a **shell
     built-in**. In that case use the "**help <X\>**" command. E.g. help
     cd
+-   Third, it may be a good idea to do an **online course** about the Linux
+    Command Line. There are plenty available like the [Ubuntu Command Line for beginners][]
+    , or [Ryans Tutorials - Linux tutorial][].     
 -   Also, your favorite **search-engine** is your friend. Learn how to
     use it! I recommend [Google][].
 -   Lastly, if you are still stuck, you can [join us via chat][]
@@ -52,5 +55,7 @@ this page. Good luck!
   [Level 1]: /wargames/bandit/bandit1.html
   [Level 0]: /wargames/bandit/bandit0.html
   [man page]: http://en.wikipedia.org/wiki/Man_page
+  [Ubuntu Command Line for beginners]: https://ubuntu.com/tutorials/command-line-for-beginners
+  [Ryans Tutorials - Linux tutorial]: https://ryanstutorials.net/linuxtutorial/
   [Google]: http://www.google.com
   [join us via chat]: /information/chat.html
