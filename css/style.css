@@ -7,6 +7,14 @@
     color: #000;
 }
 
+/* Dark mode */
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-color: #000;
+		color: #fff;
+	}
+}
+
 @font-face {
     font-family: 'origins';
     src: url('origins.ttf');
@@ -119,6 +127,13 @@
 
 #sidemenu ul li a:visited:hover {
     color: #CCC;
+}
+
+/* Darkmode for side menu */
+@media screen and (prefers-color-scheme: dark) {
+	#sidemenu ul li a {
+		color: #fff;
+	}
 }
 
 /* TEXT CONTAINER */
