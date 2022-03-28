@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Origins;
+	src: url("origins.ttf");
+}
+
+@font-face {
+    font-family: FiraSans;
+	src: url("FiraSans-SemiBold.ttf");
+}
+
+.header {
+	height: 73px;
+	width: 100%;
+	max-width: 100%;
+	background: #333;
+	position: fixed;
+	left: 0%;
+	top: 0%;
+}
+
+.header a {
+	color: white;
+	text-decoration: none;
+	font-family: Origins, Helvetica, Arial, sans-serif;
+	font-size: 70px;
+	float: right;
+}
+
+.domokittten {
+	height: 200px;
+}
+
+.game {
+    width: 150px;
+    float: left;
+    padding: 10px;
+    margin: 3px;
+	margin-top: 90px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #cce3e1;
+}
+
+.name {
+	font-family: FiraSans, "Franklin Gothic Medium", "Arial Black";
+}
+
+.green {
+	margin-left: 20px;
+}
+
+.game > ul > li {
+	padding: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: "Pontano Sans", "Maven Pro", Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.game .name {
+    font-size: 200%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    padding: 0;
+}
+
+.level:before { display: inline-block; width: 30px; padding-left: 3px; font-size: 150%;}
+.level {
+    padding: 1px; /* inside border */
+    margin: 1px; /* outside border */
+    list-style: none;
+}
+
+.level.up {
+    background-color: #88ff88;
+    color: green;
+    border: 1px solid green;
+}
+
+.level.down {
+    background-color: #ff8888;
+    color: red;
+    border: 1px solid red;
+}
+
+.level.unknown {
+    background-color: #ffffcc;
+    color: orange;
+    border: 1px solid orange;
+}
+
+.blinking {
+    animation: blinker 1s linear infinite;
+    color: #eeeeee;
+    background-color: red;
+    border-radius: 5px;
+    font-weight: bold;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
