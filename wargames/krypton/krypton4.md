@@ -38,7 +38,7 @@ So, we get a ciphertext of:
     VFZFK SOPKS ELTUL VGUCH KR
 
 This level is a Vigenère Cipher. You have intercepted two longer,
-english language messages. You also have a key piece of information.
+english language messages (American English). You also have a key piece of information.
 You know the key length!
 
 For this exercise, the key length is 6. The password to level five
