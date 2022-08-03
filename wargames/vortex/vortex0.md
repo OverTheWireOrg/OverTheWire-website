@@ -11,8 +11,11 @@ integers together and send back the results to get a username and
 password for vortex1. This information can be used to log in using
 SSH.
 
-**Note:** vortex is on an 32bit x86 machine (meaning, a little endian
-architecture)
+**Notes:** 
+
+  1. vortex is on an 32bit x86 machine (meaning, a little endian
+architecture).
+  2. sending the value back should also be an unsigned integer.
 
 Helpful Reading Material
 ------------------------
