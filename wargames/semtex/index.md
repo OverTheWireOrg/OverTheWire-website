@@ -7,13 +7,8 @@ title: Semtex
 Semtex
 ======
 
-{% include beginNote.html title="2012-04-18 - some semtex levels verified" %}
-The semtex wargame has been migrated to a new server. Because of this
-move, some levels might no longer work as intended. If you run into
-trouble, [contact us via chat][].
-
-We have verified that level 0 up to and including 4 work fine.
-
+{% include beginNote.html title="2022-08-16 - semtex offline" %}
+Semtex is offline.
 {% include endNote.html %}
 
 Wargame?

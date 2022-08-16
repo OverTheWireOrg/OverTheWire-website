@@ -7,10 +7,9 @@ title: Drifter
 Drifter
 =======
 
-{% include beginNote.html title="2014-12-29 - online with a caveat" %}
+{% include beginNote.html title="2022-08-16 - drifter offline" %}
 
-Drifter is online but individual levels are untested and may have unintended
-bugs. If you encounter these unintended bugs, let us know via chat.
+Drifter is offline.
 
 {% include endNote.html %}
 

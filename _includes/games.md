@@ -10,12 +10,15 @@
 {% include menu_item.html link="/wargames/utumno" name="Utumno" %}
 {% include menu_item.html link="/wargames/maze" name="Maze" %}
 {% include menu_item.html link="/wargames/vortex" name="Vortex" %}
-{% include menu_item.html link="/wargames/semtex" name="Semtex" %}
 {% include menu_item.html link="/wargames/manpage" name="Manpage" %}
-{% include menu_item.html link="/wargames/drifter" name="Drifter" %}
 	</ul>
 	<br />
-
+	<ul>
+	<li><sh>Offline</sh></li>
+{% include menu_item.html link="/wargames/semtex" name="Semtex" %}
+{% include menu_item.html link="/wargames/drifter" name="Drifter" %}
+	</ul>
+	<br>
 	<ul>
 	<li><sh>Released</sh></li>
 {% include menu_item.html link="/wargames/hes2010" name="HES2010" %}
