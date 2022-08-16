@@ -14,7 +14,7 @@ logged in, go to the [Level 1][] page to find out how to beat Level
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh
+[ssh](https://man7.org/linux/man-pages/man1/ssh.1.html)
 
 Helpful Reading Material
 ------------------------
