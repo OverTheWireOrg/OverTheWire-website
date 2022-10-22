@@ -18,5 +18,5 @@ executed, so you may want to keep a copy around...
 
 Commands you may need to solve this level
 -----------------------------------------
-cron, crontab, crontab(5) (use "man 5 crontab" to access this)
+chmod, cron, crontab, crontab(5) (use "man 5 crontab" to access this)
 
