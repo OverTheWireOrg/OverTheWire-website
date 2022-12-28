@@ -12,15 +12,15 @@ use SSH (on port 2220) to log into that level and continue the game.
 
 Commands you may need to solve this level
 -----------------------------------------
-[ls](https://man7.org/linux/man-pages/man1/ls.1.html)
+[ls](https://man7.org/linux/man-pages/man1/ls.1.html){:target="_blank"} 
 ,
-[cd](https://man7.org/linux/man-pages/man1/cd.1p.html)
+[cd](https://man7.org/linux/man-pages/man1/cd.1p.html){:target="_blank"} 
 ,
-[cat](https://man7.org/linux/man-pages/man1/cat.1.html)
+[cat](https://man7.org/linux/man-pages/man1/cat.1.html){:target="_blank"} 
 ,
-[file](https://man7.org/linux/man-pages/man1/file.1.html)
+[file](https://man7.org/linux/man-pages/man1/file.1.html){:target="_blank"} 
 ,
-[du](https://man7.org/linux/man-pages/man1/du.1.html)
+[du](https://man7.org/linux/man-pages/man1/du.1.html){:target="_blank"} 
 ,
-[find](https://man7.org/linux/man-pages/man1/find.1.html)
+[find](https://man7.org/linux/man-pages/man1/find.1.html){:target="_blank"} 
 

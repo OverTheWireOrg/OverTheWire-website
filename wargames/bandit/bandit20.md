@@ -12,6 +12,6 @@ place (/etc/bandit\_pass), after you have used the setuid binary.
 
 Helpful Reading Material
 ------------------------
-- [setuid on Wikipedia][]
+- [setuid on Wikipedia][]{:target="_blank"} 
 
 [setuid on Wikipedia]: http://en.wikipedia.org/wiki/Setuid

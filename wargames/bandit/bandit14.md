@@ -18,6 +18,6 @@ ssh, telnet, nc, openssl, s\_client, nmap
 
 Helpful Reading Material
 ------------------------
-- [SSH/OpenSSH/Keys][]
+- [SSH/OpenSSH/Keys][]{:target="_blank"} 
 
 [SSH/OpenSSH/Keys]: https://help.ubuntu.com/community/SSH/OpenSSH/Keys

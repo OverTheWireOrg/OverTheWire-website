@@ -15,6 +15,6 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
 ------------------------
-- [Rot13 on Wikipedia][]
+- [Rot13 on Wikipedia][]{:target="_blank"} 
 
 [Rot13 on Wikipedia]: http://en.wikipedia.org/wiki/Rot13

@@ -18,6 +18,6 @@ ssh, telnet, nc, openssl, s\_client, nmap
 
 Helpful Reading Material
 ------------------------
-- [Port scanner on Wikipedia][]
+- [Port scanner on Wikipedia][]{:target="_blank"} 
 
 [Port scanner on Wikipedia]: http://en.wikipedia.org/wiki/Port_scanner
