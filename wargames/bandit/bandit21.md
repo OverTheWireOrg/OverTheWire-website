@@ -12,6 +12,10 @@ the connection and compares it to the password in the previous level
 (bandit20). If the password is correct, it will transmit the
 password for the next level (bandit21).
 
+ **NOTE:** Tools like tmux create a session file in /tmp , this means other users
+ can see and attach to your session. Use the -S option to create the session file
+ in your private directory
+
  **NOTE:** Try connecting to your own network daemon to see if it
 works as you think
 
