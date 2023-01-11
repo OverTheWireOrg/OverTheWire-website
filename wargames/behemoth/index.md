@@ -39,6 +39,6 @@ be accessed on **behemoth.labs.overthewire.org** through SSH on port 2221.
 To login to the first level use:
 
     Username: behemoth0
-    Passowrd: behemoth0
+    Password: behemoth0
 
 Data for the levels can be found in **/behemoth/**.

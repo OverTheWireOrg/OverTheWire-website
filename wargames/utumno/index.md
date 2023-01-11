@@ -38,6 +38,6 @@ accessed on **utumno.labs.overthewire.org** through SSH on port 2227.
 To login to the first level use:
 
     Username: utumno0
-    Passowrd: utumno0
+    Password: utumno0
 
 Data for the levels can be found in **/utumno/**.
