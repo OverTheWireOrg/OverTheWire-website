@@ -1,23 +1,70 @@
 {
     "vortex": {
-	 "host": "vortex.labs.overthewire.org", "port": 2228,
+        "host": "vortex.labs.overthewire.org",
+        "port": 2228,
         "lastlevel": 26,
-	"specialNumbering": true
+        "specialNumbering": true
     },
-    "semtex": { "lastlevel": 12, "host": "semtex.labs.overthewire.org", "port": 2229 },
+    "semtex": {
+        "lastlevel": 12,
+        "host": "semtex.labs.overthewire.org",
+        "port": 2229
+    },
     "krypton": {
-        "host": "krypton.labs.overthewire.org", "port": 2231,
+        "host": "krypton.labs.overthewire.org",
+        "port": 2231,
         "lastlevel": 6,
         "specialNumbering": true
     },
-    "bandit": { "lastlevel": 34, "host": "bandit.labs.overthewire.org", "port": 2220 },
-    "leviathan": { "lastlevel": 7, "host": "leviathan.labs.overthewire.org", "port": 2223 },
-    "narnia": { "lastlevel": 9, "host": "narnia.labs.overthewire.org", "port": 2226 },
-    "behemoth": { "lastlevel": 8, "host": "behemoth.labs.overthewire.org", "port": 2221 },
-    "utumno": { "lastlevel": 8, "host": "utumno.labs.overthewire.org", "port": 2227 },
-    "maze": { "lastlevel": 9, "host": "maze.labs.overthewire.org", "port": 2225 },
-    "manpage": { "lastlevel": 7, "host": "manpage.labs.overthewire.org", "port": 2224 },
-    "natas": { "lastlevel": 34 },
-    "blacksun": { "lastlevel": 4 },
-    "drifter": { "lastlevel": 15, "host": "drifter.labs.overthewire.org", "port": 2230 }
+    "bandit": {
+        "lastlevel": 34,
+        "host": "bandit.labs.overthewire.org",
+        "port": 2220
+    },
+    "leviathan": {
+        "lastlevel": 7,
+        "host": "leviathan.labs.overthewire.org",
+        "port": 2223
+    },
+    "narnia": {
+        "lastlevel": 9,
+        "host": "narnia.labs.overthewire.org",
+        "port": 2226
+    },
+    "behemoth": {
+        "lastlevel": 8,
+        "host": "behemoth.labs.overthewire.org",
+        "port": 2221
+    },
+    "utumno": {
+        "lastlevel": 8,
+        "host": "utumno.labs.overthewire.org",
+        "port": 2227
+    },
+    "maze": {
+        "lastlevel": 9,
+        "host": "maze.labs.overthewire.org",
+        "port": 2225
+    },
+    "manpage": {
+        "lastlevel": 7,
+        "host": "manpage.labs.overthewire.org",
+        "port": 2224
+    },
+    "natas": {
+        "lastlevel": 34
+    },
+    "blacksun": {
+        "lastlevel": 4
+    },
+    "drifter": {
+        "lastlevel": 15,
+        "host": "drifter.labs.overthewire.org",
+        "port": 2230
+    },
+    "formulaone": {
+        "lastlevel": 6,
+        "host": "formulaone.labs.overthewire.org",
+        "port": 2232
+    }
 }
