@@ -7,7 +7,7 @@ title: Donating
 Donating
 ========
 
-We gladly accept donations!
+We gladly accept donations to keep our infrastructure running!
 We prefer receiving monthly donations via Patreon, since this allows us to give perks to sponsors.
 However, PayPal donations are also an option.
 
@@ -26,14 +26,4 @@ However, PayPal donations are also an option.
 </a>
 
 </div>
-
-Please [contact us] if you want to donate in another way.
-
-
-Huge Thanks to Our Patrons
-==========================
-
-{% include patreonlist.md %}
-
-[contact us]: /information/chat.html
 
