@@ -25,5 +25,5 @@ Commands you may need to solve this level
 [find](https://man7.org/linux/man-pages/man1/find.1.html)
 
 **NOTE:** Passwords for levels are *not* saved automatically! 
-If you do not save them yourself will need to start over from bandit0.
+If you do not save them yourself, you will need to start over from bandit0.
 It is recommended to keep a text file on your personal computer with passwords, notes, links, etc so you can return to where you left off, reference it for later problems, and more easily help others after you've completed the challenge.
