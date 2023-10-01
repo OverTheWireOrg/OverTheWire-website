@@ -24,6 +24,8 @@ you need to follow these steps:
         export WECHALLUSER="YourUserName"
         export WECHALLTOKEN="YOUR-WECHALL-TOKEN-HERE"
 
+    For `zsh` users, edit your ~/.zshrc file exactly as above.
+
     For `fish` users, you may run:
 
         set -Ux WECHALLUSER "YourUserName"
