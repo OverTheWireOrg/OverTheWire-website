@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "OverTheWire-website"
+version = "0.1.0"
+description = "OverTheWire website"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# pytest = "^7.4.0"
+# pytest-cov = "^4.1.0"
+flake8 = "^6.1.0"
+ruff = "^0.0.280"
+mypy = "^1.4.1"
+# wily = "^1.24.2"
+# sphinx = "^7.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
