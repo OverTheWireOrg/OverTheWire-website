@@ -47,17 +47,11 @@ access the server, such as using "shelldemo" from metasploit 2.x to
 examine the environment. In fact, using shelldemo is probably a good
 exercise as well.
 
-In order to get the values for the parameters you need, you can use
-cross-references of linux code on the net, for example, to look up the
-value for \_\_NR\_read (linux read syscall()), we can use [this][] which
-will lead us to [http://lxr.linux.no][]. From there we can use the
-search facility to find the values we need, [such as:][]
+There are 32bits syscalls and 64 bits syscalls, conforming to the CPU architecture. 
+For 32 bits processor , consult [x32_syscalls]
+For 64 bits processor, consult [x64_syscalls]
+If you want, you can use "man 2 read" or "man 2 write", for getting paramaters and return value of determinated syscall. 
 
-\#define \_\_NR\_read 3
-
-If this level is too complicated / involved, please leave a comment.
-While it's complicated than adding several little endian integers
-together, I don't want the initial level to be overkill.
 
 The following sourcecode is located in /drifter/drifter0_src/ :
 
@@ -65,10 +59,10 @@ The following sourcecode is located in /drifter/drifter0_src/ :
 {% include showFile.html path="rc4.c" %}
 {% include showFile.html path="rc4.h" %}
 
-  [mmap2()]: http://www.linuxinfor.com/english/man2/mmap2.html
-  [read()]: http://www.linuxinfor.com/english/man2/read.html
-  [open()]: http://www.linuxinfor.com/english/man2/open.html
-  [write()]: http://www.linuxinfor.com/english/man2/write.html
-  [this]: http://www.google.com.au/search?q=linux+lxr+__NR_read&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a
-  [http://lxr.linux.no]: http://lxr.linux.no
-  [such as:]: http://lxr.linux.no/linux/include/asm-i386/unistd.h#L11
+  [mmap2()]: https://man7.org/linux/man-pages/man2/mmap2.2.html
+  [read()]: https://man7.org/linux/man-pages/man2/read.2.html
+  [open()]: https://man7.org/linux/man-pages/man2/open.2.html
+  [write()]: https://man7.org/linux/man-pages/man2/write.2.html
+  [x64_syscalls]: https://github.com/torvalds/linux/blob/master/arch/x86/entry/syscalls/syscall_64.tbl
+  [x32_syscalls]: https://github.com/torvalds/linux/blob/master/arch/x86/entry/syscalls/syscall_32.tbl
+ 
