@@ -40,6 +40,6 @@ on **maze.labs.overthewire.org** through SSH on port 2225.
 To login to the first level use:
 
     Username: maze0
-    Passowrd: maze0
+    Password: maze0
 
 Data for the levels can be found in **/maze/**.
