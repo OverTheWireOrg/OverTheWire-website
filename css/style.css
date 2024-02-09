@@ -1,4 +1,8 @@
-﻿body {
+﻿*{
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
+}
+
+body {
     background-color: #FFF;
     padding: 0px;
     margin: 0px;
@@ -26,7 +30,7 @@
     font-family: 'origins','Helvetica','Arial',sans-serif;
     font-size: 40pt;
     line-height: 64px;
-    position: absolute;
+    position: fixed;
     color: #FFF;
     top: 0px;
     right: 36px;
@@ -41,7 +45,7 @@
 
 #siteslogan {
     font-size: 7.5pt;
-    position: absolute;
+    position: fixed;
     color: #CCC;
     top: 51px;
     right: 36px;
@@ -49,10 +53,10 @@
 }
 
 #topmenu {
-    position: absolute;
+    position: fixed;
     background: #333 url('/img/domokitten.png') no-repeat top left;
     width: 100%;
-    height: 73px;
+    height: 5rem;
     padding: 0px;
     margin: 0px;
     left: 0px;
@@ -95,15 +99,34 @@
 
 #sidemenu ul {
     margin: 0px;
+    padding: 10px;
     list-style-type: none;
     text-decoration: none;
 }
 
+#sidemenu ul li{
+    padding: 5px 10px 5px 14px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+#sidemenu ul li:hover{
+    background: rgba(100,100,100,0.3);
+}
+
 #sidemenu ul li sh {
-    font-family: 'origins','Helvetica','Arial',sans-serif;
+    /* font-family: 'origins','Helvetica','Arial',sans-serif; */
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
+    padding: 0;
     color: #999;
-    font-size: 16pt;
-    line-height: 42px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#sidemenu ul li:has(sh){
+    background: rgba(100,100,100,0.3);
+    border-radius: 10px 10px 0 0;
+    margin: 5px 0;
 }
 
 #sidemenu ul li a {
@@ -114,20 +137,32 @@
 }
 
 #sidemenu ul li a:hover {
-    color: #999;
+    cursor: pointer;
 }
-
+/* 
 #sidemenu ul li a:visited {
     color: #999;
-}
+} */
 
 #sidemenu ul li a.selected {
-    color: #CCC;
+    color: #006eff;
+    font-weight: bold;
+    position: relative;
 }
-
+#sidemenu ul li a.selected::before{
+    content: '';
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: -10px;
+    width: 3px;
+    border-radius: 1.5px;
+    background-color: #006eff;
+}
+/* 
 #sidemenu ul li a:visited:hover {
     color: #CCC;
-}
+} */
 
 /* Darkmode for side menu */
 @media screen and (prefers-color-scheme: dark) {
@@ -144,8 +179,8 @@
 }
 
 #content h1 {
-    font-size: 22pt;
-    font-weight: normal;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 #content h1 star {
@@ -160,8 +195,8 @@
 }
 
 #content h2 {
-    font-size: 18pt;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #999;
 }
 
@@ -172,7 +207,7 @@
 }
 
 #content a {
-    color: #999;
+    color: #006eff;
     text-decoration: none;
 }
 
@@ -180,9 +215,9 @@
     color: #CCC;
 }
 
-pre {
+/* pre {
 	width: calc(100vw - 280px);
-}
+} */
 
 pre.standalone {
     font-family: 'Inconsolata','Monaco','Andale Mono','Courier New',monospace;
@@ -237,15 +272,17 @@ dl dt {
 #sshinfo {
     color: white;
     background-color: black;
-    font-size: 9pt;
-    margin-left: 5px;
-    padding: 4px;
-    border: 1px solid #00ff00;
+    font-size: 1rem;
+    margin-left: 0;
+    box-sizing: border-box;
+    padding: 10px 15px;
+
+    border-radius: 8px;
 }
 
 #sshinfo sh {
-    color: #00ff00;
-    font-size: 12pt;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .updatedmarkercontainer {
@@ -258,15 +295,14 @@ dl dt {
 .updatedmarker-active {
     position: absolute;
 	right: 0px;
-	top: 0px;
+	top: -18px;
     color: #fff;
-	font-size: 10px;
-    font-weight: bold;
+	font-size: 0.9rem;
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
 
     border-radius: 4px;
-    background: #ff0000;
-    padding-left: 1px; 
-    padding-right: 2px; 
+    background: #006eff;
+    padding: 0 4px;
 }
 .updatedmarker-active:before {
 	content: "updated";
@@ -348,4 +384,131 @@ table {
 
 th, td {
   padding: 15px;
+}
+
+
+
+/*More stylings: */
+header{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: stretch;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    background: rgba(25,25,25,0.8);
+    backdrop-filter: blur(10px);
+    padding: 0 1.1rem;
+}
+header h1{
+    transition: 300ms;
+}
+header h1:active{
+    transform: scale(0.95);
+}
+header h1 a.home-link{
+    text-decoration: none;
+    color: inherit;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
+    transition: 300ms;
+    position: relative;
+}
+header nav ul{
+    list-style-type: none;
+}
+header nav ul li{
+    display: inline-block;
+    margin-left: 0.7rem;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(200,200,200);
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    transition: 250ms;
+}
+header nav ul li a:hover{
+    /* color: white; */
+    font-size: 1.5rem;
+}
+header nav ul li a.selected{
+    font-size: 1.5rem;
+    color: white;
+}
+#options{
+    flex: auto;
+    align-self: center;
+    text-align: right;
+}
+#options button{
+    height: 2rem;
+    padding: 0 1rem;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    margin: 0 3px;
+    cursor: pointer;
+    background-color: rgb(50,50,50);
+    color: white;
+    transition: 300ms;
+}
+#options button:hover{
+    transform: scale(1.05);
+}
+#options button:active{
+    transform: scale(0.95);
+}
+#options button.blue-btn{
+    color: white;
+    background-color: #006eff;
+}
+#sidemenu{
+    padding: 10px;
+    background: linear-gradient(to bottom, rgb(20,20,20), rgb(22,22,22));
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 25vw;
+    min-width: 260px;
+    max-width: 320px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    overflow-y: auto;
+}
+#content{
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 0;
+    margin-left: 280px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(50,50,50); 
+    border-radius: 8px;
+    border: 3px solid rgb(21,21,21);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(80,80,80); 
 }
