@@ -24,7 +24,7 @@ For educators and content-creators
 ----------------------------------
 1. **Do not publish credentials** to any of the games. We understand the need to create writeups,<br>
    walkthroughs, and tutorials, but do not publish any credentials.
-2. If are profiting from the content you create and you are able to afford it,<br>
+2. If you are profiting from the content you create and you are able to afford it,<br>
    **please [consider donating][]** a portion of your earnings to the OverTheWire community.<br>
    We are a community of volunteers which relies on donations to keep the lights on.
 3. Please **give credit where credit is due**. If you are using content from the OverTheWire games,<br>
