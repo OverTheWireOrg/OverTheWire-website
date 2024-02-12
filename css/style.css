@@ -2,17 +2,17 @@
     background-color: #FFF;
     padding: 0px;
     margin: 0px;
-    font-family: 'Pontano Sans','Maven Pro','Helvetica','Arial',sans-serif;
+    font-family: 'Pontano Sans', 'Maven Pro', 'Helvetica', 'Arial', sans-serif;
     font-size: 12pt;
     color: #000;
 }
 
 /* Dark mode */
 @media screen and (prefers-color-scheme: dark) {
-	body {
-		background-color: #000;
-		color: #fff;
-	}
+    body {
+        background-color: #000;
+        color: #fff;
+    }
 }
 
 @font-face {
@@ -23,7 +23,7 @@
 /* HEADER */
 
 #sitename {
-    font-family: 'origins','Helvetica','Arial',sans-serif;
+    font-family: 'origins', 'Helvetica', 'Arial', sans-serif;
     font-size: 40pt;
     line-height: 64px;
     position: absolute;
@@ -79,7 +79,8 @@
     width: 92px;
 }
 
-#topmenu ul li a:hover, #topmenu ul li a.selected {
+#topmenu ul li a:hover,
+#topmenu ul li a.selected {
     color: #FFF;
     font-weight: normal;
 }
@@ -100,7 +101,7 @@
 }
 
 #sidemenu ul li sh {
-    font-family: 'origins','Helvetica','Arial',sans-serif;
+    font-family: 'origins', 'Helvetica', 'Arial', sans-serif;
     color: #999;
     font-size: 16pt;
     line-height: 42px;
@@ -131,9 +132,9 @@
 
 /* Darkmode for side menu */
 @media screen and (prefers-color-scheme: dark) {
-	#sidemenu ul li a {
-		color: #fff;
-	}
+    #sidemenu ul li a {
+        color: #fff;
+    }
 }
 
 /* TEXT CONTAINER */
@@ -181,18 +182,18 @@
 }
 
 pre {
-	width: calc(100vw - 280px);
+    width: calc(100vw - 280px);
 }
 
 pre.standalone {
-    font-family: 'Inconsolata','Monaco','Andale Mono','Courier New',monospace;
+    font-family: 'Inconsolata', 'Monaco', 'Andale Mono', 'Courier New', monospace;
     background-color: #EEE;
     line-height: 100%;
     padding: 20px 10px 10px 10px;
 }
 
 code {
-  overflow-x: auto;
+    overflow-x: auto;
 }
 
 dl dt {
@@ -252,83 +253,82 @@ dl dt {
     position: relative;
 }
 
-.updatedmarker {
-}
+.updatedmarker {}
 
 .updatedmarker-active {
     position: absolute;
-	right: 0px;
-	top: 0px;
+    right: 0px;
+    top: 0px;
     color: #fff;
-	font-size: 10px;
+    font-size: 10px;
     font-weight: bold;
 
     border-radius: 4px;
     background: #ff0000;
-    padding-left: 1px; 
-    padding-right: 2px; 
+    padding-left: 1px;
+    padding-right: 2px;
 }
+
 .updatedmarker-active:before {
-	content: "updated";
+    content: "updated";
 }
 
 .donations-container {
-	display: flex;
+    display: flex;
 }
 
 .donation {
-	border: 1px solid black;
-	margin: 10px;
-	padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
     border-radius: 10px;
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-	flex: 1;
-	height: 100px;
+    flex: 1;
+    height: 100px;
 }
 
 .donation img {
-	max-width: 300px;
-	max-height: 100px;
-	align-self: center;
+    max-width: 300px;
+    max-height: 100px;
+    align-self: center;
 }
 
 .donation.patreon {
-	background-color: #f96854;
+    background-color: #f96854;
 }
 
-.donation.paypal {
-}
+.donation.paypal {}
 
 #ircframe {
-	width: calc(100vw - 280px);
-	height: calc(100vh - 100px);
+    width: calc(100vw - 280px);
+    height: calc(100vh - 100px);
 }
 
 #shortcuts {
-	display: flex;
-	position: fixed;
-	top: 80px;
-	right: 10px;
+    display: flex;
+    position: fixed;
+    top: 80px;
+    right: 10px;
 }
 
 #shortcuts div.button {
-	border: 2px solid #00ff00;
-	background-color: black;
-	color: #00ff00;
+    border: 2px solid #00ff00;
+    background-color: black;
+    color: #00ff00;
     font-weight: bold;
     font-size: 15pt;
 
-	margin: 5px;
-	padding: 5px;
+    margin: 5px;
+    padding: 5px;
     border-radius: 10px;
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-	flex: 1;
-	height: 20px;
-	width: 70px;
+    flex: 1;
+    height: 20px;
+    width: 70px;
 }
 
 #shortcuts a:link {
@@ -336,16 +336,57 @@ dl dt {
 }
 
 
-table, td, th {
-  border: 1px solid #ddd;
-  text-align: left;
+table,
+td,
+th {
+    border: 1px solid #ddd;
+    text-align: left;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-th, td {
-  padding: 15px;
+th,
+td {
+    padding: 15px;
+}
+
+#accept-rules {
+    padding: 10px;
+}
+
+#accept-rules button {
+    color: #000;
+    background-color: #aaa;
+    border: 2px solid #f00;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+
+    font-size: 15pt;
+}
+
+#rules-accepted {
+    width: 30em;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15pt;
+}
+
+#rules-accepted .checkmark {
+    color: #0c0;
+    font-size: 50pt;
+}
+
+#please-read-the-rules {
+    width: 30em;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #f88;
+
 }

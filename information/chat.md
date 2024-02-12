@@ -4,17 +4,17 @@ listinformation: true
 title: Contact via chat
 ---
 
-General chat rules
-==================
+Need help?
+==========
 
-- **No spoilers** in chat
-- Tell us the **game and level**, nothing more (salutations are accepted)
-- **Be patient**, someone will offer you a PM
+It's normal to get stuck on a level from time to time, don't despair!<br>
+Before reaching out for help, make sure you have read the level's description and hints carefully.<br>
+If you are still stuck, you can ask for help in the chatrooms, but remember to follow the [rules].
 
-NOTE: You might want to read this [article] before asking for help :) 
+You might want to read this [article] before asking for help. 
 
 Discord
-=======
+-------
 
 You can find our Discord server at <https://discord.gg/CPDYM3G>
 
@@ -25,7 +25,7 @@ You can find our Discord server at <https://discord.gg/CPDYM3G>
 Please be aware of our rules! When you first connect, you will be reminded of them.
 
 IRC
-===
+---
 
 If you don't know [how to use IRC][], use google to find out.
 
@@ -41,3 +41,4 @@ The channels used on IRC are the same as on Discord.
 
 [how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
 [article]: http://catb.org/~esr/faqs/smart-questions.html
+[rules]: /information/rules.html

@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel='shortcut icon' href='/img/favicon.ico' />
-<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/highlightcode.css">
-<link rel="stylesheet" href="/css/patreon.css">
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/mustache-4.0.0.min.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script src="/js/otwcrap.js"></script>
-<script src="/js/updatedmarkers.js"></script>
-{% if page.title != nil %}
-<title>OverTheWire: {{page.title}}</title>
-{% else %}
-<title>OverTheWire</title>
-{% endif %}
+  <link rel='shortcut icon' href='/img/favicon.ico' />
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/highlightcode.css">
+  <link rel="stylesheet" href="/css/patreon.css">
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/mustache-4.0.0.min.js"></script>
+  <script src="/js/highlight.min.js"></script>
+  <script src="/js/otwcrap.js"></script>
+  <script src="/js/updatedmarkers.js"></script>
+  {% if page.title != nil %}
+  <title>OverTheWire: {{page.title}}</title>
+  {% else %}
+  <title>OverTheWire</title>
+  {% endif %}
 </head>
+
 <body>
-<div id="sitename"><a href="/">OverTheWire</a></div>
-<div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
-<div id="topmenu">
+  <div id="sitename"><a href="/">OverTheWire</a></div>
+  <div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
+  <div id="topmenu">
     <ul>
-    {% include menu_item.html link="/wargames/" name="Wargames" %}
-    {% include menu_item.html link="/information/donate.html" name="Information" %}
+      {% include menu_item.html link="/wargames/" name="Wargames" %}
+      {% include menu_item.html link="/rules/" name="Rules" %}
+      {% include menu_item.html link="/information/donate.html" name="Information" %}
     </ul>
-</div>
-{% if page.listgames != nil %}
-{% include games.md %}
-{% endif %}
-{% if page.listinformation != nil %}
-{% include information.md %}
-{% endif %}
-{% if page.gamename != nil %}
-<div id="sidemenu"></div>
-<script>renderLevelsMenu("{{page.gamename}}");</script>
-{% endif %}
-<div id="content">
-{% if page.level != nil %}
-<div id="title"></div>
-<script>renderLevelTitle("{{page.gamename}}", {{page.level}});</script>
-{% endif %}
-{{ content }}
-</div>
+  </div>
+  {% if page.listgames != nil %}
+  {% include games.md %}
+  {% endif %}
+  {% if page.listinformation != nil %}
+  {% include information.md %}
+  {% endif %}
+  {% if page.gamename != nil %}
+  <div id="sidemenu"></div>
+  <script>renderLevelsMenu("{{page.gamename}}");</script>
+  {% endif %}
+  <div id="content">
+    {% if page.level != nil %}
+    <div id="title"></div>
+    <script>renderLevelTitle("{{page.gamename}}", {{ page.level }});</script>
+    {% endif %}
 
-<div id="shortcuts">
-	<a href="/information/donate.html"><div class="button">Donate!</div></a>
-	<a href="/information/chat.html"><div class="button">Help!?</div></a>
-</div>
+    <!--
+    <div id="please-read-the-rules">Please read and accept the <a href="/rules/">Rules!</a></div>
+    -->
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD0K2239G0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    {{ content }}
+  </div>
 
-  gtag('config', 'G-RD0K2239G0');
-</script>
-<script src="/js/updatedmarkers-logic.js"></script>
+  <div id="shortcuts">
+    <a href="/information/donate.html">
+      <div class="button">Donate!</div>
+    </a>
+    <a href="/information/chat.html">
+      <div class="button">Help!?</div>
+    </a>
+  </div>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD0K2239G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RD0K2239G0');
+  </script>
+  <script src="/js/updatedmarkers-logic.js"></script>
+  <script>
+    if (localStorage.getItem("rules-accepted") === "true") {
+      document.getElementById("please-read-the-rules").style.display = "none";
+    }
+  </script>
 </body>
-</html>
 
+</html>
