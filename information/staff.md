@@ -11,6 +11,7 @@ The OverTheWire staff consists of volunteers that spend their spare time and
 money maintaining the infrastructure and creating new games. 
 
 - Kylir
+- semchapeu
 - Steven "Steven" Van Acker
 - Wrennnnnnn
 - ypsehlig
