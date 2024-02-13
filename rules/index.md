@@ -17,7 +17,7 @@ In general
 3. **Do not spoil the game** for others in the chatrooms. If you need help, specify the game and<br>
    level and someone will help you in private messages. Do not rely on Discord's `/spoiler` <br>
    functionality as the chatrooms are connected to IRC where this functionality is not available.
-4. Do not use easy to guess file- or directory names and **clean up after yourself**. If you have<br>
+4. Do not use easy to guess file or directory names and **clean up after yourself**. If you have<br>
    created files or directories, please remove them when you are done.
 
 For educators and content-creators
