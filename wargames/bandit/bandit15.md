@@ -14,13 +14,13 @@ ssh, telnet, nc, openssl, s\_client, nmap
 
 Helpful Reading Material
 ------------------------
-- [How the Internet works in 5 minutes (YouTube)][] (Not completely
+- [How the Internet works in 5 minutes (YouTube)][]{:target="_blank"}  (Not completely
 accurate, but good enough for beginners)
-- [IP Addresses][]
-- [IP Address on Wikipedia][]
-- [Localhost on Wikipedia][]
-- [Ports][]
-- [Port (computer networking) on Wikipedia][]
+- [IP Addresses][]{:target="_blank"} 
+- [IP Address on Wikipedia][]{:target="_blank"} 
+- [Localhost on Wikipedia][]{:target="_blank"} 
+- [Ports][]{:target="_blank"} 
+- [Port (computer networking) on Wikipedia][]{:target="_blank"} 
 
 [How the Internet works in 5 minutes (YouTube)]: https://www.youtube.com/watch?v=7_LPdttKXPc
 [IP Addresses]: http://computer.howstuffworks.com/web-server5.htm

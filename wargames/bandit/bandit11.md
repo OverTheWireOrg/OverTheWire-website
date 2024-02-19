@@ -14,6 +14,6 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
 ------------------------
-- [Base64 on Wikipedia][]
+- [Base64 on Wikipedia][]{:target="_blank"} 
 
 [Base64 on Wikipedia]: http://en.wikipedia.org/wiki/Base64

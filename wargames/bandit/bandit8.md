@@ -10,5 +10,5 @@ next to the word **millionth**
 
 Commands you may need to solve this level
 -----------------------------------------
-[man](https://man7.org/linux/man-pages/man1/man.1.html),
+[man](https://man7.org/linux/man-pages/man1/man.1.html){:target="_blank"} ,
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd

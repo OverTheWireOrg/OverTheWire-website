@@ -19,6 +19,6 @@ cp, mv, file
 
 Helpful Reading Material
 ------------------------
-- [Hex dump on Wikipedia][]
+- [Hex dump on Wikipedia][]{:target="_blank"} 
 
 [Hex dump on Wikipedia]: http://en.wikipedia.org/wiki/Hex_dump

@@ -14,6 +14,6 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
 ------------------------
-- [Piping and Redirection][]
+- [Piping and Redirection][]{:target="_blank"} 
 
 [Piping and Redirection]: https://ryanstutorials.net/linuxtutorial/piping.php
