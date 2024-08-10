@@ -14,4 +14,4 @@ Helpful Reading Material
 ------------------------
 - [setuid on Wikipedia][]
 
-[setuid on Wikipedia]: http://en.wikipedia.org/wiki/Setuid
+[setuid on Wikipedia]: https://en.wikipedia.org/wiki/Setuid

@@ -16,4 +16,4 @@ Helpful Reading Material
 ------------------------
 - [Base64 on Wikipedia][]
 
-[Base64 on Wikipedia]: http://en.wikipedia.org/wiki/Base64
+[Base64 on Wikipedia]: https://en.wikipedia.org/wiki/Base64

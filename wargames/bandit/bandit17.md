@@ -23,4 +23,4 @@ Helpful Reading Material
 ------------------------
 - [Port scanner on Wikipedia][]
 
-[Port scanner on Wikipedia]: http://en.wikipedia.org/wiki/Port_scanner
+[Port scanner on Wikipedia]: https://en.wikipedia.org/wiki/Port_scanner

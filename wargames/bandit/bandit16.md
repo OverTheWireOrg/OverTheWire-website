@@ -21,5 +21,5 @@ Helpful Reading Material
 - [Secure Socket Layer/Transport Layer Security on Wikipedia][]
 - [OpenSSL Cookbook - Testing with OpenSSL][]
 
-[Secure Socket Layer/Transport Layer Security on Wikipedia]: http://en.wikipedia.org/wiki/Secure_Socket_Layer
+[Secure Socket Layer/Transport Layer Security on Wikipedia]: https://en.wikipedia.org/wiki/Transport_Layer_Security
 [OpenSSL Cookbook - Testing with OpenSSL]: https://www.feistyduck.com/library/openssl-cookbook/online/testing-with-openssl/index.html
