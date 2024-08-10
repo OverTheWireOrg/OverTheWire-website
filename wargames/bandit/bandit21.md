@@ -29,5 +29,5 @@ Commands you may need to solve this level
 ,
 [tmux](https://manpages.ubuntu.com/manpages/noble/en/man1/tmux.1.html)
 ,
-[Unix 'job control' (bg, fg, jobs, &, CTRL-Z, ...)](https://www.google.com/search?client=firefox-b-d&q=Unix+%27job+control%27+%28bg%2C+fg%2C+jobs%2C+%26%2C+CTRL-Z%2C+...%29)
+[Unix 'job control' (bg, fg, jobs, &, CTRL-Z, ...)](https://www.google.com/search?q=Unix+%27job+control%27+(bg%2C+fg%2C+jobs%2C+%26%2C+CTRL-Z%2C+...))
 
