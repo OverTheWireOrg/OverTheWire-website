@@ -53,7 +53,7 @@ this page. Good luck!
 
   [Level 1]: /wargames/bandit/bandit1.html
   [Level 0]: /wargames/bandit/bandit0.html
-  [introduction to user commands]: https://man7.org/linux/man-pages/man1/intro.1.html
+  [introduction to user commands]: https://manpages.ubuntu.com/manpages/noble/man1/intro.1.html
   [man page]: https://en.wikipedia.org/wiki/Man_page
   [Google]: https://www.google.com
   [join us via chat]: /information/chat.html
