@@ -16,5 +16,9 @@ try executing it to see the debug information it prints.
 
 Commands you may need to solve this level
 -----------------------------------------
-cron, crontab, crontab(5) (use "man 5 crontab" to access this)
+[cron](https://manpages.ubuntu.com/manpages/noble/en/man8/cron.8.html)
+,
+[crontab](https://manpages.ubuntu.com/manpages/noble/en/man1/crontab.1.html)
+,
+crontab(5) (use "man 5 crontab" to access this)
 

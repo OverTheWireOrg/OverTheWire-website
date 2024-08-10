@@ -12,5 +12,5 @@ Clone the repository and find the password for the next level.
 
 Commands you may need to solve this level
 -----------------------------------------
-git
+[git](https://manpages.ubuntu.com/manpages/noble/en/man1/git.1.html)
 

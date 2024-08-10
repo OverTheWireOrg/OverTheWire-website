@@ -16,5 +16,17 @@ Find out what it is, how it works and how to break out of it.
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, cat, more, vi, ls, id, pwd
+[ssh](https://manpages.ubuntu.com/manpages/noble/man1/ssh.1.html)
+,
+[cat](https://manpages.ubuntu.com/manpages/noble/man1/cat.1.html)
+,
+[more](https://manpages.ubuntu.com/manpages/noble/en/man1/more.1.html)
+,
+[vi](https://manpages.ubuntu.com/manpages/noble/en/man1/vim.1.html)
+,
+[ls](https://manpages.ubuntu.com/manpages/noble/man1/ls.1.html)
+,
+[id](https://manpages.ubuntu.com/manpages/noble/en/man1/id.1.html)
+,
+[pwd](https://manpages.ubuntu.com/manpages/noble/en/man1/pwd.1.html)
 

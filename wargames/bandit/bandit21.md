@@ -17,5 +17,17 @@ works as you think
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, nc, cat, bash, screen, tmux, Unix 'job control' (bg, fg, jobs, &, CTRL-Z, ...)
+[ssh](https://manpages.ubuntu.com/manpages/noble/en/man1/ssh.1.html)
+,
+[nc](https://linux.die.net/man/1/nc)
+,
+[cat](https://manpages.ubuntu.com/manpages/noble/en/man1/cat.1.html)
+,
+[bash](https://manpages.ubuntu.com/manpages/noble/en/man1/bash.1.html)
+,
+[screen](https://manpages.ubuntu.com/manpages/noble/en/man1/screen.1.html)
+,
+[tmux](https://manpages.ubuntu.com/manpages/noble/en/man1/tmux.1.html)
+,
+[Unix 'job control' (bg, fg, jobs, &, CTRL-Z, ...)](https://www.google.com/search?client=firefox-b-d&q=Unix+%27job+control%27+%28bg%2C+fg%2C+jobs%2C+%26%2C+CTRL-Z%2C+...%29)
 

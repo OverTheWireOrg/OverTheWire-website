@@ -18,5 +18,11 @@ executed, so you may want to keep a copy around...
 
 Commands you may need to solve this level
 -----------------------------------------
-chmod, cron, crontab, crontab(5) (use "man 5 crontab" to access this)
+[chmod](https://manpages.ubuntu.com/manpages/noble/en/man1/chmod.1.html)
+,
+[cron](https://manpages.ubuntu.com/manpages/noble/en/man8/cron.8.html)
+,
+[crontab](https://manpages.ubuntu.com/manpages/noble/en/man1/crontab.1.html)
+,
+crontab(5) (use "man 5 crontab" to access this)
 

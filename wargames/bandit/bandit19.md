@@ -11,5 +11,9 @@ to log you out when you log in with SSH.
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, ls, cat
+[ssh](https://manpages.ubuntu.com/manpages/noble/en/man1/ssh.1.html)
+,
+[ls](https://manpages.ubuntu.com/manpages/noble/en/man1/ls.1.html)
+,
+[cat](https://manpages.ubuntu.com/manpages/noble/en/man1/cat.1.html)
 

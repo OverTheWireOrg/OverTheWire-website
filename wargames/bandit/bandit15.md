@@ -10,7 +10,17 @@ password of the current level to **port 30000 on localhost**.
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, telnet, nc, openssl, s\_client, nmap
+[ssh](https://manpages.ubuntu.com/manpages/noble/en/man1/ssh.1.html)
+,
+[telnet](https://www.commandlinux.com/man-page/man1/telnet.1.html)
+,
+[nc](https://linux.die.net/man/1/nc)
+,
+[openssl](https://manpages.ubuntu.com/manpages/noble/en/man1/openssl.1ssl.html)
+,
+[s\_client](https://manpages.ubuntu.com/manpages/noble/en/man1/s_client.1ssl.html)
+, 
+[nmap](https://manpages.ubuntu.com/manpages/noble/en/man1/nmap.1.html)
 
 Helpful Reading Material
 ------------------------
