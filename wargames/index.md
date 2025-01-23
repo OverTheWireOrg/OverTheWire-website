@@ -28,4 +28,10 @@ Each shell game has its own SSH port
 Information about how to connect to each game using SSH, is provided in the top left corner of the page.
 Keep in mind that every game uses a different SSH port.
 
+Related Wargames
+------------------------------------
+
+Check out [SmashTheStack][sts]. A wargame network in coalition with OverTheWire.
+
 [contactus]: /information/chat.html
+[sts]: https://www.smashthestack.org
