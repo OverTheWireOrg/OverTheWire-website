@@ -14,7 +14,17 @@ you are working on
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, telnet, nc, openssl, s\_client, nmap
+[ssh](https://manpages.ubuntu.com/manpages/noble/man1/ssh.1.html)  
+,  
+[telnet](https://manpages.ubuntu.com/manpages/noble/man1/telnet.1.html)  
+,  
+[nc](https://manpages.ubuntu.com/manpages/noble/man1/nc.1.html)  
+,  
+[openssl](https://manpages.ubuntu.com/manpages/noble/man1/openssl.1.html)  
+,  
+[s_client](https://manpages.ubuntu.com/manpages/noble/man1/openssl-s_client.1.html)  
+,  
+[nmap](https://manpages.ubuntu.com/manpages/noble/man1/nmap.1.html)
 
 Helpful Reading Material
 ------------------------

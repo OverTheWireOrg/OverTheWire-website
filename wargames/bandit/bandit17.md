@@ -17,7 +17,25 @@ others will simply send back to you whatever you send to it.
 
 Commands you may need to solve this level
 -----------------------------------------
-ssh, telnet, nc, ncat, socat, openssl, s\_client, nmap, netstat, ss
+[ssh](https://manpages.ubuntu.com/manpages/noble/man1/ssh.1.html)  
+,  
+[telnet](https://manpages.ubuntu.com/manpages/noble/man1/telnet.1.html)  
+,  
+[nc](https://manpages.ubuntu.com/manpages/noble/man1/nc.1.html)  
+,  
+[ncat](https://manpages.ubuntu.com/manpages/noble/man1/ncat.1.html)  
+,  
+[socat](https://manpages.ubuntu.com/manpages/noble/man1/socat.1.html)  
+,  
+[openssl](https://manpages.ubuntu.com/manpages/noble/man1/openssl.1.html)  
+,  
+[s_client](https://manpages.ubuntu.com/manpages/noble/man1/openssl-s_client.1.html)  
+,  
+[nmap](https://manpages.ubuntu.com/manpages/noble/man1/nmap.1.html)  
+,  
+[netstat](https://manpages.ubuntu.com/manpages/noble/man8/netstat.8.html)  
+,  
+[ss](https://manpages.ubuntu.com/manpages/noble/man8/ss.8.html)
 
 Helpful Reading Material
 ------------------------

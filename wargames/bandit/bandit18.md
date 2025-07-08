@@ -15,5 +15,11 @@ to log into bandit18, this is related to the next level, bandit19**
 
 Commands you may need to solve this level
 -----------------------------------------
-cat, grep, ls, diff
+[cat](https://manpages.ubuntu.com/manpages/noble/man1/cat.1.html)  
+,  
+[grep](https://manpages.ubuntu.com/manpages/noble/man1/grep.1.html)  
+,  
+[ls](https://manpages.ubuntu.com/manpages/noble/man1/ls.1.html)  
+,  
+[diff](https://manpages.ubuntu.com/manpages/noble/man1/diff.1.html)
 
