@@ -18,3 +18,4 @@ Commands you may need to solve this level
 -----------------------------------------
 ssh, cat, more, vi, ls, id, pwd
 
+[Next Level](/wargames/bandit/bandit27.html)

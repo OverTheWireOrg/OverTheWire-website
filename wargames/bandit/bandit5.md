@@ -23,3 +23,4 @@ Commands you may need to solve this level
 ,
 [find](https://manpages.ubuntu.com/manpages/noble/man1/find.1.html)
 
+[Next Level](/wargames/bandit/bandit6.html)

@@ -31,3 +31,5 @@ If you do not save them yourself, you will need to start over from bandit0.
 
 Passwords also occasionally change. It is recommended to take notes on how to solve each challenge.
 As levels get more challenging, detailed notes are useful to return to where you left off, reference for later problems, or help others after you've completed the challenge.
+
+[Next Level](/wargames/bandit/bandit2.html)

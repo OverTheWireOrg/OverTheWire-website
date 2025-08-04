@@ -18,3 +18,5 @@ Helpful Reading Material
 - [Rot13 on Wikipedia][]
 
 [Rot13 on Wikipedia]: https://en.wikipedia.org/wiki/ROT13
+
+[Next Level](/wargames/bandit/bandit13.html)

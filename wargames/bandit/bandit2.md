@@ -29,3 +29,5 @@ Helpful Reading Material
 
 [Google Search for "dashed filename"]: https://www.google.com/search?q=dashed+filename
 [Advanced Bash-scripting Guide - Chapter 3 - Special Characters]: https://linux.die.net/abs-guide/special-chars.html
+
+[Next Level](/wargames/bandit/bandit3.html)

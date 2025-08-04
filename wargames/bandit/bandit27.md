@@ -10,3 +10,5 @@ Good job getting a shell! Now hurry and grab the password for bandit27!
 Commands you may need to solve this level
 -----------------------------------------
 ls
+
+[Next Level](/wargames/bandit/bandit28.html)

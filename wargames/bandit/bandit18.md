@@ -17,3 +17,4 @@ Commands you may need to solve this level
 -----------------------------------------
 cat, grep, ls, diff
 
+[Next Level](/wargames/bandit/bandit19.html)
