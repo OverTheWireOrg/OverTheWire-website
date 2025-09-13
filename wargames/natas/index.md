@@ -27,6 +27,11 @@ Start here:
     URL:      http://natas0.natas.labs.overthewire.org
 
 
+Tools you may find useful to solve this wargame
+-----------------------------------------------
+
+A webbrowser, curl, ZAP proxy
+
 <div style="float: right; text-align: center">
 <a href="http://www.nessos-project.eu/"><img src="FP7-NESSOS.jpg"></a><br/>
 developed in association with<br/>

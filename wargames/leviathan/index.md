@@ -45,3 +45,8 @@ To login to the first level use:
 
 Data for the levels can be found in **the homedirectories**. You can look
 at **/etc/leviathan_pass** for the various level passwords.
+
+Tools you may find useful to solve this wargame
+-----------------------------------------------
+
+strings, hexdump, objdump, ghidra

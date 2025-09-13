@@ -43,3 +43,8 @@ To login to the first level use:
     Password: narnia0
 
 Data for the levels can be found in **/narnia/**.
+
+Tools you may find useful to solve this wargame
+-----------------------------------------------
+
+objdump, ghidra, pwntools, gcc, gdb
