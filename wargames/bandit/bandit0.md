@@ -19,8 +19,10 @@ Commands you may need to solve this level
 Helpful Reading Material
 ------------------------
 - [Secure Shell (SSH) on Wikipedia][]
-- [How to use SSH on wikiHow][]
+- [How to use SSH with a non-standard port on It's FOSS][]
+- [How to use SSH with ssh-keys on wikiHow][]
 
 [Level 1]: /wargames/bandit/bandit1.html
 [Secure Shell (SSH) on Wikipedia]: https://en.wikipedia.org/wiki/Secure_Shell
-[How to use SSH on wikiHow]: https://www.wikihow.com/Use-SSH
+[How to use SSH with a non-standard port on It's FOSS]: https://itsfoss.com/ssh-to-port/
+[How to use SSH with ssh-keys on wikiHow]: https://www.wikihow.com/Use-SSH

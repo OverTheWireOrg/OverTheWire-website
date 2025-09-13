@@ -14,12 +14,16 @@ If you have a problem, a question or a suggestion, you can [join us via chat][co
 
 Suggested order to play the games in
 ------------------------------------
-1. Bandit
-2. Leviathan or Natas or Krypton
-3. Narnia
-4. Behemoth
-5. Utumno
-6. Maze
+
+1. Bandit - Unix/Linux basics
+2. Pick one:
+   * Natas  - web security
+   * Krypton - cryptography
+   * Leviathan  - reverse engineering
+3. Narnia - Start into binary exploitation (and reverse engineering)
+4. Behemoth - binary exploitation (and reverse engineering)
+5. Utumno - binary exploitation (and reverse engineering)
+6. Maze - binary exploitation (and reverse engineering)
 7. ...
 
 Each shell game has its own SSH port
