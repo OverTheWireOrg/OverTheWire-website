@@ -17,4 +17,4 @@ Commands you may need to solve this level
 -----------------------------------------
 cat, grep, ls, diff
 
-[Next Level ->](https://overthewire.org/wargames/bandit/bandit18.html)
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit19.html)
