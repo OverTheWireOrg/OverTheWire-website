@@ -13,3 +13,4 @@ Commands you may need to solve this level
 -----------------------------------------
 ssh, ls, cat
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit20.html)
