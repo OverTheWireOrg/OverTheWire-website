@@ -25,4 +25,4 @@ Helpful Reading Material
 
 [Port scanner on Wikipedia]: https://en.wikipedia.org/wiki/Port_scanner
 
-[Next Level ->](overthewire.org/wargames/bandit/bandit18.html)
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit18.html)
