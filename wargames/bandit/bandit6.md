@@ -25,3 +25,4 @@ Commands you may need to solve this level
 ,
 [find](https://manpages.ubuntu.com/manpages/noble/man1/find.1.html)
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit7.html)
