@@ -14,3 +14,4 @@ Commands you may need to solve this level
 -----------------------------------------
 git
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit32.html)
