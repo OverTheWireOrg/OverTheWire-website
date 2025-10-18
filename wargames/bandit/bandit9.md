@@ -17,3 +17,5 @@ Helpful Reading Material
 - [Piping and Redirection][]
 
 [Piping and Redirection]: https://ryanstutorials.net/linuxtutorial/piping.php
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit10.html)
