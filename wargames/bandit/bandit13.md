@@ -24,3 +24,5 @@ cp, mv, file
 - [Hex dump on Wikipedia][]
 
 [Hex dump on Wikipedia]: https://en.wikipedia.org/wiki/Hex_dump
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit14.html)
