@@ -27,3 +27,5 @@ Helpful Reading Material
 - [Google Search for "spaces in filename"][]
 
 [Google Search for "spaces in filename"]: https://www.google.com/search?q=spaces+in+filename
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit4.html)
