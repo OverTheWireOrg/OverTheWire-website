@@ -15,3 +15,5 @@ Helpful Reading Material
 - [setuid on Wikipedia][]
 
 [setuid on Wikipedia]: https://en.wikipedia.org/wiki/Setuid
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit21.html)
