@@ -10,3 +10,5 @@ bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode
 There is no way to retrieve the pincode except by going through all of the 10000
 combinations, called brute-forcing.  
 You do not need to create new connections each time
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit26.html)
