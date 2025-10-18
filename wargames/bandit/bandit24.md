@@ -20,3 +20,4 @@ Commands you may need to solve this level
 -----------------------------------------
 chmod, cron, crontab, crontab(5) (use "man 5 crontab" to access this)
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit25.html)
