@@ -13,3 +13,4 @@ Commands you may need to solve this level
 -----------------------------------------
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit11.html)
