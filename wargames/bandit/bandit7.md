@@ -27,3 +27,4 @@ Commands you may need to solve this level
 ,
 [grep](https://manpages.ubuntu.com/manpages/noble/man1/grep.1.html)
 
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit8.html)
