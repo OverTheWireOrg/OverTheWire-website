@@ -23,3 +23,5 @@ Helpful Reading Material
 
 [Secure Socket Layer/Transport Layer Security on Wikipedia]: https://en.wikipedia.org/wiki/Transport_Layer_Security
 [OpenSSL Cookbook - Testing with OpenSSL]: https://www.feistyduck.com/library/openssl-cookbook/online/testing-with-openssl/index.html
+
+[Next Level ->](https://overthewire.org/wargames/bandit/bandit17.html)
