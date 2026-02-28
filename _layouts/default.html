@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <link rel='shortcut icon' href='/img/favicon.ico' />
@@ -40,7 +40,7 @@
   <div id="sidemenu"></div>
   <script>renderLevelsMenu("{{page.gamename}}");</script>
   {% endif %}
-  <div id="content">
+  <main id="content">
     {% if page.level != nil %}
     <div id="title"></div>
     <script>renderLevelTitle("{{page.gamename}}", {{ page.level }});</script>
@@ -51,7 +51,7 @@
     -->
 
     {{ content }}
-  </div>
+  </main>
 
   <div id="shortcuts">
     <a href="/information/donate.html">
