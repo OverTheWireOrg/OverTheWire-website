@@ -39,6 +39,15 @@ If you don't know [how to use IRC][], use google to find out.
 
 The channels used on IRC are the same as on Discord.
 
+The following IRC commands may be useful:
+
+```
+ /connect -ssl ircs.overthewire.org 6697
+ /msg nickserv register mypassword my@email.whatever
+ /msg nickserv identify mypassword
+ /join #wargames
+```
+
 [how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
 [article]: http://catb.org/~esr/faqs/smart-questions.html
 [rules]: /rules
