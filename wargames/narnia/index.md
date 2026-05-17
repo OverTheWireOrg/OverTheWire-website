@@ -44,7 +44,22 @@ To login to the first level use:
 
 Data for the levels can be found in **/narnia/**.
 
-Tools you may find useful to solve this wargame
+Concepts and tools you may find useful to solve this wargame
 -----------------------------------------------
 
-objdump, ghidra, pwntools, gcc, gdb
+Concepts:
+ * [Assembly language](https://primer.picoctf.org/#_assembly) - read & write!
+ * [Dynamic program analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) - gdb is your best friend!
+
+Tools: gdb, gef, pwndbg, radare2, as, gcc, /etc/motd, pwntools, ghidra, python3
+
+This wargame requires you to analyze the given source/binary,
+find an exploit vector and then exploit it. 
+This will most certainly include x86 binary code. 
+Reading and writing x86 assembly skills are strongly recommended.
+The same applies for tools for static and dynamic analysis.
+Shellcode creation can be automated to some point with pwntools' shellcraft module.
+
+Note: You do not want to download and run random shellcode form the internet.
+It may erase your harddisk or worse. 
+It is recommended to write your own shellcode!

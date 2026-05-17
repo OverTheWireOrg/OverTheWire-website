@@ -46,7 +46,24 @@ To login to the first level use:
 Data for the levels can be found in **the homedirectories**. You can look
 at **/etc/leviathan_pass** for the various level passwords.
 
-Tools you may find useful to solve this wargame
+Concepts and tools you may find useful to solve this wargame
 -----------------------------------------------
 
-strings, hexdump, objdump, ghidra
+Concepts:
+ * [Dynamic program analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) - start here
+ * [Static program analysis](https://en.wikipedia.org/wiki/Static_program_analysis) - redo from here
+ * [Assembly language](https://primer.picoctf.org/#_assembly) - use as foundation
+
+Tools: 
+ * Tools for starting dynamic analysis: ltrace, strace
+ * Tools for advanced dynamic (and static) analysis: gdb, gef, pwndbg, radare2
+ * Tools for static analysis: strings, hexdump, objdump, ghidra
+
+A note on further progression through OverTheWire wargames:
+While Leviathan can be solved by pure dynamic analysis, i.e.
+by just running the programs in some way, and without
+looking at the insides and the execution in the machine
+(involving assembly language), those skills are useful for
+the wargames following Leviathan - be sure to learn them here!
+
+Think about analyzing malware - you wouldn't want to run that either.
