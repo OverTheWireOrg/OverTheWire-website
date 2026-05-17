@@ -51,7 +51,7 @@ Concepts and tools you may find useful to solve this wargame
 
 Concepts:
  * [Dynamic program analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) - start here
- * [Statis program analysis](https://en.wikipedia.org/wiki/Static_program_analysis) - redo from here
+ * [Static program analysis](https://en.wikipedia.org/wiki/Static_program_analysis) - redo from here
  * [Assembly language](https://primer.picoctf.org/#_assembly) - use as foundation
 
 Tools: 
