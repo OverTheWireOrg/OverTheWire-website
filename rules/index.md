@@ -14,7 +14,7 @@ In general
 ----------
 1. **Treat everyone with respect**. We will not tolerate any form of harassment or discrimination.
 2. **We do not allow unsolicited spam or self-promotion** in the chatrooms or private messages.
-3. **Do not spoil the game** for others in the chatrooms. If you need help, specify the game and<br>
+3. **Do not spoil the game** for others. If you need help in chat, specify the game and<br>
    level and someone will help you in private messages. Do not rely on Discord's `/spoiler` <br>
    functionality as the chatrooms are connected to IRC where this functionality is not available.
 4. Do not use easy to guess file or directory names and **clean up after yourself**. If you have<br>
@@ -27,8 +27,22 @@ For educators and content-creators
 2. If you are profiting from the content you create and you are able to afford it,<br>
    **please [consider donating][]** a portion of your earnings to the OverTheWire community.<br>
    We are a community of volunteers which relies on donations to keep the lights on.
-3. Please **give credit where credit is due**. If you are using content from the OverTheWire games,<br>
+3. **Give credit where credit is due**. If you are using content from the OverTheWire games,<br>
    please mention the OverTheWire community and provide a link to our website.
+
+
+Legal information
+-----------------
+
+Copyright (c) 2007-2026 Over The Wire. All rights reserved.
+
+All content on this platform -- including challenge descriptions, binary
+files, system configurations, <br>
+course structure, and instructional
+materials -- is the intellectual property of Over The Wire<br>
+or the credited individual authors. Redistribution or reuse without written
+permission is prohibited.
+
 
 <div id="accept-rules">
 	<button id="accept-rules-button" class="btn btn-primary">Click here to accept these rules</button>
