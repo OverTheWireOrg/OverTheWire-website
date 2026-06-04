@@ -34,12 +34,12 @@ For educators and content-creators
 Legal information
 -----------------
 
-Copyright (c) 2007-2026 Over The Wire. All rights reserved.
+Copyright (c) 2007-2026 OverTheWire. All rights reserved.
 
 All content on this platform -- including challenge descriptions, binary
 files, system configurations, <br>
 course structure, and instructional
-materials -- is the intellectual property of Over The Wire<br>
+materials -- is the intellectual property of OverTheWire<br>
 or the credited individual authors. Redistribution or reuse without written
 permission is prohibited.
 
