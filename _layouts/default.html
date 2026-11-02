@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel='shortcut icon' href='/img/favicon.ico' />
-  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-  <link href='http://fonts.googleapis.com/css?family=Inconsolata|Pontano+Sans|Maven+Pro&subset=latin,latin-ext'
-    rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110f">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
   <link rel="stylesheet" href="/css/highlightcode.css">
   <link rel="stylesheet" href="/css/patreon.css">
   <script src="/js/jquery-3.7.1.min.js"></script>
@@ -13,70 +16,40 @@
   <script src="/js/highlight.min.js"></script>
   <script src="/js/otwcrap.js"></script>
   <script src="/js/updatedmarkers.js"></script>
-  {% if page.title != nil %}
-  <title>OverTheWire: {{page.title}}</title>
-  {% else %}
-  <title>OverTheWire</title>
-  {% endif %}
+  <script src="/js/navigation.js" defer></script>
+  {% if page.title != nil %}<title>OverTheWire: {{page.title}}</title>{% else %}<title>OverTheWire</title>{% endif %}
 </head>
-
 <body>
-  <div id="sitename"><a href="/">OverTheWire</a></div>
-  <div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
-  <div id="topmenu">
-    <ul>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="OverTheWire home">
+      <img class="brand-art" src="/img/domokitten.png" alt="">
+      <span class="brand-copy"><span id="sitename">OverTheWire</span><span id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="topmenu" aria-expanded="false" data-nav-toggle><span aria-hidden="true" data-nav-toggle-icon>+</span></button>
+    <nav id="topmenu" aria-label="Primary navigation"><ul>
       {% include menu_item.html link="/wargames/" name="Wargames" %}
       {% include menu_item.html link="/rules/" name="Rules" %}
-      {% include menu_item.html link="/information/donate.html" name="Information" %}
-    </ul>
-  </div>
-  {% if page.listgames != nil %}
-  {% include games.md %}
-  {% endif %}
-  {% if page.listinformation != nil %}
-  {% include information.md %}
-  {% endif %}
-  {% if page.gamename != nil %}
-  <div id="sidemenu"></div>
-  <script>renderLevelsMenu("{{page.gamename}}");</script>
-  {% endif %}
-  <main id="content">
-    {% if page.level != nil %}
-    <div id="title"></div>
-    <script>renderLevelTitle("{{page.gamename}}", {{ page.level }});</script>
-    {% endif %}
+      {% include menu_item.html link="/information/donate.html" name="Information" section="/information/" %}
+      <li class="mobile-shortcut mobile-shortcut-start"><a href="/information/donate.html">Donate!</a></li>
+      <li class="mobile-shortcut"><a href="/information/chat.html">Help!?</a></li>
+    </ul></nav>
+    <div id="shortcuts" aria-label="Quick links"><a class="shortcut" href="/information/donate.html">Donate!</a><a class="shortcut shortcut-secondary" href="/information/chat.html">Help!?</a></div>
+  </header>
 
-    <!--
-    <div id="please-read-the-rules">Please read and accept the <a href="/rules/">Rules!</a></div>
-    -->
-
-    {{ content }}
-  </main>
-
-  <div id="shortcuts">
-    <a href="/information/donate.html">
-      <div class="button">Donate!</div>
-    </a>
-    <a href="/information/chat.html">
-      <div class="button">Help!?</div>
-    </a>
+  <div class="site-frame{% if page.gamename != nil or page.listgames != nil or page.listinformation != nil %} has-sidebar{% endif %}">
+    {% if page.listgames != nil %}<aside class="sidebar" aria-label="Wargames navigation">{% include games.md %}</aside>{% endif %}
+    {% if page.listinformation != nil %}<aside class="sidebar" aria-label="Information navigation">{% include information.md %}</aside>{% endif %}
+    {% if page.gamename != nil %}<aside class="sidebar" aria-label="Level navigation"><div id="sidemenu"></div></aside><script>renderLevelsMenu("{{page.gamename}}");</script>{% endif %}
+    <main id="content">{% if page.level != nil %}<div id="title"></div><script>renderLevelTitle("{{page.gamename}}", {{ page.level }});</script>{% endif %}{{ content }}</main>
   </div>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD0K2239G0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-RD0K2239G0');
   </script>
   <script src="/js/updatedmarkers-logic.js"></script>
-  <script>
-    if (localStorage.getItem("rules-accepted") === "true") {
-      document.getElementById("please-read-the-rules").style.display = "none";
-    }
-  </script>
 </body>
-
 </html>

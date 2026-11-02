@@ -36,7 +36,9 @@ function renderLevelsMenu(name) {
 	if("host" in data[name] && "port" in data[name]) {
 	    newHTML += "<div id='sshinfo'><sh>SSH Information</sh><br>Host: "+data[name].host+"<br>Port: "+data[name].port+"</div>";
 	}
-	newHTML += "<ul><li><a href=\"/wargames/"+name+"\"><sh>"+capitaliseFirstLetter(name)+"</sh></a></li>";
+	var gameUrl = "/wargames/"+name;
+	var isGameCurrent = window.location.pathname == gameUrl || window.location.pathname == gameUrl+"/";
+	newHTML += "<ul><li><a"+(isGameCurrent ? " class='selected' aria-current='page'" : "")+" href=\""+gameUrl+"\"><sh>"+capitaliseFirstLetter(name)+"</sh></a></li>";
 
 	for(var i = 0; i <= data[name].lastlevel; i++) {
 	    var url = "";
@@ -53,7 +55,7 @@ function renderLevelsMenu(name) {
 	    }
 
 	    if(window.location.pathname == url) {
-		newHTML += "<li><a class='selected' href=\""+url+"\">"+urlname+"</a></li>";
+		newHTML += "<li><a class='selected' aria-current='page' href=\""+url+"\">"+urlname+"</a></li>";
 	    } else {
 		newHTML += "<li><a href=\""+url+"\">"+urlname+"</a></li>";
 	    }
