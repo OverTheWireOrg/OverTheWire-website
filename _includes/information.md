@@ -4,6 +4,8 @@
 {% include menu_item.html link="/information/chat.html" name="Contact&nbsp;via&nbsp;Chat" %}
 {% include menu_item.html link="/information/website.html" name="Edit website" %}
 {% include menu_item.html link="/information/wechall.html" name="WeChall&nbsp;Scoreboard" %}
+{% include menu_item.html link="/information/discord-bot-tos.html" name="Bridge&nbsp;Terms&nbsp;of&nbsp;Service" %}
+{% include menu_item.html link="/information/discord-bot-privacy.html" name="Bridge&nbsp;Privacy&nbsp;Policy" %}
 
 {% include menu_item.html link="/information/staff.html" name="Staff" %}
 {% include menu_item.html link="/information/alumni.html" name="Alumni" %}
