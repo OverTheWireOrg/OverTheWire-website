@@ -37,9 +37,7 @@ If you don't know [how to use IRC][], use google to find out.
 		Host: irc.overthewire.org
 		Port: 6667
 
-The channels used on IRC are the same as on Discord. A bot relays messages between both,
-so Discord and IRC users can talk to each other. Using the bridged channels is subject to the
-bridge [Terms of Service][] and [Privacy Policy][].
+The channels used on IRC are the same as on Discord.
 
 The following IRC commands may be useful:
 
@@ -53,5 +51,3 @@ The following IRC commands may be useful:
 [how to use IRC]: https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial
 [article]: http://catb.org/~esr/faqs/smart-questions.html
 [rules]: /rules
-[Terms of Service]: /information/discord-bot-tos.html
-[Privacy Policy]: /information/discord-bot-privacy.html
