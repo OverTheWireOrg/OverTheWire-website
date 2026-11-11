@@ -1,21 +1,34 @@
-{% if include.name == nil %}
-    {% assign name = include.link | capitalize %}
-{% else %}
-    {% assign name = include.name %}
-{% endif %}
-
-{% assign linklen = include.link | size | plus:3 %}
-{% assign currprefix = page.url | truncate:linklen | remove:"..." %}
-
-{% if currprefix == include.link %}
-	{% assign cssclasses = "updatedmarkercontainer selected" %}
-{% else %}
-	{% assign cssclasses = "updatedmarkercontainer" %}
-{% endif %}
-
-{% capture updatedmarker %}
+{% if include.name == nil %} {% assign name = include.link | capitalize %} {%
+else %} {% assign name = include.name %} {% endif %} {% assign current_scope =
+include.section | default: include.link %} {% assign scope_last_character =
+current_scope | slice: -1, 1 %} {% if scope_last_character != "/" and
+current_scope contains ".html" == false %} {% assign current_scope =
+current_scope | append: "/" %} {% endif %} {% assign page_prefix = page.url |
+slice: 0, current_scope.size %} {% if page.url == include.link or page_prefix ==
+current_scope %} {% assign cssclasses = "updatedmarkercontainer selected" %} {%
+else %} {% assign cssclasses = "updatedmarkercontainer" %} {% endif %} {%
+capture updatedmarker %}
 <div class="updatedmarker" data-link="{{include.link}}"></div>
-{% endcapture %}
+{% endcapture %} {% assign is_current_page = false %} {% if page.url ==
+include.link or page_prefix == current_scope %} {% assign is_current_page = true
+%} {% endif %}
 
-
-<li><a class='{{ cssclasses }}' href="{{ include.link }}">{{ name }}{{ updatedmarker }}</a></li>
+<li>
+  <a
+    class="{{ cssclasses }}"
+    href="{{ include.link }}"
+    {%
+    if
+    is_current_page
+    and
+    include.aria_current
+    !="false"
+    %}
+    aria-current="page"
+    {%
+    endif
+    %}
+  >
+    {{ name }}{{ updatedmarker }}
+  </a>
+</li>
